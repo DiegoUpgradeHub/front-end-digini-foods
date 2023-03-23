@@ -1,3 +1,4 @@
+import { SharedModule } from './components/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,7 @@ import { EditUserComponent } from './components/users/edit-user/edit-user.compon
 import { DeleteUserComponent } from './components/users/delete-user/delete-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +22,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CreateUserComponent,
     EditUserComponent,
     DeleteUserComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
