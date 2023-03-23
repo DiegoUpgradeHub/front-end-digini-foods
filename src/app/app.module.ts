@@ -9,6 +9,7 @@ import { DeleteProductComponent } from './components/products/delete-product/del
 import { CreateUserComponent } from './components/users/create-user/create-user.component';
 import { EditUserComponent } from './components/users/edit-user/edit-user.component';
 import { DeleteUserComponent } from './components/users/delete-user/delete-user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteUserComponent } from './components/users/delete-user/delete-user.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
