@@ -17,11 +17,6 @@ const routes: Routes = [
     path: `restaurant-pizza`, loadChildren: () =>
       import('./pages/restaurant-pizza/restaurant-pizza.module').then(m => m.RestaurantPizzaModule)
   },
-  //[Diego] No tengo claro qué es el login form. Es lo mismo que el sign-in?
-  {
-    path: `login-form`, loadChildren: () =>
-      import('./features/login-form/login-form.module').then(m => m.LoginFormModule)
-  },
   {
     path: `sign-in`, loadChildren: () =>
       import('./features/sign-in/sign-in.module').then(m => m.SignInModule)
