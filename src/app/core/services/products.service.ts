@@ -39,13 +39,13 @@ export class ProductsService {
   }
 
   //Obtener producto por categoría
-  getProductCategory(name: string): Observable<any> {
-    return this.http.get(`${this.endpoint}/products/category/${name}`)
+  getProductCategory(category: string): Observable<any> {
+    return this.http.get(`${this.endpoint}/products/category/${category}`)
   }
 
   //Obtener producto por restaurante
-  getProductRestaurant(name: string): Observable<any> {
-    return this.http.get(`${this.endpoint}/products/restaurant/${name}`)
+  getProductRestaurant(restaurant: string): Observable<any> {
+    return this.http.get(`${this.endpoint}/products/restaurant/${restaurant}`)
   }
 
   //Crear un producto
