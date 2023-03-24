@@ -1,1 +1,38 @@
-<p>sign-up works!</p>
+<div class="signup-product-page">
+  <form [formGroup]="signupForm" (ngSubmit)="registerUser()">
+      <h3>Please sign up</h3>
+      <div>
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre" required>
+      </div>
+      <div>
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="lastName" placeholder="Apellidos" required>
+      </div>
+      <div>
+        <label>Fecha de nacimiento</label>
+        <input type="text" class="form-control" formControlName="age" placeholder="Año-Mes-Día" required>
+      </div>
+      <div>
+        <label>Email address</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+      </div>
+      <div>
+        <label>Fecha de inicio</label>
+        <input type="text" class="form-control" formControlName="startDate" placeholder="Año-Mes-Día" required>
+      </div>
+      <div>
+        <label>Lugar de trabajo</label>
+        <input type="text" class="form-control" formControlName="workplace" placeholder="Lugar de trabajo" required>
+      </div>
+      <div>
+        <label>Puesto de trabajo</label>
+        <input type="text" class="form-control" formControlName="role" placeholder="Puesto de trabajo" required>
+      </div>
+      <button type="submit" class="btn btn-success">Sign up</button>
+  </form>
+</div>
