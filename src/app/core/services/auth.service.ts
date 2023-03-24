@@ -39,8 +39,9 @@ export class AuthService {
         //Para setear el token y el _id
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res;
+          //Volvemos al user-profile una vez ejecutada la función
+          this.router.navigate(['/home']); //Esta redirección es provisional hasta solucionar la user-profile
           // this.router.navigate(['/user-profile/' + res.msg._id]);
-        //Volvemos al user-profile una vez ejecutada la función
         })
       })
   };
