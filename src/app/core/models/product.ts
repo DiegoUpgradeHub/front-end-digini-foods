@@ -8,3 +8,5 @@ export interface Product {
   vegetarian: boolean;
   restaurant: string;
 }
+
+

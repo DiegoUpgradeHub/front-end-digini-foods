@@ -8,18 +8,59 @@
           Menu
         </div>
       </button>
-        <!--Apartado Platos-->
-        <accordion-group class="btn btn-block clearfix"  heading="Platos">
-          <div *ngFor="let plate of plates">
-            <p>{{plate.name}}</p>
-          </div>
-        </accordion-group>
-        <!--Apartado Bebidas-->
-        <accordion-group class="btn btn-block clearfix"  heading="Bebidas">
-          <div *ngFor="let drink of drinks">
-            <p>{{drink.name}}</p>
-          </div>
-        </accordion-group>
+
+      <!--Apartado Platos-->
+      <accordion-group class="btn btn-block clearfix"  heading="Platos">
+
+        <!--Tabla de platos-->
+        <table class="table" *ngFor="let plate of plates; let indexOfplates = index;">
+          <thead>
+            <tr>
+              <th scope="col">Nº</th>
+              <th scope="col">Name</th>
+              <th scope="col">Ingredients</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{indexOfplates}}</th>
+              <td>{{plate.name}}</td>
+              <td>{{plate.ingredients}}</td>
+              <td>{{plate.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </accordion-group>
+
+
+      <!--Apartado Bebidas-->
+      <accordion-group class="btn btn-block clearfix"  heading="Bebidas">
+
+        <!--Tabla de platos-->
+        <table class="table" *ngFor="let drink of drinks; let indexOfdrinks = index;">
+          <thead>
+            <tr>
+              <th scope="col">Nº</th>
+              <th scope="col">Name</th>
+              <th scope="col">Ingredients</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{indexOfdrinks}}</th>
+              <td>{{drink.name}}</td>
+              <td>{{drink.ingredients}}</td>
+              <td>{{drink.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </accordion-group>
+
+
 
     </accordion-group>
   </accordion>
