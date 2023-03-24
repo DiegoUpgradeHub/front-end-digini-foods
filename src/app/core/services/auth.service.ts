@@ -32,14 +32,14 @@ export class AuthService {
 
   //Sign-in
   signIn(user: User){
-    return this.http.post<any>(`${this.endpoint}/register-user`, user)
+    return this.http.post<any>(`${this.endpoint}/signin`, user)
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token)
         localStorage.setItem('_id', res._id)
         //Para setear el token y el _id
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res;
-          this.router.navigate(['user-profile/' + res.msg._id]);
+          // this.router.navigate(['/user-profile/' + res.msg._id]);
         //Volvemos al user-profile una vez ejecutada la función
         })
       })
