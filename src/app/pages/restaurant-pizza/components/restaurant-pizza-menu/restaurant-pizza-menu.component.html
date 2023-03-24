@@ -1,4 +1,29 @@
 <div class="menu-container">
-  <p>restaurant-pizza-menu works!</p>
+
+  <accordion>
+    <accordion-group>
+      <!--El botón principal del accordeon-->
+      <button class="btn btn-link btn-block clearfix" accordion-heading type="button">
+        <div class="pull-centre float-centre header-name">
+          Menu
+        </div>
+      </button>
+        <!--Apartado Platos-->
+        <accordion-group class="btn btn-block clearfix"  heading="Platos">
+          <div *ngFor="let plate of plates">
+            <p>{{plate.name}}</p>
+          </div>
+        </accordion-group>
+        <!--Apartado Bebidas-->
+        <accordion-group class="btn btn-block clearfix"  heading="Bebidas">
+          <div *ngFor="let drink of drinks">
+            <p>{{drink.name}}</p>
+          </div>
+        </accordion-group>
+
+    </accordion-group>
+  </accordion>
+
+
 </div>
 
