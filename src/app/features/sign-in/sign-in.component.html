@@ -1,25 +1,13 @@
-<div class="signin-product-page">
+<div class="signin-page">
   <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
-      <h3>Please sign in</h3>
-      <div>
-          <label>Email</label>
-          <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
-          <div
-            [hidden]="signinForm.valid || signinForm.pristine"
-            class="alert alert-danger"
-          >
-            Email no identificado.
-          </div>
+      <h2>Formulario de inicio de sesión</h2>
+      <div class="form-floating mb-3">
+        <label for="floatingInput">Correo electrónico</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="nombre@email.com" id="floatingInput" required>
       </div>
-      <div>
-          <label>Password</label>
-          <input type="password" class="form-control" formControlName="password" placeholder="Password">
-          <div
-            [hidden]="signinForm.valid || signinForm.pristine"
-            class="alert alert-danger"
-          >
-            Contraseña incorrecta.
-          </div>
+      <div class="form-floating mb-3">
+          <label>Contraseña</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Introduce tu contraseña">
       </div>
       <button type="submit" class="btn btn-success">
         Sign in
@@ -28,7 +16,7 @@
         [hidden]="signinForm.valid || signinForm.pristine"
         class="alert alert-danger"
       >
-        Contraseña incorrecta.
+        Oh oh... algo no cuadra. Revisa tu correo y contraseña.
       </div>
   </form>
 </div>
