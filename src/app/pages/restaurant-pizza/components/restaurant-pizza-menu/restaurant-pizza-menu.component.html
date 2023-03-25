@@ -13,23 +13,38 @@
       <accordion-group class="btn btn-block clearfix"  heading="Platos">
 
         <!--Tabla de platos-->
-        <table class="table" *ngFor="let plate of plates; let indexOfplates = index;">
+        <table class="table">
           <thead>
             <tr>
-              <th scope="col">Nº</th>
               <th scope="col">Name</th>
-              <th scope="col">Description</th>
               <th scope="col">Price</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table" *ngFor="let plate of plates; let indexOfplates = index;">
             <tr>
-              <th scope="row">{{indexOfplates}}</th>
-              <td>{{plate.name}}</td>
+              <!--Primer Columna-->
               <td>
-                <button type="button" class="btn btn-secondary">See Details</button>
+                <p class="menu__title-text">{{plate.name}}</p>
               </td>
-              <td>{{plate.price}}</td>
+              <!--Segunda Columna-->
+              <td>
+                <p class="menu__title-text">{{plate.price}}</p>
+              </td>
+              <!--Tercer Columna-->
+              <td>
+                <img class="menu__view-icon" src="assets/images/eye-svgrepo-com.svg">
+              </td>
+              <!--Cuarta Columna-->
+              <td>
+                <img class="menu__view-icon" src="assets/images/edit-svgrepo-com.svg">
+              </td>
+              <!--Quinta Columna-->
+              <td>
+                <img class="menu__view-icon" src="assets/images/delete-svgrepo-com.svg">
+              </td>
             </tr>
           </tbody>
         </table>
@@ -40,24 +55,39 @@
       <!--Apartado Bebidas-->
       <accordion-group class="btn btn-block clearfix"  heading="Bebidas">
 
-        <!--Tabla de platos-->
-        <table class="table" *ngFor="let drink of drinks; let indexOfdrinks = index;">
+        <!--Tabla de bebidas-->
+        <table class="table">
           <thead>
             <tr>
-              <th scope="col">Nº</th>
               <th scope="col">Name</th>
-              <th scope="col">Description</th>
               <th scope="col">Price</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table" *ngFor="let drink of drinks; let indexOfdrinks = index;">
             <tr>
-              <th scope="row">{{indexOfdrinks}}</th>
-              <td>{{drink.name}}</td>
+              <!--Primer Columna-->
               <td>
-                <button type="button" class="btn btn-secondary">See Details</button>
+                <p class="menu__title-text">{{drink.name}}</p>
               </td>
-              <td>{{drink.price}}</td>
+              <!--Segunda Columna-->
+              <td class="menu__title-text">
+                <p class="menu__title-text">{{drink.price}}</p>
+              </td>
+              <!--Tercer Columna-->
+              <td>
+                <img class="menu__view-icon" src="assets/images/eye-svgrepo-com.svg">
+              </td>
+              <!--Cuarta Columna-->
+              <td>
+                <img class="menu__view-icon" src="assets/images/edit-svgrepo-com.svg">
+              </td>
+              <!--Quinta Columna-->
+              <td>
+                <img class="menu__view-icon" src="assets/images/delete-svgrepo-com.svg">
+              </td>
             </tr>
           </tbody>
         </table>
