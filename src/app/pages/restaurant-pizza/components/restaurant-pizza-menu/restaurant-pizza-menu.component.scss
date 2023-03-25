@@ -6,7 +6,18 @@
   width:20pt;
 }
 
-.menu__title-text{
-  font-size: 10pt;
+.menu__title-box{
   display: flex;
+  max-width: 20pt;
+  min-height: 30pt;
+
 }
+
+.menu__title-text{
+  margin:0 auto;
+  font-size: 10pt;
+  overflow-wrap: break-word;
+}
+
+
+
