@@ -27,8 +27,8 @@ export class RestaurantPizzaMenuComponent {
 
     this.productsService.getProducts().subscribe((response)=>{
       this.productList = response;
-      this.plates = this.productList.filter(product => product.category === 'Pizzas' )
-      this.drinks = this.productList.filter(drink => drink.category === 'Bebidas' )
+      this.plates = this.productList.filter(product => product.category === 'pizzas' )
+      this.drinks = this.productList.filter(drink => drink.category === 'bebidas' )
       console.log(this.plates);
     });
 
