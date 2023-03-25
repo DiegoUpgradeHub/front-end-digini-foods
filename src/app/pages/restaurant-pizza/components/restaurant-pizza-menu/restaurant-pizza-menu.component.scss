@@ -11,15 +11,17 @@
 
 
   &-img-top{
-    border-radius: 20pt;
-    border: solid 1pt ;
+    border-top-left-radius: 20pt;
+    border-top-right-radius: 20pt;
+    border: solid 2pt gray ;
   }
 }
 
 .card-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
+  justify-content: center;
+  justify-content: space-evenly;
 }
 
 
