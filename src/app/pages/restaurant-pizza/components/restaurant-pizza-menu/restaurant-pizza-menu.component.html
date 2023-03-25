@@ -1,17 +1,25 @@
 <div class="menu-container">
 
-  <div class="card-container" >
+<accordion [isAnimated]="true">
+  <accordion-group heading="Static Header">
 
-    <div class="card" style="width: 10rem;" *ngFor="let plate of plates; let indexOfplates = index;">
-      <img [src]="plate.image" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2>{{plate.name}}</h2>
-        <h3>{{plate.price}}</h3>
-        <p class="card-text">{{plate.ingredients}}</p>
+    <div class="card-container" >
+
+      <div class="card" style="width: 10rem;" *ngFor="let plate of plates; let indexOfplates = index;">
+        <img [src]="plate.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2>{{plate.name}}</h2>
+          <h3>{{plate.price}}</h3>
+          <p class="card-text">{{plate.ingredients}}</p>
+        </div>
       </div>
+
     </div>
 
-  </div>
+
+  </accordion-group>
+
+</accordion>
 
 </div>
 
