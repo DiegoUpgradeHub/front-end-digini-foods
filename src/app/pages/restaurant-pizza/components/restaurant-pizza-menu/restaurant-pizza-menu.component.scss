@@ -1,22 +1,25 @@
 .menu-container {
   margin-top: 50px;
+  display:flex;
+  justify-content: center
 }
 
-.menu__view-icon{
-  width:20pt;
+.card{
+  margin-top: 10px;
+  border-radius: 20pt;
+
+
+
+  &-img-top{
+    border-radius: 20pt;
+    border: solid 1pt ;
+  }
 }
 
-.menu__title-box{
+.card-container{
   display: flex;
-  max-width: 20pt;
-  min-height: 30pt;
-
-}
-
-.menu__title-text{
-  margin:0 auto;
-  font-size: 10pt;
-  overflow-wrap: break-word;
+  flex-wrap: wrap;
+  justify-content: center
 }
 
 

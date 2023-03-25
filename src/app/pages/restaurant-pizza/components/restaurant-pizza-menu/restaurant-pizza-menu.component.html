@@ -1,104 +1,17 @@
 <div class="menu-container">
 
-  <accordion [isAnimated]="true">
-    <accordion-group>
-      <!--El botón principal del accordeon-->
-      <button class=" btn btn-link btn-block clearfix" accordion-heading type="button">
-        <div class="pull-centre float-centre header-name">
-          Menu
-        </div>
-      </button>
+  <div class="card-container" >
 
-      <!--Apartado Platos-->
-      <accordion-group class="btn btn-block clearfix"  heading="Platos">
+    <div class="card" style="width: 10rem;" *ngFor="let plate of plates; let indexOfplates = index;">
+      <img [src]="plate.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h2>{{plate.name}}</h2>
+        <h3>{{plate.price}}</h3>
+        <p class="card-text">{{plate.ingredients}}</p>
+      </div>
+    </div>
 
-        <!--Tabla de platos-->
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody class="table" *ngFor="let plate of plates; let indexOfplates = index;">
-            <tr>
-              <!--Primer Columna-->
-              <td>
-                <p class="menu__title-text">{{plate.name}}</p>
-              </td>
-              <!--Segunda Columna-->
-              <td>
-                <p class="menu__title-text">{{plate.price}}</p>
-              </td>
-              <!--Tercer Columna-->
-              <td>
-                <img class="menu__view-icon" src="assets/images/eye-svgrepo-com.svg">
-              </td>
-              <!--Cuarta Columna-->
-              <td>
-                <img class="menu__view-icon" src="assets/images/edit-svgrepo-com.svg">
-              </td>
-              <!--Quinta Columna-->
-              <td>
-                <img class="menu__view-icon" src="assets/images/delete-svgrepo-com.svg">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-      </accordion-group>
-
-
-      <!--Apartado Bebidas-->
-      <accordion-group class="btn btn-block clearfix"  heading="Bebidas">
-
-        <!--Tabla de bebidas-->
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody class="table" *ngFor="let drink of drinks; let indexOfdrinks = index;">
-            <tr class="test">
-              <!--Primer Columna-->
-              <td class="menu__title-box">
-                <p class="menu__title-text">{{drink.name}}</p>
-              </td>
-              <!--Segunda Columna-->
-              <td>
-                <p class="menu__title-text">{{drink.price}}</p>
-              </td>
-              <!--Tercer Columna-->
-              <td>
-                <img class="menu__view-icon" src="assets/images/eye-svgrepo-com.svg">
-              </td>
-              <!--Cuarta Columna-->
-              <td>
-                <img class="menu__view-icon" src="assets/images/edit-svgrepo-com.svg">
-              </td>
-              <!--Quinta Columna-->
-              <td>
-                <img class="menu__view-icon" src="assets/images/delete-svgrepo-com.svg">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-      </accordion-group>
-
-
-
-    </accordion-group>
-  </accordion>
-
+  </div>
 
 </div>
 
