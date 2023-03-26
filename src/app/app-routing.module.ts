@@ -26,6 +26,11 @@ const routes: Routes = [
       import('./features/sign-up/sign-up.module').then(m => m.SignUpModule),
       canActivate: [AuthGuard]
   },
+  {
+    path: `update-user`, loadChildren: () =>
+      import('./components/users/edit-user/edit-user.module').then(m => m.EditUserModule),
+      canActivate: [AuthGuard]
+  },
   { path: ``, redirectTo: `home`, pathMatch: `full` }
 
 ];
