@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 .btn {
@@ -39,15 +39,17 @@ div.card-body {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 300px;
   margin: 5px;
+  h2 {
+    margin-top: 15px;
+  }
+
   .crud-users {
-    margin: 5px;
     width: 100%;
   }
   .crud-products {
-    margin: 5px;
     width: 100%;
   }
 }

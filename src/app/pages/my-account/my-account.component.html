@@ -22,6 +22,7 @@
 <!-- Caja con botones CRUD -->
   <div class="crud-buttons">
 <!-- CRUD Usuarios -->
+  <h2>Administración usuarios</h2>
     <div class="btn-group-vertical crud-users" role="group" aria-label="Vertical button group">
       <button role="button" [hidden]="this.currentUser.role == 'waiter'" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
         <p class="btn-text">Editar mi usuario</p>
@@ -29,7 +30,7 @@
       <button (click)="logout()" role="button" type="button" class="btn btn-danger">
         <p class="btn-text">Cerrar sesión</p>
       </button>
-      <div class="btn-group dropstart" role="group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false" [hidden]="this.currentUser.role !== 'admin'">
           <p class="btn-text">Más opciones</p>
         </button>
@@ -37,21 +38,22 @@
           <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
             <p class="btn-text">Ver usuarios</p>
           </button>
-          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+          <button role="button" routerLinkActive="active" routerLink="/register-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
             <p class="btn-text">Crear usuario</p>
           </button>
-          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+          <button role="button" routerLinkActive="active" routerLink="/delete-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
             <p class="btn-text">Eliminar usuario</p>
           </button>
         </ul>
       </div>
     </div>
 <!-- CRUD Productos -->
+    <h2 [hidden]="this.currentUser.role !== 'admin'">Administración productos</h2>
     <div class="btn-group-vertical crud-products" role="group" aria-label="Vertical button group" [hidden]="this.currentUser.role !== 'admin'">
       <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
         <p class="btn-text">Crear producto</p>
       </button>
-      <div class="btn-group dropstart" role="group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
           <p class="btn-text">Más opciones</p>
         </button>

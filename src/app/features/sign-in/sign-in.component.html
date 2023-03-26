@@ -2,12 +2,12 @@
   <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
       <h2>Formulario de inicio de sesión</h2>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Correo electrónico</label>
         <input type="email" class="form-control" formControlName="email" placeholder="nombre@email.com" id="floatingInput" required>
+        <label for="floatingInput">Correo electrónico</label>
       </div>
       <div class="form-floating mb-3">
-          <label>Contraseña</label>
-          <input type="password" class="form-control" formControlName="password" placeholder="Introduce tu contraseña">
+        <input type="password" class="form-control" formControlName="password" placeholder="Introduce tu contraseña">
+        <label>Contraseña</label>
       </div>
       <button type="submit" class="btn btn-success">
         Sign in

@@ -2,30 +2,30 @@
   <form [formGroup]="signupForm" (ngSubmit)="registerUser()">
       <h2>Formulario de registro para nuevos usuarios</h2>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Nombre</label>
         <input type="text" class="form-control" formControlName="name" placeholder="Nombre" required id="floatingInput">
+        <label for="floatingInput">Nombre</label>
       </div>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Apellidos</label>
         <input type="text" class="form-control" formControlName="lastName" placeholder="Apellidos" required id="floatingInput">
+        <label for="floatingInput">Apellidos</label>
       </div>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Fecha de nacimiento</label>
         <input type="text" class="form-control" formControlName="age" placeholder="Año-Mes-Día" required id="floatingInput">
+        <label for="floatingInput">Fecha de nacimiento</label>
       </div>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Correo electrónico</label>
         <input type="email" class="form-control" formControlName="email" placeholder="nombre@email.com" required id="floatingInput">
+        <label for="floatingInput">Correo electrónico</label>
       </div>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Contraseña</label>
         <input type="password" class="form-control" formControlName="password" placeholder="Mínimo 4 y máximo 8 caracteres" required id="floatingInput">
+        <label for="floatingInput">Contraseña</label>
       </div>
       <div class="form-floating mb-3">
-        <label for="floatingInput">Fecha de inicio</label>
         <input type="text" class="form-control" formControlName="startDate" placeholder="Año-Mes-Día" required id="floatingInput">
+        <label for="floatingInput">Fecha de inicio</label>
       </div>
-      <div class="form-floating mb-3">
+      <div class="mb-3">
         <label>Lugar de trabajo</label>
         <select class="form-select form-control" formControlName="workplace" aria-label="office" required>
           <option value="pizzeria">Restaurante pizzeria</option>
@@ -34,7 +34,7 @@
           <option value="office">Oficina</option>
         </select>
       </div>
-      <div class="form-floating mb-3">
+      <div class="mb-3">
         <label>Puesto de trabajo</label>
         <select class="form-select form-control" formControlName="role" placeholder="Puesto de trabajo" required>
           <option value="waiter">Equipo de Restauración</option>

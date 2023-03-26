@@ -89,6 +89,25 @@ export class AuthService {
     )
   };
 
+  //Eliminar usuario
+  deleteUser(user: User): Observable<any> {
+    let id = user._id
+    let api = `${this.endpoint}/delete-user/${id}`;
+    return this.http.delete(api)
+    .pipe(
+      catchError(this.handleError)
+    )
+  };
+
+    //Crear usuario
+    createUser(user: User): Observable<any> {
+      let api = `${this.endpoint}/register-user`;
+      return this.http.post(api, user)
+      .pipe(
+        catchError(this.handleError)
+      )
+    };
+
   // Error
   handleError(error: HttpErrorResponse) {
     let msg = '';
