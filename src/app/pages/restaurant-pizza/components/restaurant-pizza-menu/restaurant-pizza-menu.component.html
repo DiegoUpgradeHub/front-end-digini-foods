@@ -1,25 +1,69 @@
+<div class="menu">
 <div class="menu-container">
 
-<accordion [isAnimated]="true">
-  <accordion-group heading="Static Header">
+  <!--Titulo de la sección-->
+  <div class="menu-header">
+    <h1 class="header">Carta</h1>
+  </div>
 
-    <div class="card-container" >
+    <div class="menu-buttons">
+      <button mat-raised-button class="button" (click)="getProducts(1)">Platos</button>
+      <button mat-raised-button class="button" (click)="getProducts(2)">Bebidas</button>
+    </div>
 
-      <div class="card" style="width: 10rem;" *ngFor="let plate of plates; let indexOfplates = index;">
-        <img [src]="plate.image" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2>{{plate.name}}</h2>
-          <h3>{{plate.price}}</h3>
-          <p class="card-text">{{plate.ingredients}}</p>
-        </div>
+
+
+  <!--Platos-->
+    <div class="card-container" *ngIf="showSection === 1" >
+
+      <div class="card" style="width: 20rem;" *ngFor="let plate of plates; let indexOfplates = index;">
+          <img [src]="plate.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2>{{plate.name}}</h2>
+            <h3>{{plate.price}}</h3>
+            <p class="card-text">{{plate.ingredients}}</p>
+            <div>
+              <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
+              <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
+              <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
+            </div>
+          </div>
+      </div>
+
+
+      <div class="menu-buttons">
+        <button mat-raised-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
 
     </div>
 
 
-  </accordion-group>
 
-</accordion>
+    <!--Bebidas-->
+    <div class="card-container" *ngIf="showSection === 2" >
+
+      <div class="card" style="width: 20rem;" *ngFor="let drink of drinks; let indexOfdrinks = index;">
+        <img [src]="drink.image" style="width:10rem" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2>{{drink.name}}</h2>
+          <h3>{{drink.price}}</h3>
+          <p class="card-text">{{drink.ingredients}}</p>
+          <div>
+            <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
+            <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
+            <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-buttons">
+        <button mat-raised-button class="button" (click)="getProducts(0)">Cerrar</button>
+      </div>
+
+    </div>
+
 
 </div>
 
+
+</div>

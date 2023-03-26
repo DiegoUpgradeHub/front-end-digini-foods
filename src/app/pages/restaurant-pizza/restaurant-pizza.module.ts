@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { RestaurantPizzaRoutingModule } from './restaurant-pizza-routing.module';
 import { RestaurantPizzaComponent } from './restaurant-pizza.component';
@@ -12,6 +13,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 //Angular Material
 import {CdkTableModule} from '@angular/cdk/table';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -24,10 +27,12 @@ import {CdkTableModule} from '@angular/cdk/table';
   imports: [
     CommonModule,
     RestaurantPizzaRoutingModule,
+    FormsModule,
     //Ngx Bootstrap
     AccordionModule,
     //Angular Material
-    CdkTableModule
+    CdkTableModule,
+    MatButtonModule
   ]
 })
 export class RestaurantPizzaModule { }

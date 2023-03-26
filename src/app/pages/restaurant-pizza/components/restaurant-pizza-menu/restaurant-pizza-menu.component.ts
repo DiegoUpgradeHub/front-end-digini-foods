@@ -14,22 +14,24 @@ export class RestaurantPizzaMenuComponent {
   productList: Product[] = [];
   plates: Product[] = [];
   drinks: Product[] = [];
+  showSection: number = 0;
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
   constructor (private productsService: ProductsService) {}
 
   ngOnInit():void{
-    this.getProducts()
+
 }
 
-  private getProducts():void{
+  public getProducts(newState:number):void{
 
     this.productsService.getProducts().subscribe((response)=>{
       this.productList = response;
       this.plates = this.productList.filter(product => product.category === 'pizzas' )
       this.drinks = this.productList.filter(drink => drink.category === 'bebidas' )
       console.log(this.plates);
+      this.showSection = newState;
     });
 
   }
