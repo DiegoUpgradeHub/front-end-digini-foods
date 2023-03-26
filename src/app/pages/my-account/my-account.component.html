@@ -1,24 +1,6 @@
 <div class="my-account-page">
-
-  <button
-    (click)="logout()"
-    role="button"
-    *ngIf="this.authService.isLoggedIn"
-    type="button" class="btn btn-danger"
-  >
-    <p class="btn-text">Cerrar sesión</p>
-  </button>
-  <button
-    role="button"
-    [hidden]="this.currentUser.role == 'waiter'"
-    routerLinkActive="active"
-    routerLink="/update-user/{{this.currentUser.id}}"
-    type="button" class="btn btn-primary"
-  >
-    <p class="btn-text">Editar perfil</p>
-  </button>
-
-  <div class="user-info card bg-warning">
+<!-- Carta con info del usuario -->
+  <div class="user-info card bg-secondary">
     <div class="row g-0">
       <div class="col-4">
         <img class="img-fluid rounded-start profile-image" src="https://cdn-icons-png.flaticon.com/512/2102/2102647.png" class="card-img-top" alt="profile-image">
@@ -34,6 +16,56 @@
           <p class="card-text">Lugar de trabajo: {{this.currentUser.workplace}}</p>
           <p class="card-text">Puesto de trabajo: {{this.currentUser.role}}</p>
         </div>
+      </div>
+    </div>
+  </div>
+<!-- Caja con botones CRUD -->
+  <div class="crud-buttons">
+<!-- CRUD Usuarios -->
+    <div class="btn-group-vertical crud-users" role="group" aria-label="Vertical button group">
+      <button role="button" [hidden]="this.currentUser.role == 'waiter'" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+        <p class="btn-text">Editar mi usuario</p>
+      </button>
+      <button (click)="logout()" role="button" type="button" class="btn btn-danger">
+        <p class="btn-text">Cerrar sesión</p>
+      </button>
+      <div class="btn-group dropstart" role="group">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false" [hidden]="this.currentUser.role !== 'admin'">
+          <p class="btn-text">Más opciones</p>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+            <p class="btn-text">Ver usuarios</p>
+          </button>
+          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+            <p class="btn-text">Crear usuario</p>
+          </button>
+          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+            <p class="btn-text">Eliminar usuario</p>
+          </button>
+        </ul>
+      </div>
+    </div>
+<!-- CRUD Productos -->
+    <div class="btn-group-vertical crud-products" role="group" aria-label="Vertical button group" [hidden]="this.currentUser.role !== 'admin'">
+      <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+        <p class="btn-text">Crear producto</p>
+      </button>
+      <div class="btn-group dropstart" role="group">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
+          <p class="btn-text">Más opciones</p>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+            <p class="btn-text">Ver productos</p>
+          </button>
+          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+            <p class="btn-text">Editar productos</p>
+          </button>
+          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+            <p class="btn-text">Eliminar productos</p>
+          </button>
+        </ul>
       </div>
     </div>
   </div>
