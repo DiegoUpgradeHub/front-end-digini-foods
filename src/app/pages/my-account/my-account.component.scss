@@ -1,10 +1,13 @@
 .my-account-page {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
 
+.btn {
+  width: 100%;
+}
 
 .btn-text {
   margin: 0px;
@@ -16,7 +19,7 @@
 .user-info {
   padding: 5px;
   margin: 20px 0;
-  // width: 400px;
+  border: none;
   max-width: 540px;
   // display: flex;
   // flex-flow: row wrap;
@@ -30,4 +33,21 @@ div.card-body {
 
 .profile-image {
   max-width: 100px;
+}
+
+.crud-buttons {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 5px;
+  .crud-users {
+    margin: 5px;
+    width: 100%;
+  }
+  .crud-products {
+    margin: 5px;
+    width: 100%;
+  }
 }
