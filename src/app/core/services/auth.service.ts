@@ -56,6 +56,7 @@ export class AuthService {
   //do logout
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
+    let id = localStorage.removeItem('_id');
     if (removeToken == null) {
       this.router.navigate(['home']);
     }
@@ -77,6 +78,16 @@ export class AuthService {
     let id = localStorage.getItem('_id');
     this.router.navigate(['user-profile/' + id]);
   }
+
+  //Editar usuario
+  editUserProfile(user: User): Observable<any> {
+    let id = localStorage.getItem('_id');
+    let api = `${this.endpoint}/update-user/${id}`;
+    return this.http.put(api, user)
+    .pipe(
+      catchError(this.handleError)
+    )
+  };
 
   // Error
   handleError(error: HttpErrorResponse) {
