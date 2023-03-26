@@ -26,9 +26,20 @@ const routes: Routes = [
       import('./features/sign-up/sign-up.module').then(m => m.SignUpModule),
       canActivate: [AuthGuard]
   },
+  //Rutas para CRUD usuarios
   {
     path: `update-user`, loadChildren: () =>
       import('./components/users/edit-user/edit-user.module').then(m => m.EditUserModule),
+      canActivate: [AuthGuard]
+  },
+  {
+    path: `delete-user`, loadChildren: () =>
+      import('./components/users/delete-user/delete-user.module').then(m => m.DeleteUserModule),
+      canActivate: [AuthGuard]
+  },
+  {
+    path: `register-user`, loadChildren: () =>
+      import('./components/users/create-user/create-user.module').then(m => m.CreateUserModule),
       canActivate: [AuthGuard]
   },
   { path: ``, redirectTo: `home`, pathMatch: `full` }
