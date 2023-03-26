@@ -1,5 +1,57 @@
-.contact-container {
+.contact-page{
+  width:100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion{
+
+  &-section{
+    height: 250pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+  }
+
+  &-image{
+    width:250pt;
+  }
+}
+
+
+
+.contact-form{
   margin-top: 50px;
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items:center;
+  background-color: #B8B8B8	 ;
 }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  &-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__submit{
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+
+.error{
+  color: red;
+}
+
