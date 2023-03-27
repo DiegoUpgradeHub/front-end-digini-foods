@@ -21,7 +21,7 @@ export class AuthService {
     public router: Router,
   ) { }
 
-  //Sign-up -> método que guarda al user en la BBDD de MongoDB
+  //Registrar usuario
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/register-user`;
     return this.http.post(api, user)
@@ -30,7 +30,7 @@ export class AuthService {
     )
   };
 
-  //Sign-in
+  //Iniciar sesión
   signIn(user: User){
     return this.http.post<any>(`${this.endpoint}/signin`, user)
       .subscribe((res: any) => {
@@ -42,18 +42,18 @@ export class AuthService {
       })
   };
 
-  //getToken
+  //Obtener el token
   getToken() {
     return localStorage.getItem('access_token');
   }
 
-  //is logged in
+  //¿Está logeado?
   get isLoggedIn(): boolean {
     let authToken = localStorage.getItem('access_token');
     return (authToken !== null) ? true : false;
   }
 
-  //do logout
+  //Cerrar sesión
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     let id = localStorage.removeItem('_id');
@@ -90,8 +90,8 @@ export class AuthService {
   };
 
   //Eliminar usuario
-  deleteUser(user: User): Observable<any> {
-    let id = user._id
+  deleteUser(id: string): Observable<any> {
+    // let id = user._id
     let api = `${this.endpoint}/delete-user/${id}`;
     return this.http.delete(api)
     .pipe(
@@ -99,14 +99,25 @@ export class AuthService {
     )
   };
 
-    //Crear usuario
-    createUser(user: User): Observable<any> {
-      let api = `${this.endpoint}/register-user`;
-      return this.http.post(api, user)
-      .pipe(
-        catchError(this.handleError)
-      )
-    };
+  //Crear usuario
+  createUser(user: User): Observable<any> {
+    let api = `${this.endpoint}/register-user`;
+    return this.http.post(api, user)
+    .pipe(
+      catchError(this.handleError)
+    )
+  };
+
+  //Obtener todos los usuarios
+  getUsers(): Observable<any> {
+    let api = `${this.endpoint}/user/`;
+    return this.http.get(api, { headers: this.headers }).pipe(
+      map((res: any) => {
+        return res || {}
+      }),
+      catchError(this.handleError)
+    )
+  }
 
   // Error
   handleError(error: HttpErrorResponse) {

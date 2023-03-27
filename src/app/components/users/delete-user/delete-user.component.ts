@@ -32,9 +32,11 @@ export class DeleteUserComponent implements OnInit {
     })
   }
 
-  deletingUser() {
-    this.authService.deleteUser(this.deleteForm.value).subscribe(() => {
-      this.router.navigate(['/home'])
+  deletingUser(id: string) {
+    console.log(this.deleteForm.value._id);
+    this.authService.deleteUser(id).subscribe(() => {
+    // this.authService.deleteUser(this.deleteForm.value).subscribe(() => {
+      // this.router.navigate(['/home'])
     })
   }
 
