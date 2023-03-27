@@ -1,8 +1,8 @@
+//Contender de Menu
 .menu {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-
 
   &-container {
     width:900pt;
@@ -10,39 +10,23 @@
     flex-direction: column;
     align-items: center;
   }
-
 }
 
-
-
-.menu-header{
-  font-size: 30pt;
-}
-
-
-
-.menu-buttons{
-  height: 100pt;
-  width:200pt;
+//Contenedor de tarjeta
+.card-container{
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
-  align-content: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items:center;
+
+  &__card-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 
-
-
-.btn-link{
-  color: rgb(6, 10, 9);
-  text-decoration:none;
-  font-size: 15pt;
-}
-
-
-
-
+//Tarjeta
 .card{
   margin-top: 30px;
   border-radius: 20pt;
@@ -62,15 +46,32 @@
 }
 
 
-.card-container{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items:center;
-
+//Título de la carta
+.menu-header{
+  font-size: 30pt;
 }
 
 
+//Botones de la carta
+.menu-buttons{
+  height: 100pt;
+  width:200pt;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+//Botón "Cerrar"
+.close-buttons{
+  min-height: 70pt;
+  display: flex;
+  align-items: center
+}
+
+//Botones de CRUD en la tarjeta
 .action{
   &-container{
     display:flex;

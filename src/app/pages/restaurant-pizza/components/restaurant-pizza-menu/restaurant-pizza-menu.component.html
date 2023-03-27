@@ -1,11 +1,12 @@
 <div class="menu">
-<div class="menu-container">
+   <!--Contendero de menu-->
+  <div class="menu-container">
 
-  <!--Titulo de la sección-->
-  <div class="menu-header">
-    <h1 class="header">Carta</h1>
-  </div>
-
+    <!--Titulo de la sección-->
+    <div class="menu-header">
+      <h1 class="header">Carta</h1>
+    </div>
+    <!--Botones de menu-->
     <div class="menu-buttons">
       <button mat-raised-button class="button" (click)="getProducts(1)">Platos</button>
       <button mat-raised-button class="button" (click)="getProducts(2)">Bebidas</button>
@@ -13,9 +14,15 @@
 
 
 
-  <!--Platos-->
+    <!--Sección platos-->
     <div class="card-container" *ngIf="showSection === 1" >
-
+      <!--Botón "Cerrar"-->
+      <div  class="close-buttons">
+        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
+      </div>
+      <!--Contenedor de tarjeta-->
+      <div class="card-container__card-section">
+      <!--Tarjeta-->
       <div class="card" style="width: 20rem;" *ngFor="let plate of plates; let indexOfplates = index;">
           <img [src]="plate.image" class="card-img-top" alt="...">
           <div class="card-body">
@@ -30,9 +37,10 @@
           </div>
       </div>
 
-
-      <div class="menu-buttons">
-        <button mat-raised-button class="button" (click)="getProducts(0)">Cerrar</button>
+    </div>
+      <!--Botón "Cerrar"-->
+      <div class="close-buttons">
+        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
 
     </div>
@@ -41,29 +49,37 @@
 
     <!--Bebidas-->
     <div class="card-container" *ngIf="showSection === 2" >
-
-      <div class="card" style="width: 20rem;" *ngFor="let drink of drinks; let indexOfdrinks = index;">
-        <img [src]="drink.image" style="width:10rem" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2>{{drink.name}}</h2>
-          <h3>{{drink.price}}</h3>
-          <p class="card-text">{{drink.ingredients}}</p>
-          <div>
-            <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
-            <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
-            <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
-          </div>
-        </div>
+      <!--Botón "Cerrar"-->
+      <div class="close-buttons">
+        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
+      <!--Contenedor de tarjeta-->
+      <div class="card-container__card-section">
+        <!--Tarjeta-->
+        <div class="card" style="width: 20rem;" *ngFor="let drink of drinks; let indexOfdrinks = index;">
+            <img [src]="drink.image" style="width:10rem"  class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2>{{drink.name}}</h2>
+              <h3>{{drink.price}}</h3>
+              <p class="card-text">{{drink.ingredients}}</p>
+              <div>
+                <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
+                <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
+                <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
+              </div>
+            </div>
+        </div>
 
-      <div class="menu-buttons">
-        <button mat-raised-button class="button" (click)="getProducts(0)">Cerrar</button>
+      </div>
+      <!--Botón "Cerrar"-->
+      <div class="close-buttons">
+        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
 
     </div>
 
 
-</div>
+  </div>
 
 
 </div>
