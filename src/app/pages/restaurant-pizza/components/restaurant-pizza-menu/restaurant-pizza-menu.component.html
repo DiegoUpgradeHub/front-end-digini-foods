@@ -22,7 +22,7 @@
       </div>
        <!--Botón "Crear Plato"-->
        <div  class="create-button" *ngIf="this.authService.isLoggedIn">
-        <button mat-flat-button color="accent" class="button" (click)="getProducts(0)">Crear Plato</button>
+        <button mat-flat-button color="accent" class="button" routerLink="/create-product">Crear Plato</button>
       </div>
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
@@ -33,18 +33,26 @@
             <h2>{{plate.name}}</h2>
             <h3>{{plate.price}}</h3>
             <p class="card-text">{{plate.ingredients}}</p>
-            <div>
-              <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
+            <div class="action-button__container">
+              <img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg"
+              >
               <img
               class="action-button"
               src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
               *ngIf="this.authService.isLoggedIn"
+              routerLink="/edit-product"
               >
               <Img
               class="action-button"
               src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
               *ngIf="this.authService.isLoggedIn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="triggerDeleteConfrimation(true)"
               >
+              <app-delete-product *ngIf="deleteConfirmation"></app-delete-product>
             </div>
           </div>
       </div>
@@ -54,6 +62,7 @@
       <div class="close-buttons">
         <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
+
 
     </div>
 
@@ -65,6 +74,10 @@
       <div class="close-buttons">
         <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
+        <!--Botón "Crear Plato"-->
+      <div  class="create-button" *ngIf="this.authService.isLoggedIn">
+        <button mat-flat-button color="accent" class="button" routerLink="/create-product">Crear Plato</button>
+      </div>
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
         <!--Tarjeta-->
@@ -74,12 +87,21 @@
               <h2>{{drink.name}}</h2>
               <h3>{{drink.price}}</h3>
               <p class="card-text">{{drink.ingredients}}</p>
-              <div clas="acction-container" *ngIf="this.authService.isLoggedIn">
+              <div>
                 <img
                 class="action-button"
                 src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
-                <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
-                <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
+                <img
+                class="action-button"
+                src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
+                *ngIf="this.authService.isLoggedIn"
+                routerLink="/edit-product"
+                >
+                <Img
+                class="action-button"
+                src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
+                *ngIf="this.authService.isLoggedIn"
+                >
               </div>
             </div>
         </div>
@@ -97,3 +119,5 @@
 
 
 </div>
+
+

@@ -7,6 +7,7 @@ import { RestaurantPizzaComponent } from './restaurant-pizza.component';
 import { RestaurantPizzaCarouselComponent } from './components/restaurant-pizza-carousel/restaurant-pizza-carousel.component';
 import { RestaurantPizzaMenuComponent } from './components/restaurant-pizza-menu/restaurant-pizza-menu.component';
 import { RestaurantPizzaContactComponent } from './components/restaurant-pizza-contact/restaurant-pizza-contact.component';
+import { ProductsModule } from 'src/app/components/products/products.module';
 
 //Ngx Bootstrap
 import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -28,11 +29,13 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     RestaurantPizzaRoutingModule,
     FormsModule,
+    ProductsModule,
     //Ngx Bootstrap
     AccordionModule,
     //Angular Material
     CdkTableModule,
-    MatButtonModule
+    MatButtonModule,
+
   ]
 })
 export class RestaurantPizzaModule { }
