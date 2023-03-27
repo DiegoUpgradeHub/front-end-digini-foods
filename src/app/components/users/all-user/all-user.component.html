@@ -1,0 +1,51 @@
+<div class="all-user-page">
+  <button (click)="this.authService.userProfile()" class="btn btn-dark back-btn">Atrás</button>
+
+  <h1>Usuarios</h1>
+
+  <ul class="users-list">
+    <li *ngFor="let user of usersList; let i = index">
+      <div class="user-card bg-light">
+        <h2>{{user.name}}</h2>
+        <h3>{{user.lastName}}</h3>
+        <h5>{{user.role}}</h5>
+        <div class="dropdown-center">
+          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Más información
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark px-2">
+            <small>ID del usuario:</small>
+            <p>{{user._id}}</p>
+            <small>Cumpleaños:</small>
+            <p>{{user.age | date:'dd/MM'}}</p>
+            <small>Email:</small>
+            <p>{{user.email}}</p>
+            <small>Fecha de inicio:</small>
+            <p>{{user.startDate | date:'dd/MM/yyyy'}}</p>
+            <small>Lugar y puesto de trabajo:</small>
+            <p>{{user.workplace}} | {{user.role}}</p>
+          </ul>
+        </div>
+        <div class="dropdown-center">
+          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Editar usuario
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark px-2">
+            <app-edit-user></app-edit-user>
+          </ul>
+        </div>
+
+        <div class="dropdown-center">
+          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Eliminar usuario
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark px-2">
+            <app-delete-user></app-delete-user>
+            <button class="btn btn-dark">Cancelar</button>
+          </ul>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</div>

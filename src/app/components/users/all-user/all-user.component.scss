@@ -1,0 +1,51 @@
+ul {
+  list-style: none;
+}
+
+.all-user-page {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-btn {
+  margin: 20px;
+  width: 400px;
+}
+.users-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: start;
+}
+.user-card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: start;
+  margin: 10px;
+  width: 350px;
+  border-radius: 5px;
+  h2 {
+    margin:15px 15px -10px 15px;
+  }
+  h3 {
+    margin: 0 15px;
+  }
+  h5 {
+    margin: -7px 15px 15px 15px;
+  }
+  .more-info-btn {
+    margin: 0 5px;
+    width: 350px;
+  }
+  .edit-btn{
+    margin: 5px;
+    width: 90px;
+  }
+  .delete-btn{
+    margin: 5px;
+    width: 90px;
+  }
+}

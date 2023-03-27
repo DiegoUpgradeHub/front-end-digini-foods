@@ -1,11 +1,11 @@
 export interface User {
-  _id: String;
-  name: String;
-  lastName: String;
+  _id: string;
+  name: string;
+  lastName: string;
   age: Date;
-  email: String;
-  password: String;
+  email: string;
+  password: string;
   startDate: Date;
-  workplace: String;
-  role: String;
+  workplace: string;
+  role: string;
 }

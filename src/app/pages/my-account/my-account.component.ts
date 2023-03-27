@@ -12,7 +12,7 @@ export class MyAccountComponent implements OnInit {
   currentUser: any = {}; // Aquí almacenamos el usuario actual
 
   constructor(
-    private actRoute: ActivatedRoute,
+    public actRoute: ActivatedRoute,
     public authService: AuthService,
     public router: Router,
   ) {
@@ -27,11 +27,6 @@ export class MyAccountComponent implements OnInit {
 
   logout() {
     this.authService.doLogout();
-  }
-
-  editUser() {
-    let id = localStorage.getItem('_id');
-    this.router.navigate(['/update-use/' + id]);
   }
 
 }
