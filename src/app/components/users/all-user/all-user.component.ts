@@ -17,6 +17,8 @@ export class AllUserComponent implements OnInit {
 
   protected readonly clearSubscriptions$ = new Subject();
 
+  thisUser: any = {};
+
   constructor(
     public fb: FormBuilder,
     public authService: AuthService,
@@ -36,6 +38,11 @@ export class AllUserComponent implements OnInit {
     return this.authService.getUsers().pipe(takeUntil(this.clearSubscriptions$),).subscribe((data) => {
       this.usersList = data
     })
+  }
+
+  getThisUser(user: any): void {
+    console.log(user);
+    this.thisUser = user;
   }
 
   editUser(id: string) {

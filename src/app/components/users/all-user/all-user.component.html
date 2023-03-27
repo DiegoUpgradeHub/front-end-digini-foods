@@ -27,20 +27,20 @@
           </ul>
         </div>
         <div class="dropdown-center">
-          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisUser(user)">
             Editar usuario
           </button>
           <ul class="dropdown-menu dropdown-menu-dark px-2">
-            <app-edit-user></app-edit-user>
+            <app-edit-this-user [user]="thisUser"></app-edit-this-user>
           </ul>
         </div>
 
         <div class="dropdown-center">
-          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisUser(user)">
             Eliminar usuario
           </button>
           <ul class="dropdown-menu dropdown-menu-dark px-2">
-            <app-delete-user></app-delete-user>
+            <app-delete-this-user [user]="thisUser"></app-delete-this-user>
             <button class="btn btn-dark">Cancelar</button>
           </ul>
         </div>

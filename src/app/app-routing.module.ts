@@ -42,6 +42,11 @@ const routes: Routes = [
       import('./components/users/create-user/create-user.module').then(m => m.CreateUserModule),
       canActivate: [AuthGuard]
   },
+  {
+    path: `all-user`, loadChildren: () =>
+      import('./components/users/all-user/all-user.module').then(m => m.AllUserModule),
+      canActivate: [AuthGuard]
+  },
   //Rutas para CRUD de productos
   {
     path: `edit-product`, loadChildren: () =>

@@ -80,8 +80,10 @@ export class AuthService {
   }
 
   //Editar usuario
-  editUserProfile(user: User): Observable<any> {
-    let id = localStorage.getItem('_id');
+  editUserProfile(user: User, id: string): Observable<any> {
+    // let id = localStorage.getItem('_id');
+    // let id = user._id as string;
+    console.log(id);
     let api = `${this.endpoint}/update-user/${id}`;
     return this.http.put(api, user)
     .pipe(
@@ -91,7 +93,6 @@ export class AuthService {
 
   //Eliminar usuario
   deleteUser(id: string): Observable<any> {
-    // let id = user._id
     let api = `${this.endpoint}/delete-user/${id}`;
     return this.http.delete(api)
     .pipe(
