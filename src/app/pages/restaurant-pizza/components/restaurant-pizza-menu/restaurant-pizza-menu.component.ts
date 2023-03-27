@@ -16,7 +16,8 @@ export class RestaurantPizzaMenuComponent {
   plates: Product[] = [];
   drinks: Product[] = [];
   showSection: number = 0;
-  
+  deleteConfirmation:boolean = false;
+
 
 
   constructor (
@@ -34,9 +35,12 @@ export class RestaurantPizzaMenuComponent {
       this.productList = response;
       this.plates = this.productList.filter(product => product.category === 'pizzas' )
       this.drinks = this.productList.filter(drink => drink.category === 'bebidas' )
-      console.log(this.plates);
       this.showSection = newState;
     });
+  }
+
+  public triggerDeleteConfrimation(newState: boolean): void {
+    this.deleteConfirmation = newState;
 
   }
 

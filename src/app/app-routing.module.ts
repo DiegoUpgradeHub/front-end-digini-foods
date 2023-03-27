@@ -42,6 +42,25 @@ const routes: Routes = [
       import('./components/users/create-user/create-user.module').then(m => m.CreateUserModule),
       canActivate: [AuthGuard]
   },
+  //Rutas para CRUD de productos
+  {
+    path: `edit-product`, loadChildren: () =>
+      import('./components/products/edit-product/edit-product.module').then(m => m.EditProductModule),
+      canActivate: [AuthGuard]
+  },
+  {
+    path: `delete-product`, loadChildren: () =>
+      import('./components/products/delete-product/delete-product.module').then(m => m.DeleteProductModule),
+      canActivate: [AuthGuard]
+  },
+  {
+    path: `create-product`, loadChildren: () =>
+      import('./components/products/create-product/create-product.module').then(m => m.CreateProductModule),
+      canActivate: [AuthGuard]
+  },
+
+
+
   { path: ``, redirectTo: `home`, pathMatch: `full` }
 
 ];

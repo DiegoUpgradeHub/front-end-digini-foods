@@ -73,11 +73,14 @@
 
 //Botones de CRUD en la tarjeta
 .action{
-  &-container{
-    display:flex;
-  }
   &-button{
     width:30pt;
+
+    &__container{
+      min-width:200pt;
+      display:flex;
+      justify-content: space-between;
+    }
   }
 }
 
