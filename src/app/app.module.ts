@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Importación de componentes
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 
 //Importación componentes CRUD usuarios y productos
 
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
 
   ],
   imports: [
