@@ -1,16 +1,30 @@
-.container-principal  {
-display: flex;
-flex-direction: row;
+.container-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .card {
+    margin: 1%;
+    width: 18rem;
+
+    @media screen and (max-width: 768px) {
+      flex-basis: 100%;
+    }
+  }
 }
 
-.container-principal .card {
-margin: 1%;
+.container-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.card-text {
-    text-align: justify;
-  }
-  
-  .card-title {
-    font-weight: bold;
-  }
+blockquote {
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  color: #555;
+  border-left: 4px solid #555;
+  padding: 0 20px;
+}
