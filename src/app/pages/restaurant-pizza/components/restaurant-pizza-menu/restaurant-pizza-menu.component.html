@@ -44,15 +44,7 @@
               *ngIf="this.authService.isLoggedIn"
               routerLink="/edit-product"
               >
-              <Img
-              class="action-button"
-              src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
-              *ngIf="this.authService.isLoggedIn"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              (click)="triggerDeleteConfrimation(true)"
-              >
-              <app-delete-product *ngIf="deleteConfirmation"></app-delete-product>
+              <app-delete-product class="action-button"></app-delete-product>
             </div>
           </div>
       </div>
