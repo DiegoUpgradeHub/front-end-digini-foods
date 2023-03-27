@@ -1,0 +1,54 @@
+<div class="edit-user-page">
+  <form [formGroup]="editForm" (ngSubmit)="editingUser(this.user._id)">
+      <h2>Formulario para editar usuarios</h2>
+      <div class="form">
+        <label>ID del usuario</label>
+        <input type="text" class="form-control mb-2" formControlName="_id" placeholder="Id del usuario" required value="{{this.user._id}}">
+      </div>
+      <div class="form">
+        <label>Nombre</label>
+        <input type="text" class="form-control mb-2" formControlName="name" placeholder="Nombre" required value="{{this.user.name}}">
+      </div>
+      <div class="form">
+        <label>Apellidos</label>
+        <input type="text" class="form-control mb-2" formControlName="lastName" placeholder="Apellidos" required value="{{this.user.lastName}}">
+      </div>
+      <div class="form">
+        <label>Fecha de nacimiento</label>
+        <input type="text" class="form-control mb-2" formControlName="age" placeholder="Año-Mes-Día" required value="{{this.user.age}}">
+      </div>
+      <div class="form">
+        <label>Correo electrónico</label>
+        <input type="email" class="form-control mb-2" formControlName="email" placeholder="nombre@email.com" required value="{{this.user.email}}">
+      </div>
+      <div class="form">
+        <label>Contraseña</label>
+        <input type="password" class="form-control mb-2" formControlName="password" placeholder="Mínimo 4 y máximo 8 caracteres" required value="{{this.user.password}}">
+      </div>
+      <div>
+        <label>Fecha de inicio</label>
+        <input type="text" class="form-control mb-2" formControlName="startDate" placeholder="Año-Mes-Día" required value="{{this.user.startDate}}">
+      </div>
+      <div class="form mb-3">
+        <label>Lugar de trabajo</label>
+        <select class="form-select form-control" formControlName="workplace" required value="{{this.user.workplace}}">
+          <option value="pizzeria">Restaurante pizzeria</option>
+          <option value="sushi">Restaurante sushi</option>
+          <option value="brunch">Restaurante brunch</option>
+          <option value="office">Oficina</option>
+        </select>
+      </div>
+      <div class="form mb-3">
+        <label>Puesto de trabajo</label>
+        <select class="form-select form-control" formControlName="role" required value="{{this.user.role}}">
+          <option value="waiter">Equipo de Restauración</option>
+          <option value="marketing">Equipo de Marketing</option>
+          <option value="admin">Equipo de Administración</option>
+        </select>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-warning">Editar usuario</button>
+      </div>
+  </form>
+
+</div>

@@ -36,6 +36,7 @@ export class EditUserComponent implements OnInit {
     let id = localStorage.getItem('_id') as string;
     console.log(id);
     this.authService.getUserProfile(id).subscribe(res => {
+      this.currentUser = res;
       console.log(res);
       this.editForm.get('_id')?.setValue(res._id);
       this.editForm.get('name')?.setValue(res.name);
@@ -50,7 +51,7 @@ export class EditUserComponent implements OnInit {
   }
 
   editingUser() {
-    this.authService.editUserProfile(this.editForm.value).subscribe(() => {
+    this.authService.editUserProfile(this.editForm.value, this.currentUser._id).subscribe(() => {
       this.authService.userProfile();
     })
   }
