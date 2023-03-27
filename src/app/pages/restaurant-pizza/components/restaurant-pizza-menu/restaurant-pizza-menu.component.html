@@ -20,6 +20,10 @@
       <div  class="close-buttons">
         <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
       </div>
+       <!--Botón "Crear Plato"-->
+       <div  class="create-button" *ngIf="this.authService.isLoggedIn">
+        <button mat-flat-button color="accent" class="button" (click)="getProducts(0)">Crear Plato</button>
+      </div>
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
       <!--Tarjeta-->
@@ -31,8 +35,16 @@
             <p class="card-text">{{plate.ingredients}}</p>
             <div>
               <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
-              <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
-              <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
+              <img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
+              *ngIf="this.authService.isLoggedIn"
+              >
+              <Img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
+              *ngIf="this.authService.isLoggedIn"
+              >
             </div>
           </div>
       </div>
@@ -62,8 +74,10 @@
               <h2>{{drink.name}}</h2>
               <h3>{{drink.price}}</h3>
               <p class="card-text">{{drink.ingredients}}</p>
-              <div>
-                <img class="action-button" src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
+              <div clas="acction-container" *ngIf="this.authService.isLoggedIn">
+                <img
+                class="action-button"
+                src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
                 <img class="action-button" src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg">
                 <Img class="action-button" src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg">
               </div>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
 import { ProductsService } from 'src/app/core/services/products.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
-import {DataSource} from '@angular/cdk/collections';
+
 
 @Component({
   selector: 'app-restaurant-pizza-menu',
@@ -15,10 +16,13 @@ export class RestaurantPizzaMenuComponent {
   plates: Product[] = [];
   drinks: Product[] = [];
   showSection: number = 0;
+  
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
-  constructor (private productsService: ProductsService) {}
+  constructor (
+    private productsService: ProductsService,
+    public authService: AuthService
+    ) {}
 
   ngOnInit():void{
 
