@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   //Rutas para CRUD de productos
   {
-    path: `edit-product`, loadChildren: () =>
+    path: `edit-product/:name`, loadChildren: () =>
       import('./components/products/edit-product/edit-product.module').then(m => m.EditProductModule),
       canActivate: [AuthGuard]
   },
