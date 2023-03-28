@@ -15,6 +15,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 //Angular Material
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatButtonModule} from '@angular/material/button';
+import { DeleteFoodComponent } from './components/restaurant-pizza-menu/components/delete-food/delete-food.component';
 
 
 
@@ -23,7 +24,9 @@ import {MatButtonModule} from '@angular/material/button';
     RestaurantPizzaComponent,
     RestaurantPizzaCarouselComponent,
     RestaurantPizzaMenuComponent,
-    RestaurantPizzaContactComponent
+    RestaurantPizzaContactComponent,
+    DeleteFoodComponent,
+
   ],
   imports: [
     CommonModule,

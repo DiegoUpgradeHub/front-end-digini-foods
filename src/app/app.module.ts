@@ -31,7 +31,9 @@ import { MenuComponent } from './menu/menu.component';
     BrowserAnimationsModule,
     SharedModule,
     ProductsModule,
-    UsersModule
+    UsersModule,
+
+
   ],
   providers: [
     {
