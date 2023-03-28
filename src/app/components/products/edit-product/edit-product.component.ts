@@ -50,13 +50,13 @@ export class EditProductComponent {
               this.product = response[0];
               console.log(response[0]);
 
-              this.editForm.get('name')?.setValue(response.name);
-              this.editForm.get('price')?.setValue(response.price);
-              this.editForm.get('ingredients')?.setValue(response.ingredients);
-              this.editForm.get('image')?.setValue(response.image);
-              this.editForm.get('category')?.setValue(response.category);
-              this.editForm.get('vegetarian')?.setValue(response.vegetarian);
-              this.editForm.get('restaurant')?.setValue(response.restaurant);
+              this.editForm.get('name')?.setValue(this.product.name);
+              this.editForm.get('price')?.setValue(this.product.price);
+              this.editForm.get('ingredients')?.setValue(this.product.ingredients);
+              this.editForm.get('image')?.setValue(this.product.image);
+              this.editForm.get('category')?.setValue(this.product.category);
+              this.editForm.get('vegetarian')?.setValue(this.product.vegetarian);
+              this.editForm.get('restaurant')?.setValue(this.product.restaurant);
             });
         }
 

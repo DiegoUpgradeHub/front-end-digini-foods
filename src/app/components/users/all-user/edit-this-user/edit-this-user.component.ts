@@ -37,16 +37,17 @@ export class EditThisUserComponent {
     // this.authService.getUserProfile(this.user._id).subscribe(res => {
     //   // this.currentUser = res;
     //   // console.log(res);
-    //   this.editUserForm.get('_id')?.setValue(this.user._id);
-    //   this.editUserForm.get('name')?.setValue(this.user.name);
-    //   this.editUserForm.get('lastName')?.setValue(this.user.lastName);
-    //   this.editUserForm.get('age')?.setValue(this.user.age);
-    //   this.editUserForm.get('email')?.setValue(this.user.email);
-    //   this.editUserForm.get('password')?.setValue(this.user.password);
-    //   this.editUserForm.get('startDate')?.setValue(this.user.startDate);
-    //   this.editUserForm.get('workplace')?.setValue(this.user.workplace);
-    //   this.editUserForm.get('role')?.setValue(this.user.role);
+    this.editUserForm.get('_id')?.setValue(this.user._id);
+    this.editUserForm.get('name')?.setValue(this.user.name);
+    this.editUserForm.get('lastName')?.setValue(this.user.lastName);
+    this.editUserForm.get('age')?.setValue(this.user.age);
+    this.editUserForm.get('email')?.setValue(this.user.email);
+    this.editUserForm.get('password')?.setValue(this.user.password);
+    this.editUserForm.get('startDate')?.setValue(this.user.startDate);
+    this.editUserForm.get('workplace')?.setValue(this.user.workplace);
+    this.editUserForm.get('role')?.setValue(this.user.role);
     // })
+    console.log(this.user)
   }
 
   editingUser(userId: any) {
