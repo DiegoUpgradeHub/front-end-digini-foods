@@ -1,13 +1,59 @@
 <div class="all-user-page">
-  <button (click)="this.authService.userProfile()" class="btn btn-dark back-btn">Atrás</button>
+  <h1 class="mt-3">Usuarios del grupo DiGiNi</h1>
+  <div class="">
+    <button (click)="this.authService.userProfile()" class="btn btn-dark top-buttons">Atrás</button>
+    <button role="button" routerLinkActive="active" routerLink="/register-user/" type="button" class="btn btn-success top-buttons mb-3">
+      Crear usuario
+    </button>
+  </div>
+  <div class="input-group mb-3 search-bar">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="input-group-append">
+      <button class="input-group-text btn-dark">Buscar</button>
+    </div>
+  </div>
 
-  <h1>Usuarios</h1>
+  <div class="filters">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <label class="form-check-label" for="inlineRadio1">Todos los usuarios</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <label class="form-check-label" for="inlineRadio2">La Pizzetta</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+      <label class="form-check-label" for="inlineRadio3">Sushi Saki</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+      <label class="form-check-label" for="inlineRadio4">Brunch & Munch</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
+      <label class="form-check-label" for="inlineRadio5">Equipo de restaruración</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+      <label class="form-check-label" for="inlineRadio6">Equipo de marketing</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option2">
+      <label class="form-check-label" for="inlineRadio7">Equipo de administración</label>
+    </div>
+  </div>
 
   <ul class="users-list">
     <li *ngFor="let user of usersList; let i = index">
-      <div class="user-card bg-light">
-        <h2>{{user.name}}</h2>
-        <h3>{{user.lastName}}</h3>
+      <div class="user-card">
+        <div class="card-tittle">
+          <h2>{{user.name}}</h2>
+          <h3 class="ms-1">{{user.lastName}}</h3>
+        </div>
         <h5>{{user.role}}</h5>
         <div class="dropdown-center">
           <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,7 +73,7 @@
           </ul>
         </div>
         <div class="dropdown-center">
-          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisUser(user)">
+          <button class="btn btn-warning dropdown-toggle more-info-btn my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisUser(user)">
             Editar usuario
           </button>
           <ul class="dropdown-menu dropdown-menu-dark px-2">
@@ -36,12 +82,11 @@
         </div>
 
         <div class="dropdown-center">
-          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisUser(user)">
+          <button class="btn btn-danger dropdown-toggle more-info-btn mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisUser(user)">
             Eliminar usuario
           </button>
           <ul class="dropdown-menu dropdown-menu-dark px-2">
             <app-delete-this-user [user]="thisUser"></app-delete-this-user>
-            <button class="btn btn-dark">Cancelar</button>
           </ul>
         </div>
 
