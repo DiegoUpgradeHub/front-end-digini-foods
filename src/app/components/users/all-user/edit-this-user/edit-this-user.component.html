@@ -1,5 +1,5 @@
 <div class="edit-user-page">
-  <form [formGroup]="editForm" (ngSubmit)="editingUser(this.user._id)">
+  <form [formGroup]="editUserForm" (ngSubmit)="editingUser(this.user._id)">
       <h2>Formulario para editar usuarios</h2>
       <div class="form">
         <label>ID del usuario</label>
@@ -15,7 +15,7 @@
       </div>
       <div class="form">
         <label>Fecha de nacimiento</label>
-        <input type="text" class="form-control mb-2" formControlName="age" placeholder="Año-Mes-Día" required value="{{this.user.age}}">
+        <input type="text" class="form-control mb-2" formControlName="age" placeholder="Año-Mes-Día" required value="{{this.user.age | date:'dd/MM/yyyy'}}">
       </div>
       <div class="form">
         <label>Correo electrónico</label>
@@ -27,7 +27,7 @@
       </div>
       <div>
         <label>Fecha de inicio</label>
-        <input type="text" class="form-control mb-2" formControlName="startDate" placeholder="Año-Mes-Día" required value="{{this.user.startDate}}">
+        <input type="text" class="form-control mb-2" formControlName="startDate" placeholder="Año-Mes-Día" required value="{{this.user.startDate | date:'dd/MM/yyyy'}}">
       </div>
       <div class="form mb-3">
         <label>Lugar de trabajo</label>

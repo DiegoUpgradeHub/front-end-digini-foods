@@ -10,10 +10,9 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class EditThisUserComponent {
 
-  editForm!: FormGroup;
+  editUserForm!: FormGroup;
 
-  @Input() user: any = {};
-  userId: string = '';
+  @Input() user: any;
 
   constructor(
     public fb: FormBuilder,
@@ -21,7 +20,7 @@ export class EditThisUserComponent {
     public router: Router,
     public actRoute: ActivatedRoute
   ) {
-    this.editForm = this.fb.group({
+    this.editUserForm = this.fb.group({
       _id:[''],
       name: [''],
       lastName: [''],
@@ -35,14 +34,27 @@ export class EditThisUserComponent {
   }
 
   ngOnInit(): void {
-    this.userId = this.user._id;
-    console.log(this.userId);
+    // this.authService.getUserProfile(this.user._id).subscribe(res => {
+    //   // this.currentUser = res;
+    //   // console.log(res);
+    //   this.editUserForm.get('_id')?.setValue(this.user._id);
+    //   this.editUserForm.get('name')?.setValue(this.user.name);
+    //   this.editUserForm.get('lastName')?.setValue(this.user.lastName);
+    //   this.editUserForm.get('age')?.setValue(this.user.age);
+    //   this.editUserForm.get('email')?.setValue(this.user.email);
+    //   this.editUserForm.get('password')?.setValue(this.user.password);
+    //   this.editUserForm.get('startDate')?.setValue(this.user.startDate);
+    //   this.editUserForm.get('workplace')?.setValue(this.user.workplace);
+    //   this.editUserForm.get('role')?.setValue(this.user.role);
+    // })
   }
 
   editingUser(userId: any) {
-    this.authService.editUserProfile(this.editForm.value, userId).subscribe(() => {
+    this.user = this.editUserForm.value;
+    console.log("this user ID", userId);
+    console.log("esto es el this.user", this.user);
+    this.authService.editUserProfile(this.editUserForm.value, userId.trim()).subscribe(() => {
       this.authService.userProfile();
-      console.log("esto es el this.user", this.user);
       // this.router.navigate(['/all-users']);
     })
   }
