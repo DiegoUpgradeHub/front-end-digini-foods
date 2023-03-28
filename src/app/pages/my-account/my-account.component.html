@@ -78,25 +78,12 @@
 <!-- CRUD Productos -->
     <h2>Administración productos</h2>
     <div class="btn-group-vertical crud-products" role="group" aria-label="Vertical button group">
-      <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-        Crear productos
+      <button role="button" routerLinkActive="active" routerLink="/create-product" type="button" class="btn btn-dark">
+        Crear producto
       </button>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
-          Opciones de productos
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-            <p class="btn-text">Ver productos</p>
-          </button>
-          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-            <p class="btn-text">Editar productos</p>
-          </button>
-          <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-            <p class="btn-text">Eliminar productos</p>
-          </button>
-        </ul>
-      </div>
+      <button role="button" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
+        Ver productos
+      </button>
     </div>
   </div>
 
