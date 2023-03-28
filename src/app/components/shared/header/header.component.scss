@@ -1,9 +1,13 @@
 .header-principal {
-  display: flex;
-  justify-content: center; /* centrar horizontalmente */
-  align-items: center; /* centrar verticalmente */
+  height: 90px;
+}
+
+.logo-container {
   width: 100%;
-  height: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* agregar justify-content con el valor center */
+  align-items: center;
 }
 
 .container-logo {
