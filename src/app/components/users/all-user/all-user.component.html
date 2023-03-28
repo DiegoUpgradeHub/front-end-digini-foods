@@ -69,7 +69,13 @@
             <small>Fecha de inicio:</small>
             <p>{{user.startDate | date:'dd/MM/yyyy'}}</p>
             <small>Lugar y puesto de trabajo:</small>
-            <p>{{user.workplace}} | {{user.role}}</p>
+            <p class="my-1" [hidden]="user.workplace !== 'pizzeria'">La Pizzeta</p>
+            <p class="my-1" [hidden]="user.workplace !== 'sushi'">Sushi Saki</p>
+            <p class="my-1" [hidden]="user.workplace !== 'brunch'">Brunch & Munch</p>
+            <p class="my-1" [hidden]="user.workplace !== 'office'">Oficinas centrales</p>
+            <p class="my-1" [hidden]="user.role !== 'waiter'">Equipo de restauración</p>
+            <p class="my-1" [hidden]="user.role !== 'marketing'">Equipo de marketing</p>
+            <p class="my-1" [hidden]="user.role !== 'admin'">Equipo de Administración</p>
           </ul>
         </div>
         <div class="dropdown-center">
