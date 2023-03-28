@@ -47,10 +47,16 @@ export class AuthService {
     return localStorage.getItem('access_token');
   }
 
-  //¿Está logeado?
+  //Si está logeado
   get isLoggedIn(): boolean {
     let authToken = localStorage.getItem('access_token');
     return (authToken !== null) ? true : false;
+  }
+
+  //No está logeado
+  get isLoggedOut(): boolean {
+    let authToken = localStorage.getItem('access_token');
+    return (authToken !== null) ? false : true;
   }
 
   //Cerrar sesión

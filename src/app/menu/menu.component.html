@@ -1,11 +1,10 @@
 <nav>
   <span class="icon-menu" (click)="toggleMenu()">&#9776;</span>
   <ul class="menu-items">
-    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/home">DiGiNi Foods</a></li>
     <li><a routerLink="/restaurant-pizza">Pizza Restaurant</a></li>
-    <li><a routerLink="/my-account">My Account</a></li>
-    <li><a routerLink="/login-form">Login</a></li>
-    <li><a routerLink="/sign-in">Sign In</a></li>
-    <li><a routerLink="/sign-up">Sign Up</a></li>
+    <li><a (click)="myAccount()"*ngIf="this.authService.isLoggedIn">Mi cuenta</a></li>
+    <li><a routerLink="/sign-in"*ngIf="this.authService.isLoggedOut">Iniciar sesión</a></li>
+    <li><a (click)="logout()"*ngIf="this.authService.isLoggedIn">Cerrar sesión</a></li>
   </ul>
 </nav>
