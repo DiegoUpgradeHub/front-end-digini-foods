@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authService:AuthService,
+
+  ) { }
 
   ngOnInit(): void {
   }
@@ -16,5 +20,15 @@ export class MenuComponent implements OnInit {
     const menuItems = document.querySelector('.menu-items');
     menuItems?.classList.toggle('show');
   }
+logout(){
+ 
+  this.authService.doLogout();
+  
+}
+
+myAccount(){
+
+  this.authService.userProfile();
+}
 
 }
