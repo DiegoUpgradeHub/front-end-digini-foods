@@ -1,1 +1,47 @@
-<p>edit-product works!</p>
+<div class="edit-user-page">
+
+  <form  (ngSubmit)="onSubmit($event)" [formGroup]="editForm" >
+      <h2>Editar {{product.name}}</h2>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="_id" [value]="product._id"  required id="floatingInput1">
+        <label for="floatingInput">Id del plato</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="name" [value]="product.name"  required id="floatingInput1">
+        <label for="floatingInput">Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" formControlName="price" [value]="product.price" required id="floatingInput2">
+        <label for="floatingInput">Precio</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="category" [value]="product.category" placeholder="Categoría" >
+        <label for="floatingInput">Categoría</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="ingredients" [value]="product.ingredients" placeholder="Ingredientes" >
+        <label for="floatingInput">Ingredites</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="vegetarian" [value]="product.vegetarian" placeholder="vegetariano" >
+        <label for="floatingInput">Vegetariano</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="image" [value]="product.image" placeholder="imagen" >
+        <label for="floatingInput">Imagen</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="restaurant" [value]="product.restaurant" placeholder="restautante" >
+        <label for="floatingInput">restaurante</label>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-warning">Editar producto</button>
+        <button class="btn btn-dark">
+          Cancelar
+        </button>
+      </div>
+  </form>
+
+</div>
+

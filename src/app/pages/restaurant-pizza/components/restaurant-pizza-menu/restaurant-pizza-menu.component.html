@@ -27,7 +27,7 @@
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
       <!--Tarjeta-->
-      <div class="card" style="width: 20rem;" *ngFor="let plate of plates; let indexOfplates = index;">
+      <div class="card" style="width: 20rem;" *ngFor="let plate of plates;">
           <img [src]="plate.image" class="card-img-top" alt="...">
           <div class="card-body">
             <h2>{{plate.name}}</h2>
@@ -80,7 +80,7 @@
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
         <!--Tarjeta-->
-        <div class="card" style="width: 20rem;" *ngFor="let drink of drinks; let indexOfdrinks = index;">
+        <div class="card" style="width: 20rem;" *ngFor="let drink of drinks;">
             <img [src]="drink.image" style="width:10rem"  class="card-img-top" alt="...">
             <div class="card-body">
               <h2>{{drink.name}}</h2>

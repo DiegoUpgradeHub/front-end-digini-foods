@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: `restaurant-pizza`, loadChildren: () =>
-      import('./pages/restaurant-pizza/restaurant-pizza.module').then(m => m.RestaurantPizzaModule)
+      import('./pages/restaurant-pizza/restaurant-pizza.module').then(m => m.RestaurantPizzaModule),
   },
   {
     path: `sign-in`, loadChildren: () =>
