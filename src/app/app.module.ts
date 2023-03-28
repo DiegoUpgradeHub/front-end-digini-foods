@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
+
 //Importación componentes CRUD usuarios y productos
 
 
@@ -32,6 +33,7 @@ import { MenuComponent } from './menu/menu.component';
     SharedModule,
     ProductsModule,
     UsersModule,
+ 
 
 
   ],

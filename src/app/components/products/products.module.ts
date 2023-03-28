@@ -5,6 +5,9 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     CreateProductComponent,
@@ -13,7 +16,9 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   exports: [
