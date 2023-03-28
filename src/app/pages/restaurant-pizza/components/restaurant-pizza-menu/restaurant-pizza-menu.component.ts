@@ -19,15 +19,15 @@ export class RestaurantPizzaMenuComponent {
   deleteConfirmation:boolean = false;
 
 
+  productInfo: any = {}
+
 
   constructor (
     private productsService: ProductsService,
     public authService: AuthService
     ) {}
 
-  ngOnInit():void{
 
-}
 
   public getProducts(newState:number):void{
 
@@ -41,8 +41,15 @@ export class RestaurantPizzaMenuComponent {
 
   public triggerDeleteConfrimation(newState: boolean): void {
     this.deleteConfirmation = newState;
-
   }
+
+  //Recojo el objeto del plato y lo guardo en una variable
+  getProductInfo(plate:any): void {
+    this.productInfo = plate;
+    console.log(this.productInfo);
+  }
+
+
 
 
 }

@@ -44,7 +44,14 @@
               *ngIf="this.authService.isLoggedIn"
               routerLink="/edit-product"
               >
-              <app-delete-product class="action-button"></app-delete-product>
+              <img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
+              *ngIf="this.authService.isLoggedIn"
+              (click)="getProductInfo(plate)"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="delete-product">
             </div>
           </div>
       </div>
@@ -79,7 +86,7 @@
               <h2>{{drink.name}}</h2>
               <h3>{{drink.price}}</h3>
               <p class="card-text">{{drink.ingredients}}</p>
-              <div>
+              <div class="action-button__container">
                 <img
                 class="action-button"
                 src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg">
@@ -93,6 +100,10 @@
                 class="action-button"
                 src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
                 *ngIf="this.authService.isLoggedIn"
+                (click)="getProductInfo(drink)"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                routerLink="delete-product"
                 >
               </div>
             </div>
@@ -112,4 +123,5 @@
 
 </div>
 
-
+<!--Modal de Eliminar Producto-->
+<app-delete-food [item]="productInfo"></app-delete-food>

@@ -69,8 +69,10 @@ export class ProductsService {
 
   //Eliminar un producto
   deleteProduct(product: Product): Observable<any> {
+    console.log(product);
     let id = product._id
     let api = `${this.endpoint}/products/delete/${id}`;
+    console.log(api)
     return this.http.delete(api)
     .pipe(
       catchError(this.handleError)

@@ -55,7 +55,7 @@ const routes: Routes = [
   },
   {
     path: `delete-product`, loadChildren: () =>
-      import('./components/products/delete-product/delete-product.module').then(m => m.DeleteProductModule),
+      import('./pages/restaurant-pizza/components/restaurant-pizza-menu/components/delete-food/delete-food.module').then(m => m.DeleteFoodModule),
       canActivate: [AuthGuard]
   },
   {
