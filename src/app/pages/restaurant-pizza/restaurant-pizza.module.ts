@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { RestaurantPizzaRoutingModule } from './restaurant-pizza-routing.module';
 import { RestaurantPizzaComponent } from './restaurant-pizza.component';
@@ -16,6 +18,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatButtonModule} from '@angular/material/button';
 import { DeleteFoodComponent } from './components/restaurant-pizza-menu/components/delete-food/delete-food.component';
+import { EditFoodComponent } from './components/restaurant-pizza-menu/components/edit-food/edit-food.component';
 
 
 
@@ -26,6 +29,7 @@ import { DeleteFoodComponent } from './components/restaurant-pizza-menu/componen
     RestaurantPizzaMenuComponent,
     RestaurantPizzaContactComponent,
     DeleteFoodComponent,
+    EditFoodComponent,
 
   ],
   imports: [
@@ -38,6 +42,7 @@ import { DeleteFoodComponent } from './components/restaurant-pizza-menu/componen
     //Angular Material
     CdkTableModule,
     MatButtonModule,
+    ReactiveFormsModule
 
   ]
 })

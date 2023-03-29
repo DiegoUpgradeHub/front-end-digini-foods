@@ -50,7 +50,7 @@ const routes: Routes = [
   //Rutas para CRUD de productos
   {
     path: `edit-product/:name`, loadChildren: () =>
-      import('./components/products/edit-product/edit-product.module').then(m => m.EditProductModule),
+      import('./pages/restaurant-pizza/components/restaurant-pizza-menu/components/edit-food/edit-food.module').then(m => m.EditFoodModule),
       canActivate: [AuthGuard]
   },
   {

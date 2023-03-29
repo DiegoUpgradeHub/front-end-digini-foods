@@ -1,15 +1,17 @@
 <div class="edit-user-page">
 
-  <button class="btn btn-dark">
-    Cancelar
+  <button class="btn btn-dark" routerLink="../../">
+    Atrás
   </button>
 
-  <form  (ngSubmit)="onSubmit($event)" [formGroup]="editForm" >
-      <h2>Editar {{product.name}}</h2>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" formControlName="_id"  required id="floatingInput1">
-        <label for="floatingInput">Id del plato</label>
-      </div>
+  <form  (ngSubmit)="editingProduct(this.product._id)" [formGroup]="editForm" >
+      <h2>Editar {{this.product.name}}</h2>
+      <fieldset disabled>
+        <div class=" form-floating mb-3">
+          <input type="text" id="disabledInput" formControlName="_id" class="form-control" placeholder="Disabled input" >
+          <label for="disabledTextInput" class="form-label">ID del plato</label>
+        </div>
+      </fieldset>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" formControlName="name"  required id="floatingInput1">
         <label for="floatingInput">Nombre</label>
