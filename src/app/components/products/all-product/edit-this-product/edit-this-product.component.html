@@ -1,0 +1,52 @@
+<div class="edit-user-page">
+  <form [formGroup]="editProductForm" (ngSubmit)="editingProduct(this.product._id)">
+      <h2>Formulario para editar el producto {{this.product.name}}</h2>
+      <div class="form">
+        <label>ID del producto</label>
+        <input type="text" class="form-control mb-2" formControlName="_id" placeholder="Id del producto" >
+      </div>
+      <div class="form">
+        <label>Nombre</label>
+        <input type="text" class="form-control mb-2" formControlName="name" placeholder="Nombre" required value="{{this.product.name}}">
+      </div>
+      <div class="form">
+        <label>Precio</label>
+        <input type="text" class="form-control mb-2" formControlName="price" placeholder="Precio" required value="{{this.product.price}}">
+      </div>
+      <div class="form">
+        <label>Ingredientes</label>
+        <input type="text" class="form-control mb-2" formControlName="ingredients" placeholder="Ingredientes" required value="{{this.product.ingredients}}">
+      </div>
+      <div class="form">
+        <label>Imagen</label>
+        <input type="text" class="form-control mb-2" formControlName="image" placeholder="Imagen del producto" required value="{{this.product.image}}">
+      </div>
+      <div class="form mb-3">
+        <label>Categoría</label>
+        <select class="form-select form-control" formControlName="category" required value="{{this.product.category}}">
+          <option value="plates">Platos de comida</option>
+          <option value="drinks">Bebidas</option>
+        </select>
+      </div>
+      <div class="form mb-3">
+        <label>¿Es vegetariano?</label>
+        <select class="form-select form-control" formControlName="vegetarian" required value="{{this.product.vegetarian}}">
+          <option value="true">Sí es vegetariano</option>
+          <option value="false">No es vegetariano</option>
+        </select>
+      </div>
+      <div class="form mb-3">
+        <label>A qué restaurante pertenece</label>
+        <select class="form-select form-control" formControlName="vegetarian" required value="{{this.product.vegetarian}}">
+          <option value="">A todos</option>
+          <option value="pizzeria">La Pizzetta</option>
+          <option value="sushi">Sushi Saki</option>
+          <option value="brunch">Brunch & Munch</option>
+        </select>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-warning">Editar producto</button>
+      </div>
+  </form>
+
+</div>

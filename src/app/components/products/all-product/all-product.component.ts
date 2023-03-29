@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { Subject, takeUntil } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -13,8 +14,11 @@ import { Product } from 'src/app/core/models/product';
 export class AllProductComponent {
 
   productsList: Product[] = [];
+  editForm!: FormGroup;
+  thisProduct: any = {};
 
   constructor(
+    public fb: FormBuilder,
     private productsService: ProductsService,
     public router: Router,
     public authService: AuthService,
@@ -29,6 +33,19 @@ export class AllProductComponent {
     this.productsService.getProducts().subscribe((response)=>{
       this.productsList = response;
     });
+  }
+
+  getThisProduct(user: any): void {
+    console.log(user);
+    this.thisProduct = user;
+  }
+
+  editProduct(id: string) {
+    this.router.navigate(['/update-use/' + id]);
+  }
+
+  deleteProduct(id: string) {
+    this.router.navigate(['/delete-use/' + id]);
   }
 
 }
