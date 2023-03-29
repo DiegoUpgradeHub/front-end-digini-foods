@@ -1,12 +1,5 @@
 <div class="edit-user-page">
 
-  <button
-    (click)="this.authService.userProfile()"
-    class="btn btn-dark"
-  >
-    <p class="btn-text">Atrás</p>
-  </button>
-
   <form [formGroup]="editForm" (ngSubmit)="editingUser()">
       <h2>Formulario para editar usuarios</h2>
       <div class="form-floating mb-3">

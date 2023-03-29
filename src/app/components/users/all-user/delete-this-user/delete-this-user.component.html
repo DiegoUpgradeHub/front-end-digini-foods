@@ -1,6 +1,6 @@
 <div class="delete-user-page">
+  <h2>Formulario para eliminar usuario</h2>
   <form [formGroup]="deleteForm" (ngSubmit)="deletingUser(this.user._id)">
-      <h2>¿Seguro que desea eliminar a {{this.user.name}} {{this.user.lastName}}?</h2>
       <div class="form">
         <label >ID del usuario</label>
         <input type="text" class="form-control" formControlName="_id" placeholder="Id del usuario" required value="{{this.user._id}}">
@@ -9,5 +9,4 @@
         <button type="submit" class="btn btn-warning">Eliminar usuario</button>
       </div>
   </form>
-
 </div>

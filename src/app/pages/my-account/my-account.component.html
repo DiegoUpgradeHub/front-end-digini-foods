@@ -52,28 +52,44 @@
 <!-- CRUD Usuarios -->
   <h2>Administración usuarios</h2>
     <div class="btn-group-vertical crud-users" role="group" aria-label="Vertical button group">
-      <button role="button"routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-        Editar perfil de {{this.currentUser.name}}
-      </button>
       <button (click)="logout()" role="button" type="button" class="btn btn-danger">
         Cerrar sesión
       </button>
-      <div class="btn-group" role="group" [hidden]="this.currentUser.role !== 'admin'">
-        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
-          Opciones de usuario
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-          <button role="button" routerLinkActive="active" routerLink="/all-user/" type="button" class="btn btn-dark">
-            Ver usuarios
-          </button>
-          <button role="button" routerLinkActive="active" routerLink="/register-user/" type="button" class="btn btn-dark">
-            Crear usuario
-          </button>
-          <button role="button" routerLinkActive="active" routerLink="/delete-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-            Eliminar usuario
-          </button>
-        </ul>
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal">
+        Editar mis datos
+      </button>
+      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Estás editando los datos de {{this.currentUser.name}} {{this.currentUser.lastName}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <app-edit-user></app-edit-user>
+            </div>
+          </div>
+        </div>
       </div>
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#createModal">
+        Crear usuario
+      </button>
+      <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <app-create-user></app-create-user>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button role="button" routerLinkActive="active" routerLink="/all-user/" type="button" class="btn btn-dark">
+        Ver usuarios
+      </button>
     </div>
 <!-- CRUD Productos -->
     <h2>Administración productos</h2>

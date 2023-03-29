@@ -1,9 +1,9 @@
 <div class="edit-user-page">
-  <form [formGroup]="editUserForm" (ngSubmit)="editingUser(this.user._id)">
-      <h2>Formulario para editar usuarios</h2>
+    <h2>Formulario para editar usuarios</h2>
+    <form [formGroup]="editUserForm" (ngSubmit)="editingUser(this.user._id)">
       <div class="form">
         <label>ID del usuario</label>
-        <input type="text" class="form-control mb-2" formControlName="_id" placeholder="Id del usuario" >
+        <input type="text" class="form-control mb-2" formControlName="_id" placeholder="Id del usuario" value="{{this.user._id}}">
       </div>
       <div class="form">
         <label>Nombre</label>
