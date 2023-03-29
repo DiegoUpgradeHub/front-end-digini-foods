@@ -1,33 +1,25 @@
 <div class="edit-user-page">
 
-  <button class="btn btn-dark" routerLink="../../">
+  <button class="btn btn-dark" routerLink="../">
     Atrás
   </button>
 
-  <form  (ngSubmit)="editingProduct(this.product._id)" [formGroup]="editForm" >
-      <h2>Editar {{this.product.name}}</h2>
-
-      <fieldset disabled class="mb-3">
-      <div class="mb-3">
-        <label for="disabledTextInput" class="form-label">ID del plato</label>
-        <input type="text" id="disabledInput" formControlName="_id" class="form-control">
-      </div>
-      </fieldset>
+  <form  (ngSubmit)="creatingProduct()" [formGroup]="createForm">
+      <h2>Crear Producto</h2>
 
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" formControlName="name">
+        <input type="text" class="form-control" formControlName="name"  required id="floatingInput1">
         <label for="floatingInput">Nombre</label>
       </div>
-
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" formControlName="price">
+        <input type="number" class="form-control" formControlName="price" required id="floatingInput2">
         <label for="floatingInput">Precio</label>
       </div>
 
       <div class="form-floating mb-3">
         <select id="disabledSelect" class="form-select" formControlName="category" >
-          <option selected>{{this.product.category}}</option>
+          <option selected></option>
           <option>pizzas</option>
           <option>bebidas</option>
         </select>
@@ -39,11 +31,10 @@
         <label for="floatingInput">Ingredites</label>
       </div>
 
-      <div class="form-floating mb-3">
-        <select id="disabledSelect" class="form-select" formControlName="vegetarian">
-          <option selected>{{this.product.vegetarian}}</option>
-          <option *ngIf="this.product.vegetarian === false">true</option>
-          <option *ngIf="this.product.vegetarian === true ">false</option>
+      <div class="form-floating mb-3" >
+        <select id="disabledSelect" class="form-select" formControlName="vegetarian" >
+          <option>true</option>
+          <option>false</option>
         </select>
         <label for="disabledSelect" class="form-label">Vegetariano</label>
       </div>
@@ -55,8 +46,9 @@
 
 
       <div class="form-floating mb-3">
-        <select id="disabledSelect" class="form-select" formControlName="restaurant">
-          <option selected>{{this.product.restaurant}}</option>
+        <select id="disabledSelect" class="form-select" formControlName="restaurant" >
+          <option selected></option>
+          <option>pizza</option>
           <option>sushi</option>
           <option>brunch</option>
         </select>
@@ -65,12 +57,11 @@
 
 
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="submit" class="btn btn-warning">Editar producto</button>
-        <button class="btn btn-dark" routerLink="../../">
+        <button type="submit" class="btn btn-warning">Crear producto</button>
+        <button class="btn btn-dark" routerLink="../">
           Cancelar
         </button>
       </div>
   </form>
 
 </div>
-

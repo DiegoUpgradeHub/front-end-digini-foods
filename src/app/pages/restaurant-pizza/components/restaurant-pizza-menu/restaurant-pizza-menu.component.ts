@@ -33,6 +33,7 @@ export class RestaurantPizzaMenuComponent {
 
     this.productsService.getProducts().subscribe((response)=>{
       this.productList = response;
+      console.log(this.productList);
       this.plates = this.productList.filter(product => product.category === 'pizzas' )
       this.drinks = this.productList.filter(drink => drink.category === 'bebidas' )
       this.showSection = newState;

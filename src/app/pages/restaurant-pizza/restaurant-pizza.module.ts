@@ -19,6 +19,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {MatButtonModule} from '@angular/material/button';
 import { DeleteFoodComponent } from './components/restaurant-pizza-menu/components/delete-food/delete-food.component';
 import { EditFoodComponent } from './components/restaurant-pizza-menu/components/edit-food/edit-food.component';
+import { CreateFoodComponent } from './components/restaurant-pizza-menu/components/create-food/create-food.component';
 
 
 
@@ -30,6 +31,7 @@ import { EditFoodComponent } from './components/restaurant-pizza-menu/components
     RestaurantPizzaContactComponent,
     DeleteFoodComponent,
     EditFoodComponent,
+    CreateFoodComponent,
 
   ],
   imports: [
