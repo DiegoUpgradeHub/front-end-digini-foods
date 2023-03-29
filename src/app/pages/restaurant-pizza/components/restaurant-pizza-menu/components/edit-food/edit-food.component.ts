@@ -33,7 +33,7 @@ export class EditFoodComponent {
         image: new FormControl (''),
         category: new FormControl (''),
         vegetarian: new FormControl (''),
-        restaurant: new FormControl (''),
+        restaurant: new FormControl ('')
       });
     }
 

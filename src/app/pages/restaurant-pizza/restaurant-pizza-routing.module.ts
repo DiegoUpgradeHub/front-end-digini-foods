@@ -1,3 +1,4 @@
+import { CreateFoodComponent } from './components/restaurant-pizza-menu/components/create-food/create-food.component';
 import { DeleteFoodComponent } from './components/restaurant-pizza-menu/components/delete-food/delete-food.component';
 import { EditProductComponent } from './../../components/products/edit-product/edit-product.component';
 import { RestaurantPizzaComponent } from './restaurant-pizza.component';
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'edit-product/:name', component: EditFoodComponent //http://localhost:4200/restaurant-pizza/edit-product/:name
+  },
+  {
+    path: 'create-product', component: CreateFoodComponent //http://localhost:4200/restaurant-pizza/create-product
   }
 
 

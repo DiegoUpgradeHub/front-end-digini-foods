@@ -1,3 +1,4 @@
+import { CreateFoodModule } from './pages/restaurant-pizza/components/restaurant-pizza-menu/components/create-food/create-food.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard'
@@ -50,7 +51,7 @@ const routes: Routes = [
   //Rutas para CRUD de productos
   {
     path: `edit-product/:name`, loadChildren: () =>
-      import('./pages/restaurant-pizza/components/restaurant-pizza-menu/components/edit-food/edit-food.module').then(m => m.EditFoodModule),
+      import('./components/products/edit-product/edit-product.module').then(m => m.EditProductModule),
       canActivate: [AuthGuard]
   },
   {
@@ -60,7 +61,7 @@ const routes: Routes = [
   },
   {
     path: `create-product`, loadChildren: () =>
-      import('./components/products/create-product/create-product.module').then(m => m.CreateProductModule),
+      import('./pages/restaurant-pizza/components/restaurant-pizza-menu/components/create-food/create-food.module').then(m => m.CreateFoodModule),
       canActivate: [AuthGuard]
   },
 
