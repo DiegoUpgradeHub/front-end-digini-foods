@@ -1,3 +1,4 @@
+// Estilos para el container-principal
 .container-principal {
   display: flex;
   flex-wrap: wrap;
@@ -13,22 +14,36 @@
   }
 }
 
+// Estilos para el container-quote
 .container-quote {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+
+  .quote-content {
+    max-width: 600px;
+  }
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  blockquote {
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+    border-left: 4px solid #555;
+    padding: 0 20px;
+    margin-bottom: 90px;
+  }
 }
 
-blockquote {
-  font-size: 20px;
-  font-style: italic;
-  text-align: center;
-  color: #555;
-  border-left: 4px solid #555;
-  padding: 0 20px;
-}
-
+// Estilos para el botón Ver restaurante
 .btn-primary {
   background-color: rgb(224, 216, 0);
-  }
+}
