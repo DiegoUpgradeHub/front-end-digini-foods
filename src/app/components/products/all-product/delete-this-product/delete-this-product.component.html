@@ -1,0 +1,13 @@
+<div class="delete-user-page">
+  <form [formGroup]="deleteForm" (ngSubmit)="deletingProduct(this.product._id)">
+      <h2>¿Seguro que desea eliminar el producto "{{this.product.name}}"?</h2>
+      <div class="form">
+        <label >ID del usuario</label>
+        <input type="text" class="form-control" formControlName="_id" placeholder="Id del usuario" required value="{{this.product._id}}">
+      </div>
+      <div class="btn-group mt-2" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-warning">Eliminar producto</button>
+      </div>
+  </form>
+
+</div>

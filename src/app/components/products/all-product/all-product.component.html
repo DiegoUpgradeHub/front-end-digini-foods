@@ -54,8 +54,47 @@
         <img [src]="product.image" class="product-image" alt="...">
         <div class="product-info">
           <h2>{{product.name}}</h2>
-          <h3>{{product.price}}</h3>
-          <p class="card-text">{{product.ingredients}}</p>
+          <div class="dropdown-center">
+            <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Más información
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark px-2">
+              <small>ID del producto:</small>
+              <p>{{product._id}}</p>
+              <small>Nombre del producto:</small>
+              <p>{{product.name}}</p>
+              <small>Precio:</small>
+              <p>{{product.price}} €</p>
+              <small>Ingredientes:</small>
+              <p>{{product.ingredients}}</p>
+              <small>Imagen:</small>
+              <p>{{product.image}}</p>
+              <small>Categoría y restaurante:</small>
+              <p class="my-1" [hidden]="product.category !== 'platos'">Platos de comida</p>
+              <p class="my-1" [hidden]="product.category !== 'bebidas'">Bebidas</p>
+              <p class="my-1" [hidden]="product.restaurant !== 'brunch'">Brunch & Munch</p>
+              <p class="my-1" [hidden]="product.restaurant !== 'sushi'">Sushi Saki</p>
+              <p class="my-1" [hidden]="product.restaurant !== 'pizzeria'">La Pizzetta</p>
+            </ul>
+          </div>
+          <div class="crud-icons">
+            <div class="dropdown-center">
+              <button class="btn btn-warning dropdown-toggle more-info-btn my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisProduct(product)">
+                <i class="bi bi-pencil-square"></i> Editar
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark px-2">
+                <app-edit-this-product [product]="product"></app-edit-this-product>
+              </ul>
+            </div>
+            <div class="dropdown-center">
+              <button class="btn btn-danger dropdown-toggle more-info-btn mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisProduct(product)">
+                <i class="bi bi-trash3"></i> Eliminar
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark px-2">
+                <app-delete-this-product [product]="product"></app-delete-this-product>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </li>
