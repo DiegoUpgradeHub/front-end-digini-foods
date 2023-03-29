@@ -17,6 +17,9 @@ export class AllProductComponent {
   editForm!: FormGroup;
   thisProduct: any = {};
 
+  searchBarValue!: string;
+
+
   constructor(
     public fb: FormBuilder,
     private productsService: ProductsService,
@@ -46,6 +49,19 @@ export class AllProductComponent {
 
   deleteProduct(id: string) {
     this.router.navigate(['/delete-use/' + id]);
+  }
+
+  searchProduct(){
+    // this.productsService.getProduct(this.searchBarValue).subscribe((response)=>{
+    //   console.log(response);
+    //   this.productsList = response;
+    // })
+    this.productsList = this.productsList.filter(product => product.name == this.searchBarValue)
+    console.log(this.productsList)
+  }
+
+  getInputValue(e:any){
+    this.searchBarValue = e.target.value
   }
 
 }
