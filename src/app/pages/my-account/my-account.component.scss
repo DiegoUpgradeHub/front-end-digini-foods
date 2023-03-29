@@ -9,22 +9,15 @@
   width: 100%;
 }
 
-.btn-text {
-  margin: 0px;
-  font-family: Helvetica, sans-serif;
-  text-transform: uppercase;
-  color: white;
-}
-
 .user-info {
   padding: 5px;
   margin: 20px 0;
   border: none;
   max-width: 540px;
-  // display: flex;
-  // flex-flow: row wrap;
-  // justify-content: start;
-  // align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 div.card-body {
@@ -40,8 +33,8 @@ div.card-body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: start;
-  width: 300px;
-  margin: 5px;
+  width: 250px;
+  margin: 5px 50px;
   h2 {
     margin-top: 15px;
   }

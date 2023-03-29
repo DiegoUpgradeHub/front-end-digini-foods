@@ -9,10 +9,27 @@ ul {
   align-items: center;
 }
 
-.back-btn {
-  margin: 20px;
+.top-buttons {
+  margin: 2px;
   width: 400px;
 }
+
+.search-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.filters {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
 .users-list {
   display: flex;
   flex-flow: row wrap;
@@ -20,32 +37,33 @@ ul {
   align-items: start;
 }
 .user-card {
+  // border: solid 1px black;
   display: flex;
   flex-flow: column wrap;
   justify-content: start;
   align-items: start;
   margin: 10px;
+  padding: 20px;
   width: 350px;
   border-radius: 5px;
-  h2 {
+/* Created with https://www.css-gradient.com */
+background: #ECECEC;
+background: -webkit-linear-gradient(top left, #ECECEC, #FFFFFF);
+background: -moz-linear-gradient(top left, #ECECEC, #FFFFFF);
+background: linear-gradient(to bottom right, #ECECEC, #FFFFFF);
+  .card-tittle {
     margin:15px 15px -10px 15px;
-  }
-  h3 {
-    margin: 0 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: end;
   }
   h5 {
     margin: -7px 15px 15px 15px;
   }
   .more-info-btn {
-    margin: 0 5px;
-    width: 350px;
-  }
-  .edit-btn{
-    margin: 5px;
-    width: 90px;
-  }
-  .delete-btn{
-    margin: 5px;
-    width: 90px;
+    margin: 0;
+    padding: 10px;
+    width: 310px;
   }
 }
