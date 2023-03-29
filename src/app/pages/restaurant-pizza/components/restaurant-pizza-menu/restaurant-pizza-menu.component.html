@@ -94,7 +94,7 @@
                 class="action-button"
                 src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
                 *ngIf="this.authService.isLoggedIn"
-                routerLink="/edit-product"
+                [routerLink]= "['edit-product', drink.name]"
                 >
                 <Img
                 class="action-button"
