@@ -8,6 +8,8 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AllProductComponent } from './all-product/all-product.component';
+import { EditThisProductComponent } from './all-product/edit-this-product/edit-this-product.component';
+import { DeleteThisProductComponent } from './all-product/delete-this-product/delete-this-product.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { AllProductComponent } from './all-product/all-product.component';
     EditProductComponent,
     DeleteProductComponent,
     AllProductComponent,
-
+    DeleteThisProductComponent,
+    EditThisProductComponent
   ],
   imports: [
     CommonModule,

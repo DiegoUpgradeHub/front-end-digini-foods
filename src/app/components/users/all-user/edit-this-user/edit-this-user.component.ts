@@ -34,9 +34,6 @@ export class EditThisUserComponent {
   }
 
   ngOnInit(): void {
-    // this.authService.getUserProfile(this.user._id).subscribe(res => {
-    //   // this.currentUser = res;
-    //   // console.log(res);
     this.editUserForm.get('_id')?.setValue(this.user._id);
     this.editUserForm.get('name')?.setValue(this.user.name);
     this.editUserForm.get('lastName')?.setValue(this.user.lastName);
@@ -46,7 +43,6 @@ export class EditThisUserComponent {
     this.editUserForm.get('startDate')?.setValue(this.user.startDate);
     this.editUserForm.get('workplace')?.setValue(this.user.workplace);
     this.editUserForm.get('role')?.setValue(this.user.role);
-    // })
     console.log(this.user)
   }
 
@@ -55,8 +51,7 @@ export class EditThisUserComponent {
     console.log("this user ID", userId);
     console.log("esto es el this.user", this.user);
     this.authService.editUserProfile(this.editUserForm.value, userId.trim()).subscribe(() => {
-      this.authService.userProfile();
-      // this.router.navigate(['/all-users']);
+      window.location.reload();
     })
   }
 
