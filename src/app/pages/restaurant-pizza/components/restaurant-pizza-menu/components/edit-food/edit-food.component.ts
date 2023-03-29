@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
-import { ActivatedRoute } from '@angular/router';
-import { ProductsService } from './../../../core/services/products.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductsService } from 'src/app/core/services/products.service';
 import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
 
-
-
 @Component({
-  selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.scss']
+  selector: 'app-edit-food',
+  templateUrl: './edit-food.component.html',
+  styleUrls: ['./edit-food.component.scss']
 })
-export class EditProductComponent {
+export class EditFoodComponent {
 
   public name: string = '';
   public product!: Product;
+  public editedProduct:any = {};
 
 
   public editForm!:FormGroup;
@@ -23,7 +22,8 @@ export class EditProductComponent {
   constructor (
     public formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private RequestService: ProductsService
+    private productService: ProductsService,
+    private router: Router
     ) {
       this.editForm = new FormGroup ({
         _id: new FormControl (''),
@@ -45,7 +45,7 @@ export class EditProductComponent {
           });
           this.activatedRoute.queryParamMap.subscribe((queryParams) => {
           });
-          this.RequestService.getProduct(this.name).subscribe(
+          this.productService.getProduct(this.name).subscribe(
             (response) => {
               this.product = response[0];
               console.log(response[0]);
@@ -67,6 +67,13 @@ export class EditProductComponent {
             console.log(this.editForm);
           }
 
+          editingProduct(productId: any) {
+            this.editedProduct = this.editForm.value;
+            console.log(this.editedProduct);
+            this.productService.editProduct(this.editedProduct).subscribe(() => {
+              this.router.navigate(['/restaurant-pizza']);
+            })
+          }
 
 
 }

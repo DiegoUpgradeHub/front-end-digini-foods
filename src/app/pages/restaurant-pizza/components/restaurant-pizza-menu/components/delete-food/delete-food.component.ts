@@ -28,7 +28,7 @@ export class DeleteFoodComponent {
     this.itemToDelete = this.item;
     console.log(this.itemToDelete);
     this.productService.deleteProduct(this.itemToDelete).subscribe(() => {
-      this.router.navigate(['/restaurant-pizza']);
+    this.router.navigate(['/restaurant-pizza']);
     })
   }
 

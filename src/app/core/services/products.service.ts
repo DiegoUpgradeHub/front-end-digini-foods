@@ -58,7 +58,7 @@ export class ProductsService {
   };
 
   //Editar un producto
-  editProduct(product: Product): Observable<any> {
+  editProduct(product: Product ): Observable<any> {
     let id = product._id
     let api = `${this.endpoint}/products/edit/${id}`;
     return this.http.put(api, product)
