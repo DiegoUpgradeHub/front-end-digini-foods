@@ -9,9 +9,16 @@ ul {
   align-items: center;
 }
 
-.top-buttons {
-  margin: 2px;
-  width: 400px;
+.buttons-top {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  .top-buttons {
+    margin: 2px;
+    width: 400px;
+  }
 }
 
 .search-bar {
@@ -19,6 +26,7 @@ ul {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  width:80%;
   max-width: 600px;
 }
 
@@ -46,11 +54,11 @@ ul {
   padding: 20px;
   width: 350px;
   border-radius: 5px;
-/* Created with https://www.css-gradient.com */
-background: #ECECEC;
-background: -webkit-linear-gradient(top left, #ECECEC, #FFFFFF);
-background: -moz-linear-gradient(top left, #ECECEC, #FFFFFF);
-background: linear-gradient(to bottom right, #ECECEC, #FFFFFF);
+  /* Created with https://www.css-gradient.com */
+  background: #ECECEC;
+  background: -webkit-linear-gradient(top left, #ECECEC, #FFFFFF);
+  background: -moz-linear-gradient(top left, #ECECEC, #FFFFFF);
+  background: linear-gradient(to bottom right, #ECECEC, #FFFFFF);
   .card-tittle {
     margin:15px 15px -10px 15px;
     display: flex;

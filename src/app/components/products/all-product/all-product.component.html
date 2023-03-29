@@ -1,10 +1,63 @@
 <div class="all-product-page">
-  <div class="card" style="width: 20rem;" *ngFor="let product of productsList;">
-    <img [src]="product.image" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2>{{product.name}}</h2>
-      <h3>{{product.price}}</h3>
-      <p class="card-text">{{product.ingredients}}</p>
+  <h1 class="mt-3">Productos del grupo DiGiNi</h1>
+  <div class="buttons-top">
+    <button (click)="this.authService.userProfile()" class="btn btn-dark top-buttons">Atrás</button>
+    <button role="button" routerLinkActive="active" routerLink="/create-product" type="button" class="btn btn-success top-buttons">
+      Crear producto
+    </button>
+  </div>
+
+  <div class="input-group mb-3 search-bar">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Busca un producto" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="input-group-append">
+      <button class="input-group-text btn-dark">Buscar</button>
     </div>
   </div>
+
+  <div class="filters">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <label class="form-check-label" for="inlineRadio1">Todos los productos</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <label class="form-check-label" for="inlineRadio2">La Pizzetta</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+      <label class="form-check-label" for="inlineRadio3">Sushi Saki</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+      <label class="form-check-label" for="inlineRadio4">Brunch & Munch</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
+      <label class="form-check-label" for="inlineRadio5">Platos</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+      <label class="form-check-label" for="inlineRadio6">Bebidas</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option2">
+      <label class="form-check-label" for="inlineRadio7">Equipo de administración</label>
+    </div>
+  </div>
+
+  <ul class="product-list">
+    <li *ngFor="let product of productsList;">
+      <div class="product-card" >
+        <img [src]="product.image" class="product-image" alt="...">
+        <div class="product-info">
+          <h2>{{product.name}}</h2>
+          <h3>{{product.price}}</h3>
+          <p class="card-text">{{product.ingredients}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
