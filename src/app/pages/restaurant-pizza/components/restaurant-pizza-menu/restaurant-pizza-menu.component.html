@@ -18,7 +18,7 @@
     <div class="card-container" *ngIf="showSection === 1" >
       <!--Botón "Cerrar"-->
       <div  class="close-buttons">
-        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
+        <button mat-button class=" shadow button bi bi-x-lg" (click)="getProducts(0)"></button>
       </div>
        <!--Botón "Crear Plato"-->
        <div  class="create-button" *ngIf="this.authService.isLoggedIn">
@@ -27,7 +27,7 @@
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
       <!--Tarjeta-->
-      <div class="card" style="width: 20rem;" *ngFor="let plate of plates;">
+      <div class="card shadow" style="width: 20rem;" *ngFor="let plate of plates;">
           <img [src]="plate.image" class="card-img-top" alt="...">
           <div class="card-body">
             <h2>{{plate.name}}</h2>
@@ -59,7 +59,7 @@
     </div>
       <!--Botón "Cerrar"-->
       <div class="close-buttons">
-        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
+        <button mat-button class=" shadow button bi bi-x-lg" (click)="getProducts(0)"></button>
       </div>
 
 
@@ -71,7 +71,7 @@
     <div class="card-container" *ngIf="showSection === 2" >
       <!--Botón "Cerrar"-->
       <div class="close-buttons">
-        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
+        <button mat-button class=" shadow button bi bi-x-lg" (click)="getProducts(0)"></button>
       </div>
         <!--Botón "Crear Plato"-->
       <div  class="create-button" *ngIf="this.authService.isLoggedIn">
@@ -80,7 +80,7 @@
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
         <!--Tarjeta-->
-        <div class="card" style="width: 20rem;" *ngFor="let drink of drinks;">
+        <div class="card shadow" style="width: 20rem;" *ngFor="let drink of drinks;">
             <img [src]="drink.image" style="width:10rem"  class="card-img-top" alt="...">
             <div class="card-body">
               <h2>{{drink.name}}</h2>
@@ -112,7 +112,7 @@
       </div>
       <!--Botón "Cerrar"-->
       <div class="close-buttons">
-        <button mat-button class="button" (click)="getProducts(0)">Cerrar</button>
+        <button mat-button class=" shadow button bi bi-x-lg" (click)="getProducts(0)"></button>
       </div>
 
     </div>
