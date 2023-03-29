@@ -45,12 +45,12 @@ export class AllUserComponent implements OnInit {
     this.thisUser = user;
   }
 
-  editUser(id: string) {
-    this.router.navigate(['/update-use/' + id]);
-  }
+  // editUser(id: string) {
+  //   this.router.navigate(['/update-use/' + id]);
+  // }
 
-  deleteUser(id: string) {
-    this.router.navigate(['/delete-use/' + id]);
-  }
+  // deleteUser(id: string) {
+  //   this.router.navigate(['/delete-use/' + id]);
+  // }
 
 }
