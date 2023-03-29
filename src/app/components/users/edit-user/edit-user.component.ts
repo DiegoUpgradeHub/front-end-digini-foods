@@ -52,7 +52,7 @@ export class EditUserComponent implements OnInit {
 
   editingUser() {
     this.authService.editUserProfile(this.editForm.value, this.currentUser._id).subscribe(() => {
-      this.authService.userProfile();
+      window.location.reload();
     })
   }
 }

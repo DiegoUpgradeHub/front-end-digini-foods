@@ -1,14 +1,14 @@
 <div class="create-user-page">
 
-  <button
+  <!-- <button
     (click)="this.authService.userProfile()"
     class="btn btn-dark"
   >
     <p class="btn-text">Atrás</p>
-  </button>
+  </button> -->
 
   <form [formGroup]="createForm" (ngSubmit)="creatingUser()">
-      <h2>Formulario para editar usuarios</h2>
+      <!-- <h2>Formulario para editar usuarios</h2> -->
       <div class="form-floating mb-3">
         <input type="text" class="form-control" formControlName="name" placeholder="Nombre" required id="floatingInput">
         <label for="floatingInput">Nombre</label>

@@ -34,8 +34,8 @@ export class CreateUserComponent {
 
   creatingUser() {
     this.authService.createUser(this.createForm.value).subscribe(() => {
-      // this.router.navigate(['/all-users']); //No funciona :(
-      this.authService.userProfile();
+      window.location.reload();
+      // this.authService.userProfile();
     })
   }
 
