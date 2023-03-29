@@ -3,18 +3,18 @@ import { NgForm } from '@angular/forms';
 
 import { Contact } from 'src/app/core/models/contact';
 
-
 @Component({
   selector: 'app-restaurant-pizza-contact',
   templateUrl: './restaurant-pizza-contact.component.html',
   styleUrls: ['./restaurant-pizza-contact.component.scss']
 })
 export class RestaurantPizzaContactComponent {
-
   public contact: Contact = {
     name: '',
-    email:'',
-    description:''
+    email: '',
+    description: '',
+    date: '',
+    phoneNumber: ''
   };
 
   public isSubmitted: boolean = false;
@@ -34,6 +34,7 @@ export class RestaurantPizzaContactComponent {
         phoneNumber: formGroup.get('phoneNumber')?.value,
         email: formGroup.get('email')?.value,
         description: formGroup.get('description')?.value,
+        date: formGroup.get('date')?.value
       };
 
       console.log(contact);
@@ -44,5 +45,4 @@ export class RestaurantPizzaContactComponent {
       }, 3000);
     }
   }
-
 }
