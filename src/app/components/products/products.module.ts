@@ -7,12 +7,14 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AllProductComponent } from './all-product/all-product.component';
 
 @NgModule({
   declarations: [
     CreateProductComponent,
     EditProductComponent,
     DeleteProductComponent,
+    AllProductComponent,
 
   ],
   imports: [

@@ -64,6 +64,11 @@ const routes: Routes = [
       import('./pages/restaurant-pizza/components/restaurant-pizza-menu/components/create-food/create-food.module').then(m => m.CreateFoodModule),
       canActivate: [AuthGuard]
   },
+  {
+    path: `all-product`, loadChildren: () =>
+      import('./components/products/all-product/all-product.module').then(m => m.AllProductModule),
+      canActivate: [AuthGuard]
+  },
 
 
 

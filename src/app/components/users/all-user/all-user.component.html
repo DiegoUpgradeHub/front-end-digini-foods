@@ -1,8 +1,8 @@
 <div class="all-user-page">
   <h1 class="mt-3">Usuarios del grupo DiGiNi</h1>
-  <div class="">
+  <div class="buttons-top">
     <button (click)="this.authService.userProfile()" class="btn btn-dark top-buttons">Atrás</button>
-    <button role="button" routerLinkActive="active" routerLink="/register-user/" type="button" class="btn btn-success top-buttons mb-3">
+    <button role="button" routerLinkActive="active" routerLink="/register-user/" type="button" class="btn btn-success top-buttons">
       Crear usuario
     </button>
   </div>
@@ -10,7 +10,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">@</span>
     </div>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" placeholder="Busca un usuario" aria-label="Username" aria-describedby="basic-addon1">
     <div class="input-group-append">
       <button class="input-group-text btn-dark">Buscar</button>
     </div>
