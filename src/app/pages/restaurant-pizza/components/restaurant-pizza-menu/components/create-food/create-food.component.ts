@@ -39,8 +39,9 @@ export class CreateFoodComponent {
   }
 
   creatingProduct() {
-    this.productService.createProduct(this.createForm.value).subscribe(()=>{
-      this.router.navigate(['/restaurant-pizza']);
+    this.productService.createProduct(this.createForm.value).subscribe((response)=>{
+      window.location.reload();
+      console.log(response)
     })
   }
 

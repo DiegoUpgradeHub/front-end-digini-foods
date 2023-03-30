@@ -1,0 +1,31 @@
+<div class="modal fade"  id="viewDetailsModal" tabindex="-1" aria-labelledby="viewDetailsModalLabel" aria-hidden="true"
+ data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles del producto</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          routerLink="/restaurant-pizza">
+        </button>
+      </div>
+      <div class="modal-body" >
+
+      <h1>{{this.item.name}}</h1>
+      <h2>Ingredientes</h2>
+      <p>{{this.item.ingredients}}</p>
+      <h2>Vegetariano</h2>
+      <p>{{this.item.vegetarian}}</p>
+
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button"class="btn btn-success">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

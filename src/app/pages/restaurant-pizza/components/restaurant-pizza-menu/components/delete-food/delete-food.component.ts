@@ -2,8 +2,6 @@ import { Component, Input } from '@angular/core';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { Router } from '@angular/router';
 
-import { ViewChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
 
 
 @Component({
@@ -22,6 +20,8 @@ export class DeleteFoodComponent {
     private productService: ProductsService,
     public router: Router,
     ) {}
+
+
 
 
   public deleteProduct(): void {
