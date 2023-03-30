@@ -1,1 +1,49 @@
-<p>create-product works!</p>
+<div class="create-product-page">
+
+  <form [formGroup]="createForm" (ngSubmit)="creatingProduct()">
+      <h2>Formulario para crear productos</h2>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre" required id="floatingInput">
+        <label for="floatingInput">Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="price" placeholder="Precio" required id="floatingInput">
+        <label for="floatingInput">Precio</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="ingredients" placeholder="Ingredientes" required id="floatingInput">
+        <label for="floatingInput">Ingredientes</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="image" placeholder="URL de la imagen" required id="floatingInput">
+        <label for="floatingInput">Imagen</label>
+      </div>
+      <div class="mb-3">
+        <label>¿Es vegetariano?</label>
+        <select class="form-select form-control" formControlName="vegetarian" aria-label="office" required>
+          <option value="true">Sí es vegetariano</option>
+          <option value="false">No es vegetariano</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label>Categoría</label>
+        <select class="form-select form-control" formControlName="category" aria-label="category" required>
+          <option value="plates">Platos de comida</option>
+          <option value="drinks">Bebidas</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label>Restaurante</label>
+        <select class="form-select form-control" formControlName="restaurant" aria-label="office" required>
+          <option value="">Todos los restaurantes</option>
+          <option value="pizzeria">Restaurante pizzeria</option>
+          <option value="sushi">Restaurante sushi</option>
+          <option value="brunch">Restaurante brunch</option>
+        </select>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="submit" class="btn btn-warning">Crear usuario</button>
+      </div>
+  </form>
+
+</div>

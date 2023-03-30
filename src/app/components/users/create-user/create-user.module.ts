@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+// import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CreatetUserRoutingModule } from './create-user-routing.module';
 
 
@@ -8,8 +8,6 @@ import { CreatetUserRoutingModule } from './create-user-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
     CreatetUserRoutingModule
   ]
 })

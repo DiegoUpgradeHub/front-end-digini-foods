@@ -35,7 +35,6 @@ export class CreateUserComponent {
   creatingUser() {
     this.authService.createUser(this.createForm.value).subscribe(() => {
       window.location.reload();
-      // this.authService.userProfile();
     })
   }
 
