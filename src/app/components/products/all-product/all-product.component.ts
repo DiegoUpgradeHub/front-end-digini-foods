@@ -15,6 +15,7 @@ export class AllProductComponent {
 
   productsList: Product[] = [];
   editForm!: FormGroup;
+
   thisProduct: any = {};
 
   searchBarValue!: string;
@@ -38,9 +39,9 @@ export class AllProductComponent {
     });
   }
 
-  getThisProduct(user: any): void {
-    console.log(user);
-    this.thisProduct = user;
+  getThisProduct(product: any): void {
+    console.log(product);
+    this.thisProduct = product;
   }
 
   editProduct(id: string) {
