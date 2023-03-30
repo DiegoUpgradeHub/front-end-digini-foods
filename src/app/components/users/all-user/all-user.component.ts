@@ -17,6 +17,8 @@ export class AllUserComponent implements OnInit {
 
   thisUser: any = {};
 
+  searchBarValue!: string;
+
   protected readonly clearSubscriptions$ = new Subject();
 
   constructor(
@@ -33,16 +35,53 @@ export class AllUserComponent implements OnInit {
   ngOnDestroy(): void {
     this.clearSubscriptions$.complete();
   }
-
+  //Obtener todos los usuarios
   getAllUsers() {
     return this.authService.getUsers().pipe(takeUntil(this.clearSubscriptions$),).subscribe((data) => {
       this.usersList = data
     })
   }
-
+  //Obtener este usuario
   getThisUser(user: any): void {
     console.log(user);
     this.thisUser = user;
+  }
+  //Buscar un usuario
+  searchUser(){
+    this.usersList = this.usersList.filter(user => user.name == this.searchBarValue)
+    console.log(this.usersList)
+  }
+  //Obtener información del input del searchbar
+  getInputValue(e:any){
+    this.searchBarValue = e.target.value
+  }
+  //Obetener usuarios de La Pizzetta
+  getPizzeria(){
+    this.usersList = this.usersList.filter(user => user.workplace == 'pizzeria');
+  }
+  //Obetener usuarios de Sushi Saki
+  getSushi(){
+    this.usersList = this.usersList.filter(user => user.workplace == 'sushi');
+  }
+  //Obetener usuarios de Brunch & Munch
+  getBrunch(){
+    this.usersList = this.usersList.filter(user => user.workplace == 'brunch');
+  }
+  //Obetener usuarios de Oficinas Centrales
+  getOffice(){
+    this.usersList = this.usersList.filter(user => user.workplace == 'office');
+  }
+  //Obetener usuarios Restauración
+  getWaiter(){
+    this.usersList = this.usersList.filter(user => user.role == 'waiter');
+  }
+  //Obetener usuarios Marketing
+  getMarketing(){
+    this.usersList = this.usersList.filter(user => user.role == 'marketing');
+  }
+  //Obetener usuarios Administración
+  getAdmin(){
+    this.usersList = this.usersList.filter(user => user.role == 'admin');
   }
 
 }
