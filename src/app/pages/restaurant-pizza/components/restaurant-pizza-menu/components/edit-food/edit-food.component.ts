@@ -19,7 +19,6 @@ export class EditFoodComponent {
   public product!: Product;
   public editedProduct:any = {};
 
-  inputValue:any;
 
   public editForm!:FormGroup;
 
@@ -44,9 +43,6 @@ export class EditFoodComponent {
     }
 
 
-
-
-
   ngOnInit():void{
     this.editForm.get('_id')?.setValue(this.item._id);
     this.editForm.get('name')?.setValue(this.item.name);
@@ -56,33 +52,14 @@ export class EditFoodComponent {
     this.editForm.get('category')?.setValue(this.item.category);
     this.editForm.get('vegetarian')?.setValue(this.item.vegetarian);
     this.editForm.get('restaurant')?.setValue(this.item.restaurant);
-    console.log(this.item)
   }
 
 
-        prueba(): void {
-          this.inputValue = this.item;
-          console.log(this.inputValue)
-          console.log(this.editForm.value)
-        }
-
-
-
-          onSubmit(e:any){
-            e.preventDefault();
-            console.log(this.editForm);
-          }
-
-
-
-
-          editingProduct(productId: any) {
-            this.editedProduct = this.editForm.value;
-            console.log(this.editedProduct);
-            this.productService.editProduct(this.editedProduct).subscribe(() => {
-              this.router.navigate(['/restaurant-pizza']);
-            })
-          }
+  editingProduct(productId: any) {
+    this.productService.editThisProduct(this.editForm.value, productId).subscribe(() => {
+      window.location.reload();
+    })
+  }
 
 
 }
