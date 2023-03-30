@@ -15,71 +15,10 @@
       </div>
       <div class="modal-body" >
 
+      <app-create-product></app-create-product>
 
-  <form  (ngSubmit)="creatingProduct()" [formGroup]="createForm">
-
-
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" formControlName="name"  required id="floatingInput1">
-        <label for="floatingInput">Nombre</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="number" class="form-control" formControlName="price" required id="floatingInput2">
-        <label for="floatingInput">Precio</label>
       </div>
 
-      <div class="form-floating mb-3">
-        <select id="disabledSelect" class="form-select" formControlName="category" >
-          <option selected></option>
-          <option>plates</option>
-          <option>drinks</option>
-        </select>
-        <label for="disabledSelect" class="form-label">Categoría</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" formControlName="ingredients">
-        <label for="floatingInput">Ingredites</label>
-      </div>
-
-      <div class="form-floating mb-3" >
-        <select id="disabledSelect" class="form-select" formControlName="vegetarian" >
-          <option>true</option>
-          <option>false</option>
-        </select>
-        <label for="disabledSelect" class="form-label">Vegetariano</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" formControlName="image">
-        <label for="floatingInput">Imagen</label>
-      </div>
-
-
-      <div class="form-floating mb-3">
-        <select id="disabledSelect" class="form-select" formControlName="restaurant" >
-          <option selected></option>
-          <option>pizzeria</option>
-          <option>sushi</option>
-          <option>brunch</option>
-        </select>
-        <label for="disabledSelect" class="form-label">Restaurante</label>
-      </div>
-
-  </form>
-
-
-
-</div>
-
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="./">Descartar</button>
-  <button
-  type="button"
-  class="btn btn-success"
-  (click)="creatingProduct()"
-  >Crear</button>
-</div>
-</div>
-</div>
+    </div>
+  </div>
 </div>

@@ -16,28 +16,28 @@
 
       <div class="modal-body" >
 
-        <form  (ngSubmit)="prueba()" [formGroup]="editForm" >
+        <form  (ngSubmit)="editingProduct(this.item._id)" [formGroup]="editForm" >
 
             <fieldset disabled class="mb-3">
             <div class="mb-3">
               <label for="disabledTextInput" class="form-label">ID del plato</label>
-              <input type="text" id="disabledInput" formControlName="_id"  class="form-control">
+              <input type="text" id="disabledInput" formControlName="_id"  class="form-control" required value="{{this.item._id}}">
             </div>
             </fieldset>
 
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" formControlName="name" >
+              <input type="text" class="form-control" formControlName="name" value="{{this.item.name}}">
               <label for="floatingInput">Nombre</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="number" class="form-control" formControlName="price"  >
+              <input type="number" class="form-control" formControlName="price"  value="{{this.item.price}}">
               <label for="floatingInput">Precio</label>
             </div>
 
             <div class="form-floating mb-3">
-              <select id="disabledSelect" class="form-select" formControlName="category" >
+              <select id="disabledSelect" class="form-select" formControlName="category" value="{{this.item.category}}" >
                 <option selected>{{this.item.category}}</option>
                 <option>pizzas</option>
                 <option>bebidas</option>
@@ -48,12 +48,12 @@
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" formControlName="ingredients" >
-              <label for="floatingInput">Ingredites</label>
+              <input type="text" class="form-control" formControlName="ingredients" value="{{this.item.ingredients}}">
+              <label for="floatingInput">Ingredientes</label>
             </div>
 
             <div class="form-floating mb-3">
-              <select id="disabledSelect" class="form-select" formControlName="vegetarian" >
+              <select id="disabledSelect" class="form-select" formControlName="vegetarian" value="{{this.item.vegetarian}}" >
                 <option selected>{{this.item.vegetarian}}</option>
                 <option *ngIf="this.item.vegetarian === false">true</option>
                 <option *ngIf="this.item.vegetarian === true ">false</option>
@@ -62,13 +62,13 @@
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" formControlName="image" >
+              <input type="text" class="form-control" formControlName="image" value="{{this.item.image}}">
               <label for="floatingInput">Imagen</label>
             </div>
 
 
             <div class="form-floating mb-3">
-              <select id="disabledSelect" class="form-select" formControlName="restaurant" >
+              <select id="disabledSelect" class="form-select" formControlName="restaurant" value="{{this.item.restaurant}}">
                 <option selected>{{this.item.restaurant}}</option>
                 <option>pizzeria</option>
                 <option>sushi</option>
@@ -77,14 +77,12 @@
               <label for="disabledSelect" class="form-label">Restaurante</label>
             </div>
 
+            <button type="submit" class="btn btn-warning">Editar</button>
+
         </form>
 
       </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="./">Descartar</button>
-        <button type="button" class="btn btn-warning">Editar</button>
-      </div>
     </div>
   </div>
 </div>
