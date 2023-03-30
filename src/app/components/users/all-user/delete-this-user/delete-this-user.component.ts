@@ -31,7 +31,6 @@ export class DeleteThisUserComponent {
   }
 
   deletingUser(id: string) {
-    console.log(this.deleteForm.value._id); //Sale undefined
     this.authService.deleteUser(id).subscribe(() => {
       window.location.reload();
     })

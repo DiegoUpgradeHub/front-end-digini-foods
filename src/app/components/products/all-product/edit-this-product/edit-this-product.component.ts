@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/core/services/auth.service';
 import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
@@ -17,7 +16,6 @@ export class EditThisProductComponent {
 
   constructor(
     public fb: FormBuilder,
-    public authService: AuthService,
     public productService: ProductsService,
     public router: Router,
     public actRoute: ActivatedRoute
@@ -46,9 +44,9 @@ export class EditThisProductComponent {
     console.log(this.product)
   }
 
-  editingProduct(productId: any) {
-    this.productService.editProduct(this.editProductForm.value).subscribe(() => {
-      this.authService.userProfile();
+  editingThisProduct(productId: any) {
+    this.productService.editThisProduct(this.editProductForm.value, productId.trim()).subscribe(() => {
+      window.location.reload();
     })
   }
 

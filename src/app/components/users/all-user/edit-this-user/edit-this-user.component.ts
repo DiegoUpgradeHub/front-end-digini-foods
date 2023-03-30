@@ -47,9 +47,6 @@ export class EditThisUserComponent {
   }
 
   editingUser(userId: any) {
-    this.user = this.editUserForm.value;
-    console.log("this user ID", userId);
-    console.log("esto es el this.user", this.user);
     this.authService.editUserProfile(this.editUserForm.value, userId.trim()).subscribe(() => {
       window.location.reload();
     })
