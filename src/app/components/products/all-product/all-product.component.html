@@ -1,5 +1,7 @@
 <div class="all-product-page">
+
   <h1 class="mt-3">Productos del grupo DiGiNi</h1>
+
   <div class="buttons-top">
     <button (click)="this.authService.userProfile()" class="btn btn-dark top-buttons">Atrás</button>
     <button type="button" class="btn btn-success top-buttons" data-bs-toggle="modal" data-bs-target="#createModal">
@@ -17,6 +19,7 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
 
   <div class="input-group mb-3 search-bar">
@@ -31,33 +34,29 @@
   </div>
 
   <div class="filters">
-    <div class="form-check form-check-inline" (click)='getProducts()'>
+    <div class="form-check form-check-inline" (click)="getProducts()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
       <label class="form-check-label" for="inlineRadio1">Todos los productos</label>
     </div>
-    <div class="form-check form-check-inline">
+    <div class="form-check form-check-inline" (click)="getPizzeria()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
       <label class="form-check-label" for="inlineRadio2">La Pizzetta</label>
     </div>
-    <div class="form-check form-check-inline">
+    <div class="form-check form-check-inline" (click)="getSushi()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
       <label class="form-check-label" for="inlineRadio3">Sushi Saki</label>
     </div>
-    <div class="form-check form-check-inline">
+    <div class="form-check form-check-inline" (click)="getBrunch()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
       <label class="form-check-label" for="inlineRadio4">Brunch & Munch</label>
     </div>
-    <div class="form-check form-check-inline">
+    <div class="form-check form-check-inline" (click)="getPlates()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
       <label class="form-check-label" for="inlineRadio5">Platos</label>
     </div>
-    <div class="form-check form-check-inline">
+    <div class="form-check form-check-inline" (click)="getDrinks()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
       <label class="form-check-label" for="inlineRadio6">Bebidas</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option2">
-      <label class="form-check-label" for="inlineRadio7">Equipo de administración</label>
     </div>
   </div>
 

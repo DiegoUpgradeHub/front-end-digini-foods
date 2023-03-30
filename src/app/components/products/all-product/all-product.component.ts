@@ -43,26 +43,42 @@ export class AllProductComponent {
     console.log(product);
     this.thisProduct = product;
   }
-
+  //Editar el producto
   editProduct(id: string) {
     this.router.navigate(['/update-use/' + id]);
   }
-
+  //Eliminar el producto
   deleteProduct(id: string) {
     this.router.navigate(['/delete-use/' + id]);
   }
-
+  //Buscar un producto
   searchProduct(){
-    // this.productsService.getProduct(this.searchBarValue).subscribe((response)=>{
-    //   console.log(response);
-    //   this.productsList = response;
-    // })
     this.productsList = this.productsList.filter(product => product.name == this.searchBarValue)
     console.log(this.productsList)
   }
-
+  //Obtener información del input del searchbar
   getInputValue(e:any){
     this.searchBarValue = e.target.value
+  }
+  //Obetener productos de La Pizzetta
+  getPizzeria(){
+    this.productsList = this.productsList.filter(product => product.restaurant == 'pizzeria');
+  }
+  //Obetener productos de Sushi Saki
+  getSushi(){
+    this.productsList = this.productsList.filter(product => product.restaurant == 'sushi');
+  }
+  //Obetener productos de Brunch & Munch
+  getBrunch(){
+    this.productsList = this.productsList.filter(product => product.restaurant == 'brunch');
+  }
+  //Obetener productos categoría plates
+  getPlates(){
+    this.productsList = this.productsList.filter(product => product.category == 'plates');
+  }
+  //Obetener productos categoría drinks
+  getDrinks(){
+    this.productsList = this.productsList.filter(product => product.category == 'drinks');
   }
 
 }
