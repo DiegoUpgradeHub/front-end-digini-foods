@@ -87,9 +87,6 @@ export class AuthService {
 
   //Editar usuario
   editUserProfile(user: User, id: string): Observable<any> {
-    // let id = localStorage.getItem('_id');
-    // let id = user._id as string;
-    console.log(id);
     let api = `${this.endpoint}/update-user/${id}`;
     return this.http.put(api, user)
     .pipe(

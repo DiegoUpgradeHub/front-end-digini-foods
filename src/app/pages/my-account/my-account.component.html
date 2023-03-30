@@ -5,10 +5,10 @@
 
       <div class="col-4">
         <img class="img-fluid rounded-start profile-image" src="https://cdn-icons-png.flaticon.com/512/2102/2102647.png" class="card-img-top" alt="profile-image">
-        <!-- CRUD Usuarios -->
+        <!-- CRUD Waiter -->
         <div [hidden]="this.currentUser.role !== 'waiter'">
           <button type="button" class="btn btn-dark my-2" data-bs-toggle="modal" data-bs-target="#waiterModal">
-            Editar mis datos
+            <i class="bi bi-pencil-square"></i> Editar mis datos
           </button>
           <div class="modal fade" id="waiterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -24,7 +24,7 @@
             </div>
           </div>
           <button (click)="logout()" role="button" type="button" class="btn btn-danger">
-            Cerrar sesión
+            <i class="bi bi-box-arrow-right"></i> Cerrar sesión
           </button>
         </div>
       </div>
@@ -65,10 +65,10 @@
   <h2>Administración usuarios</h2>
     <div class="btn-group-vertical crud-users" role="group" aria-label="Vertical button group">
       <button (click)="logout()" role="button" type="button" class="btn btn-danger">
-        Cerrar sesión
+        <i class="bi bi-box-arrow-right"></i> Cerrar sesión
       </button>
       <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editModal">
-        Editar mis datos
+        <i class="bi bi-pencil-square"></i> Editar mis datos
       </button>
       <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -84,7 +84,7 @@
         </div>
       </div>
       <button [hidden]="this.currentUser.role !== 'admin'" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#createModal">
-        Crear usuario
+        <i class="bi bi-plus-square"></i> Crear usuario
       </button>
       <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -100,17 +100,30 @@
         </div>
       </div>
       <button [hidden]="this.currentUser.role !== 'admin'" role="button" routerLinkActive="active" routerLink="/all-user/" type="button" class="btn btn-dark">
-        Ver usuarios
+        <i class="bi bi-info-square"></i> Ver usuarios
       </button>
     </div>
 <!-- CRUD Productos -->
     <h2>Administración productos</h2>
     <div class="btn-group-vertical crud-products" role="group" aria-label="Vertical button group">
-      <button role="button" routerLinkActive="active" routerLink="/create-product" type="button" class="btn btn-dark">
-        Crear producto
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#createProductModal">
+        <i class="bi bi-plus-square"></i> Crear producto
       </button>
+      <div class="modal fade" id="createProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Estás creando un producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <app-create-product></app-create-product>
+            </div>
+          </div>
+        </div>
+      </div>
       <button role="button" routerLinkActive="active" routerLink="/all-product/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-        Ver productos
+        <i class="bi bi-info-square"></i> Ver productos
       </button>
     </div>
   </div>

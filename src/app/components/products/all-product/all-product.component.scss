@@ -21,13 +21,6 @@ ul {
   }
 }
 
-.product-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: start;
-}
-
 .search-bar {
   display: flex;
   flex-flow: row wrap;
@@ -43,6 +36,13 @@ ul {
   justify-content: center;
   align-items: center;
   max-width: 600px;
+}
+
+.product-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: start;
 }
 
 .product-card {
@@ -68,12 +68,18 @@ ul {
   object-fit: cover;
 }
 
-.product-info {
-  // display: flex;
-  // flex-flow: row wrap;
-  // justify-content: start;
-  // align-items: start;
-  margin-left: 10px
+.info-box {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: start;
+  margin-left: 10px;
+  .restaurantPrice {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
+  }
 }
 
 .more-info-btn {

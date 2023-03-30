@@ -11,7 +11,7 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Estás creando un producto</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -49,103 +49,111 @@
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
       <label class="form-check-label" for="inlineRadio4">Brunch & Munch</label>
     </div>
-    <div class="form-check form-check-inline" (click)="getPlates()">
+    <div class="form-check form-check-inline" (click)="getInAllRestaurants()">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
-      <label class="form-check-label" for="inlineRadio5">Platos</label>
+      <label class="form-check-label" for="inlineRadio5">En todos los restaurantes</label>
+    </div>
+    <div class="form-check form-check-inline" (click)="getPlates()">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+      <label class="form-check-label" for="inlineRadio6">Platos</label>
     </div>
     <div class="form-check form-check-inline" (click)="getDrinks()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
-      <label class="form-check-label" for="inlineRadio6">Bebidas</label>
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option2">
+      <label class="form-check-label" for="inlineRadio7">Bebidas</label>
     </div>
   </div>
 
   <ul class="product-list">
     <li *ngFor="let product of productsList;">
-      <div class="product-card" >
-        <img [src]="product.image" class="product-image" alt="...">
-        <div class="product-info">
-          <h2>{{product.name}}</h2>
-          <div class="dropdown-center">
-            <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Más información
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark px-2">
-              <small>ID del producto:</small>
-              <p>{{product._id}}</p>
-              <small>Nombre del producto:</small>
-              <p>{{product.name}}</p>
-              <small>Precio:</small>
-              <p>{{product.price}} €</p>
-              <small>Ingredientes:</small>
-              <p>{{product.ingredients}}</p>
-              <small>Imagen:</small>
-              <p>{{product.image}}</p>
-              <small>Categoría y restaurante:</small>
-              <p class="my-1" [hidden]="product.category !== 'platos'">Platos de comida</p>
-              <p class="my-1" [hidden]="product.category !== 'bebidas'">Bebidas</p>
-              <p class="my-1" [hidden]="product.restaurant !== 'brunch'">Brunch & Munch</p>
-              <p class="my-1" [hidden]="product.restaurant !== 'sushi'">Sushi Saki</p>
-              <p class="my-1" [hidden]="product.restaurant !== 'pizzeria'">La Pizzetta</p>
-            </ul>
-          </div>
-
-          <div class="crud-icons">
-            <div class="dropdown-center">
-              <button class="btn btn-warning dropdown-toggle more-info-btn my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisProduct(product)">
-                <i class="bi bi-pencil-square"></i> Editar
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark px-2">
-                <app-edit-this-product [product]="product"></app-edit-this-product>
-              </ul>
-            </div>
-            <!-- <button type="button" class="btn btn-warning more-info-btn my-1" data-bs-toggle="modal" data-bs-target="#editModal" (click)="getThisProduct(product)">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Estás editando a {{this.thisProduct.name}}</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <app-edit-this-product [product]="thisProduct"></app-edit-this-product>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <div class="dropdown-center">
-              <button class="btn btn-danger dropdown-toggle more-info-btn mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisProduct(product)">
-                <i class="bi bi-trash3"></i> Eliminar
-              </button>
-              <ul class="dropdown-menu dropdown-menu-dark px-2">
-                <app-delete-this-product [product]="product"></app-delete-this-product>
-              </ul>
-            </div>
-            <!-- <div>
-              <button type="button" class="btn btn-danger more-info-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="getThisProduct(product)">
-                <i class="bi bi-trash3"></i> Eliminar
-              </button>
-              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar usuario {{this.thisProduct.name}}</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <h1>¿Seguro que quieres eliminar a {{this.thisProduct.name}} {{this.thisProduct.lastName}}?</h1>
-                      <h3>Estos cambios son irreversibles</h3>
-                      <app-delete-this-product [product]="thisProduct"></app-delete-this-product>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-          </div>
+      <div class="product-card">
+        <div class="image-box">
+          <img [src]="product.image" class="product-image" alt="...">
         </div>
+
+        <div class="info-box">
+          <div class="product-info">
+            <h2 class="mb-0">{{product.name}}</h2>
+            <div class="restaurantPrice">
+              <h5 class="mb-2" [hidden]="this.product.restaurant !== ''">Todos los restaurantes</h5>
+              <h5 class="mb-2" [hidden]="this.product.restaurant !== 'pizzeria'">Restaurante La Pizzetta</h5>
+              <h5 class="mb-2" [hidden]="this.product.restaurant !== 'sushi'">Restaurante Sushi Saki</h5>
+              <h5 class="mb-2" [hidden]="this.product.restaurant !== 'brunch'">Restaurante Brunch & Munch</h5>
+              <h5 class="mx-3 mb-2">{{this.product.price}} €</h5>
+            </div>
+          </div>
+          <!-- Buttons -->
+          <button type="button" class="btn btn-dark more-info-btn my-1" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="getThisProduct(product)">
+            <i class="bi bi-info-square"></i> Más información
+          </button>
+          <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Información de {{this.thisProduct.name}}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <small>ID del producto:</small>
+                  <p>{{this.thisProduct._id}}</p>
+                  <small>Nombre del producto:</small>
+                  <p>{{this.thisProduct.name}}</p>
+                  <small>Precio:</small>
+                  <p>{{this.thisProduct.price}} €</p>
+                  <small>Ingredientes:</small>
+                  <p>{{this.thisProduct.ingredients}}</p>
+                  <small>Imagen:</small>
+                  <p>{{this.thisProduct.image}}</p>
+                  <small>Categoría:</small>
+                  <p class="my-1" [hidden]="this.thisProduct.category !== 'plates'">Platos de comida</p>
+                  <p class="my-1" [hidden]="this.thisProduct.category !== 'drinks'">Bebidas</p>
+                  <small>Restaurante:</small>
+                  <p class="my-1" [hidden]="this.thisProduct.restaurant !== ''">Todos los restaurantes</p>
+                  <p class="my-1" [hidden]="this.thisProduct.restaurant !== 'brunch'">Brunch & Munch</p>
+                  <p class="my-1" [hidden]="this.thisProduct.restaurant !== 'sushi'">Sushi Saki</p>
+                  <p class="my-1" [hidden]="this.thisProduct.restaurant !== 'pizzeria'">La Pizzetta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-warning more-info-btn my-1" data-bs-toggle="modal" data-bs-target="#editModal" (click)="getThisProduct(product)">
+            <i class="bi bi-pencil-square"></i> Editar
+          </button>
+          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Estás editando a {{this.thisProduct.name}}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <app-edit-this-product [product]="thisProduct"></app-edit-this-product>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-danger more-info-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="getThisProduct(product)">
+            <i class="bi bi-trash3"></i> Eliminar producto
+          </button>
+          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Estás a punto de eliminar el producto {{this.thisProduct.name}}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h1>¿Seguro que quieres eliminar el producto {{this.thisProduct.name}}?</h1>
+                  <h3>Estos cambios son irreversibles</h3>
+                  <app-delete-this-product [product]="thisProduct"></app-delete-this-product>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </li>
   </ul>

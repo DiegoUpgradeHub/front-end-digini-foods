@@ -66,6 +66,14 @@ export class ProductsService {
       catchError(this.handleError)
     )
   };
+  //Editar un producto desde All Products
+  editThisProduct(product: Product, id: string ): Observable<any> {
+    let api = `${this.endpoint}/products/edit/${id}`;
+    return this.http.put(api, product)
+    .pipe(
+      catchError(this.handleError)
+    )
+  };
 
   //Eliminar un producto
   deleteProduct(product: Product): Observable<any> {
@@ -73,6 +81,15 @@ export class ProductsService {
     let id = product._id
     let api = `${this.endpoint}/products/delete/${id}`;
     console.log(api)
+    return this.http.delete(api)
+    .pipe(
+      catchError(this.handleError)
+    )
+  };
+
+  //Eliminar un producto
+  deleteThisProduct(id: string): Observable<any> {
+    let api = `${this.endpoint}/products/delete/${id}`;
     return this.http.delete(api)
     .pipe(
       catchError(this.handleError)

@@ -72,6 +72,10 @@ export class AllProductComponent {
   getBrunch(){
     this.productsList = this.productsList.filter(product => product.restaurant == 'brunch');
   }
+  //Obetener productos de Brunch & Munch
+  getInAllRestaurants(){
+    this.productsList = this.productsList.filter(product => product.restaurant == '');
+  }
   //Obetener productos categoría plates
   getPlates(){
     this.productsList = this.productsList.filter(product => product.category == 'plates');
