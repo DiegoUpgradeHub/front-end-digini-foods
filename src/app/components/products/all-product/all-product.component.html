@@ -2,9 +2,21 @@
   <h1 class="mt-3">Productos del grupo DiGiNi</h1>
   <div class="buttons-top">
     <button (click)="this.authService.userProfile()" class="btn btn-dark top-buttons">Atrás</button>
-    <button role="button" routerLinkActive="active" routerLink="/create-product" type="button" class="btn btn-success top-buttons">
+    <button type="button" class="btn btn-success top-buttons" data-bs-toggle="modal" data-bs-target="#createModal">
       Crear producto
     </button>
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <app-create-product></app-create-product>
+          </div>
+        </div>
+      </div>
   </div>
 
   <div class="input-group mb-3 search-bar">
@@ -78,6 +90,7 @@
               <p class="my-1" [hidden]="product.restaurant !== 'pizzeria'">La Pizzetta</p>
             </ul>
           </div>
+
           <div class="crud-icons">
             <div class="dropdown-center">
               <button class="btn btn-warning dropdown-toggle more-info-btn my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisProduct(product)">
@@ -87,6 +100,23 @@
                 <app-edit-this-product [product]="product"></app-edit-this-product>
               </ul>
             </div>
+            <!-- <button type="button" class="btn btn-warning more-info-btn my-1" data-bs-toggle="modal" data-bs-target="#editModal" (click)="getThisProduct(product)">
+              <i class="bi bi-pencil-square"></i> Editar
+            </button>
+            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Estás editando a {{this.thisProduct.name}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <app-edit-this-product [product]="thisProduct"></app-edit-this-product>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
             <div class="dropdown-center">
               <button class="btn btn-danger dropdown-toggle more-info-btn mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="getThisProduct(product)">
                 <i class="bi bi-trash3"></i> Eliminar
@@ -95,6 +125,27 @@
                 <app-delete-this-product [product]="product"></app-delete-this-product>
               </ul>
             </div>
+            <!-- <div>
+              <button type="button" class="btn btn-danger more-info-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="getThisProduct(product)">
+                <i class="bi bi-trash3"></i> Eliminar
+              </button>
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar usuario {{this.thisProduct.name}}</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h1>¿Seguro que quieres eliminar a {{this.thisProduct.name}} {{this.thisProduct.lastName}}?</h1>
+                      <h3>Estos cambios son irreversibles</h3>
+                      <app-delete-this-product [product]="thisProduct"></app-delete-this-product>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
           </div>
         </div>
       </div>

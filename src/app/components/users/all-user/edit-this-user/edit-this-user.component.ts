@@ -13,7 +13,6 @@ export class EditThisUserComponent {
   editUserForm!: FormGroup;
 
   @Input() user: any;
-  @Input() thisUser: any;
 
   constructor(
     public fb: FormBuilder,

@@ -15,9 +15,9 @@ export class AllUserComponent implements OnInit {
   usersList: User[] = [];
   editForm!: FormGroup;
 
-  protected readonly clearSubscriptions$ = new Subject();
-
   thisUser: any = {};
+
+  protected readonly clearSubscriptions$ = new Subject();
 
   constructor(
     public fb: FormBuilder,
@@ -44,13 +44,5 @@ export class AllUserComponent implements OnInit {
     console.log(user);
     this.thisUser = user;
   }
-
-  // editUser(id: string) {
-  //   this.router.navigate(['/update-use/' + id]);
-  // }
-
-  // deleteUser(id: string) {
-  //   this.router.navigate(['/delete-use/' + id]);
-  // }
 
 }
