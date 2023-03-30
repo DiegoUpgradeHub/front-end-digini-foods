@@ -2,21 +2,33 @@
 <!-- Carta con info del usuario -->
   <div class="user-info card bg-warning">
     <div class="row g-0">
+
       <div class="col-4">
         <img class="img-fluid rounded-start profile-image" src="https://cdn-icons-png.flaticon.com/512/2102/2102647.png" class="card-img-top" alt="profile-image">
         <!-- CRUD Usuarios -->
-        <div [hidden]="this.currentUser.role !== 'waiter'" >
-          <h2>Administración usuarios</h2>
-          <div class="btn-group-vertical crud-users" role="group" aria-label="Vertical button group">
-            <button role="button" [hidden]="this.currentUser.role == 'waiter'" routerLinkActive="active" routerLink="/update-user/{{this.currentUser.id}}" type="button" class="btn btn-dark">
-              Editar perfil de {{this.currentUser.name}}
-            </button>
-            <button (click)="logout()" role="button" type="button" class="btn btn-danger">
-              Cerrar sesión
-            </button>
+        <div [hidden]="this.currentUser.role !== 'waiter'">
+          <button type="button" class="btn btn-dark my-2" data-bs-toggle="modal" data-bs-target="#waiterModal">
+            Editar mis datos
+          </button>
+          <div class="modal fade" id="waiterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Estás editando los datos de {{this.currentUser.name}} {{this.currentUser.lastName}}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <app-edit-user></app-edit-user>
+                </div>
+              </div>
+            </div>
           </div>
+          <button (click)="logout()" role="button" type="button" class="btn btn-danger">
+            Cerrar sesión
+          </button>
         </div>
       </div>
+
       <div class="col-8">
         <div class="card-body">
           <h2 class="card-title">Perfil de {{this.currentUser.name}}</h2>
@@ -71,14 +83,14 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#createModal">
+      <button [hidden]="this.currentUser.role !== 'admin'" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#createModal">
         Crear usuario
       </button>
       <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Estás creando un usuario</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -87,7 +99,7 @@
           </div>
         </div>
       </div>
-      <button role="button" routerLinkActive="active" routerLink="/all-user/" type="button" class="btn btn-dark">
+      <button [hidden]="this.currentUser.role !== 'admin'" role="button" routerLinkActive="active" routerLink="/all-user/" type="button" class="btn btn-dark">
         Ver usuarios
       </button>
     </div>

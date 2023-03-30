@@ -1,12 +1,4 @@
 <div class="delete-user-page">
-
-  <button
-    (click)="this.authService.userProfile()"
-    class="btn btn-dark"
-  >
-    <p class="btn-text">Atrás</p>
-  </button>
-
   <form [formGroup]="deleteForm" (ngSubmit)="deletingUser(this.deleteForm.value._id)">
       <h2>Formulario para eliminar usuarios</h2>
       <div class="form-floating mb-3">
@@ -15,12 +7,6 @@
       </div>
       <div class="btn-group" role="group" aria-label="Basic example">
         <button type="submit" class="btn btn-warning">Eliminar usuario</button>
-        <!-- <button
-          (click)="this.authService.userProfile()"
-          class="btn btn-dark"
-        >
-          Cancelar
-        </button> -->
       </div>
   </form>
 

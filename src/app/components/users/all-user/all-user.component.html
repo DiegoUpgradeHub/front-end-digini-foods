@@ -11,7 +11,7 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Estás creando un usuario</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -70,33 +70,46 @@
           <h2>{{user.name}}</h2>
           <h3 class="ms-1">{{user.lastName}}</h3>
         </div>
-        <h5>{{user.role}}</h5>
-        <div class="dropdown-center">
-          <button class="btn btn-dark dropdown-toggle more-info-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Más información
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark px-2">
-            <small>ID del usuario:</small>
-            <p>{{user._id}}</p>
-            <small>Cumpleaños:</small>
-            <p>{{user.age | date:'dd/MM'}}</p>
-            <small>Email:</small>
-            <p>{{user.email}}</p>
-            <small>Fecha de inicio:</small>
-            <p>{{user.startDate | date:'dd/MM/yyyy'}}</p>
-            <small>Lugar y puesto de trabajo:</small>
-            <p class="my-1" [hidden]="user.workplace !== 'pizzeria'">La Pizzeta</p>
-            <p class="my-1" [hidden]="user.workplace !== 'sushi'">Sushi Saki</p>
-            <p class="my-1" [hidden]="user.workplace !== 'brunch'">Brunch & Munch</p>
-            <p class="my-1" [hidden]="user.workplace !== 'office'">Oficinas centrales</p>
-            <p class="my-1" [hidden]="user.role !== 'waiter'">Equipo de restauración</p>
-            <p class="my-1" [hidden]="user.role !== 'marketing'">Equipo de marketing</p>
-            <p class="my-1" [hidden]="user.role !== 'admin'">Equipo de Administración</p>
-          </ul>
+        <h5 [hidden]="this.user.role !== 'waiter'">Equipo de restauración</h5>
+        <h5 [hidden]="this.user.role !== 'marketing'">Equipo de marketing</h5>
+        <h5 [hidden]="this.user.role !== 'admin'">Equipo de Administración</h5>
+        <button type="button" class="btn btn-dark more-info-btn my-1" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="getThisUser(user)">
+          <i class="bi bi-info-square"></i> Más información
+        </button>
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Información de {{this.thisUser.name}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <small>ID del usuario:</small>
+                <p>{{this.thisUser._id}}</p>
+                <small>Nombre y apellidos:</small>
+                <p>{{this.thisUser.name}} {{this.thisUser.lastName}}</p>
+                <small>Cumpleaños:</small>
+                <p>{{this.thisUser.age | date:'dd/MM'}}</p>
+                <small>Email:</small>
+                <p>{{this.thisUser.email}}</p>
+                <small>Fecha de inicio:</small>
+                <p>{{this.thisUser.startDate | date:'dd/MM/yyyy'}}</p>
+                <small>Lugar de trabajo:</small>
+                <p [hidden]="this.thisUser.workplace !== 'pizzeria'">La Pizzeta</p>
+                <p [hidden]="this.thisUser.workplace !== 'sushi'">Sushi Saki</p>
+                <p [hidden]="this.thisUser.workplace !== 'brunch'">Brunch & Munch</p>
+                <p [hidden]="this.thisUser.workplace !== 'office'">Oficinas centrales</p>
+                <small>Equipo de trabajo:</small>
+                <p [hidden]="this.thisUser.role !== 'waiter'">Equipo de restauración</p>
+                <p [hidden]="this.thisUser.role !== 'marketing'">Equipo de marketing</p>
+                <p [hidden]="this.thisUser.role !== 'admin'">Equipo de Administración</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <button type="button" class="btn btn-warning more-info-btn my-1" data-bs-toggle="modal" data-bs-target="#editModal" (click)="getThisUser(user)">
-          Editar usuario
+          <i class="bi bi-pencil-square"></i> Editar usuario
         </button>
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -113,13 +126,13 @@
         </div>
 
         <button type="button" class="btn btn-danger more-info-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="getThisUser(user)">
-          Eliminar usuario
+          <i class="bi bi-trash3"></i> Eliminar usuario
         </button>
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar usuario {{this.thisUser.name}}</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Estás a punto de eliminar a {{this.thisUser.name}}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
