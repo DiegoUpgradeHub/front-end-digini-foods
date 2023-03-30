@@ -20,7 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { DeleteFoodComponent } from './components/restaurant-pizza-menu/components/delete-food/delete-food.component';
 import { EditFoodComponent } from './components/restaurant-pizza-menu/components/edit-food/edit-food.component';
 import { CreateFoodComponent } from './components/restaurant-pizza-menu/components/create-food/create-food.component';
-
+import { ViewFoodDetailsComponent } from './components/restaurant-pizza-menu/components/view-food-details/view-food-details.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CreateFoodComponent } from './components/restaurant-pizza-menu/componen
     DeleteFoodComponent,
     EditFoodComponent,
     CreateFoodComponent,
+    ViewFoodDetailsComponent,
 
   ],
   imports: [
@@ -39,12 +41,14 @@ import { CreateFoodComponent } from './components/restaurant-pizza-menu/componen
     RestaurantPizzaRoutingModule,
     FormsModule,
     ProductsModule,
+    ReactiveFormsModule,
+
     //Ngx Bootstrap
     AccordionModule,
     //Angular Material
     CdkTableModule,
     MatButtonModule,
-    ReactiveFormsModule
+    MatButtonToggleModule
 
   ]
 })
