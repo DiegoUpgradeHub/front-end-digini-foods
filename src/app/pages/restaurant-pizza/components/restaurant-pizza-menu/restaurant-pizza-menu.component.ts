@@ -21,24 +21,32 @@ export class RestaurantPizzaMenuComponent {
 
   productInfo: any = {}
 
+  someExpression:any;
+
 
   constructor (
     private productsService: ProductsService,
     public authService: AuthService
-    ) {}
+    ) {
+      this.someExpression = null;
+    }
+
+    ngOnInit():void {
+      this.getAllProducts();
+    }
+
+    getAllProducts(){
+      this.productsService.getProducts().subscribe((response)=>{
+        this.productList = response;
+        this.drinks = this.productList.filter(drink => drink.category ===  'drinks' )
+        this.plates = this.productList.filter(product => (product.category === 'plates' && product.restaurant === 'pizzeria') )
+        //console.log(this.productList)
+      });
+    }
 
 
 
-  public getProducts(newState:number):void{
 
-    this.productsService.getProducts().subscribe((response)=>{
-      this.productList = response;
-      this.plates = this.productList.filter(product => (product.category === 'plates' && product.restaurant === 'pizzeria') )
-      this.drinks = this.productList.filter(drink => drink.category ===  'drinks' )
-      console.log(this.productList)
-      this.showSection = newState;
-    });
-  }
 
   public triggerDeleteConfrimation(newState: boolean): void {
     this.deleteConfirmation = newState;
@@ -48,6 +56,14 @@ export class RestaurantPizzaMenuComponent {
   getProductInfo(plate:any): void {
     this.productInfo = plate;
     console.log(this.productInfo);
+  }
+
+  toggleAttribute() {
+    if (this.someExpression==null) {
+      this.someExpression = '';
+    } else {
+      this.someExpression = null;
+    }
   }
 
 
