@@ -27,7 +27,43 @@
   &-button{
     width:100%;
   }
+}
 
+mat-button-toggle-group {
+  box-shadow: none;
+  border: none;
+}
+
+//Toggle button
+.mat-button-toggle{
+  background-color: gray;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+
+}
+.mat-button-toggle:hover{
+  background-image: linear-gradient(to right, #485563 0%, #29323c  51%, #485563  100%);
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.mat-button-toggle-checked{
+  background-image: linear-gradient(to right, #485563 0%, #29323c  51%, #485563  100%);
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
 }
 
 
@@ -138,5 +174,7 @@
   }
 
 }
+
+
 
 
