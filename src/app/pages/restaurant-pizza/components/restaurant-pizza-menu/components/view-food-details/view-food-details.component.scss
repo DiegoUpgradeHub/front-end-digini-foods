@@ -1,0 +1,50 @@
+.image{
+  max-width:330pt;
+  border-radius: 20pt;
+
+  &-container{
+    display:flex;
+    justify-content: center
+  }
+}
+
+.text-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__item{
+    margin: 10pt;
+  }
+
+  &__ingredients{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  &__intolerancies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+}
+
+.action-icon{
+  width:30pt;
+  margin: 10pt;
+}
+
+
+@media (max-width: 500px) {
+
+  .image{
+    object-fit: cover;
+    max-width:250pt;
+    border-radius: 20pt;
+  }
+
+}
