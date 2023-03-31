@@ -5,15 +5,35 @@
   justify-content: center;
 
   &-container {
-    width:900pt;
+    width:800pt;
     display:flex;
     flex-direction: column;
     align-items: center;
   }
+
+  //Título de la carta
+  &-header{
+    font-size: 30pt;
+  }
+
+  //Contenedor de botones de la carta
+  &-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  //Botones de la carta
+  &-button{
+    width:100%;
+  }
+
 }
+
 
 //Contenedor de tarjeta
 .card-container{
+  margin-top:70pt;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -36,6 +56,7 @@
   &-img-top{
     border-top-left-radius: 20pt;
     border-top-right-radius: 20pt;
+    max-height: 150pt;
   }
 
   &-body{
@@ -43,25 +64,13 @@
     flex-direction: column;
     align-items: center;
    }
+
+   &-item{
+    height: 40pt;
+   }
 }
 
 
-//Título de la carta
-.menu-header{
-  font-size: 30pt;
-}
-
-
-//Botones de la carta
-.menu-buttons{
-  height: 100pt;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
-  align-content: center;
-  flex-wrap: wrap;
-}
 
 //Botón "Cerrar"
 .close-buttons {
@@ -82,6 +91,52 @@
       justify-content: center;
     }
   }
+}
+
+
+.cards{
+  display:flex;
+  border:solid 1pt gray;
+  border-radius: 20pt;
+  margin-top:50pt;
+
+}
+
+.card-image-section{
+  display:flex;
+  //width:130pt;
+}
+
+.image{
+  max-width: 90pt;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20pt;
+  border-bottom-left-radius: 20pt;
+}
+
+
+.card-text-section{
+  max-width:180pt;
+  margin: 10pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+@media (max-width: 500px) {
+
+  .card-text-section{
+    max-width:150pt;
+    margin: 10pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
 }
 
 

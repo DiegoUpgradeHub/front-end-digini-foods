@@ -1,46 +1,45 @@
 <div class="menu">
    <!--Contenedor de menu-->
   <div class="menu-container">
-
     <!--Titulo de la sección-->
     <div class="menu-header">
       <h1 class="header">Carta</h1>
     </div>
-
     <!--Botones de menu-->
-    <div class="menu-buttons">
-      <mat-button-toggle-group  #toggleGroup="matButtonToggleGroup" multiple>
-        <mat-button-toggle mat-raised-button class="button"  #toggleBtn>Platos</mat-button-toggle>
-        <mat-button-toggle mat-raised-button class="button"  #toggleBtnTwo>Bebidas</mat-button-toggle>
-      </mat-button-toggle-group>
-    </div>
-
+    <mat-button-toggle-group class="menu-buttons" #toggleGroup="matButtonToggleGroup" >
+      <mat-button-toggle  mat-raised-button class="menu-button"  #toggleBtn>Platos</mat-button-toggle>
+      <mat-button-toggle  mat-raised-button class="menu-button"  #toggleBtnTwo>Bebidas</mat-button-toggle>
+    </mat-button-toggle-group>
 
 
     <!--Sección platos-->
     <div class="card-container" *ngIf ="toggleBtn.checked">
-
-       <!--Botón "Crear Producto"-->
-
-       <div  class="create-button" *ngIf="this.authService.isLoggedIn">
+      <!--Botón "Crear Producto"-->
+      <div  class="create-button" *ngIf="this.authService.isLoggedIn">
         <button
         mat-flat-button color="accent"
         class="button"
         data-bs-toggle="modal"
         data-bs-target="#createModal"
-        routerLink="create-product"
-        >Crear Producto</button>
+        routerLink="create-product">
+        Crear Producto
+        </button>
       </div>
 
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
-      <!--Tarjeta-->
-      <div class="card shadow" style="width: 20rem;" *ngFor="let plate of plates;">
-          <img [src]="plate.image" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2>{{plate.name}}</h2>
-            <h3>{{plate.price}}</h3>
-            <p class="card-text">{{plate.ingredients}}</p>
+        <!--Tarjeta-->
+        <div class="cards shadow border-light" *ngFor="let plate of plates;">
+          <div class="card-image-section">
+            <div class="image-container">
+              <img [src]="plate.image" class="image">
+            </div>
+          </div>
+          <div class="card-text-section">
+            <h2 clas="card-items">{{plate.name}}</h2>
+            <p clas="card-items">{{plate.ingredients}}</p>
+            <h3 clas="card-items">{{plate.price}} €</h3>
+            <p class="card-items"></p>
             <div class="action-button__container">
               <img
               class="action-button"
@@ -48,8 +47,7 @@
               (click)="getProductInfo(plate)"
               data-bs-toggle="modal"
               data-bs-target="#viewDetailsModal"
-              [routerLink]= "['view-details', plate.name]"
-              >
+              [routerLink]= "['view-details', plate.name]">
               <img
               class="action-button"
               src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
@@ -57,8 +55,7 @@
               (click)="getProductInfo(plate)"
               data-bs-toggle="modal"
               data-bs-target="#editModal"
-              [routerLink]= "['edit-product', plate.name]"
-              >
+              [routerLink]= "['edit-product', plate.name]">
               <img
               class="action-button"
               src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
@@ -69,64 +66,72 @@
               [routerLink]= "['delete-product']">
             </div>
           </div>
-
-      </div>
-
-
-    </div>
-
-
-    </div>
-
-
-        <!--Sección bebidas-->
-        <div class="card-container" *ngIf ="toggleBtnTwo.checked">
-
-          <!--Contenedor de tarjeta-->
-          <div class="card-container__card-section">
-          <!--Tarjeta-->
-          <div class="card shadow" style="width: 20rem;" *ngFor="let drink of drinks;">
-              <img [src]="drink.image" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h2>{{drink.name}}</h2>
-                <h3>{{drink.price}}</h3>
-                <p class="card-text">{{drink.ingredients}}</p>
-                <div class="action-button__container">
-                  <img
-                  class="action-button"
-                  src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg"
-                  (click)="getProductInfo(drink)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#viewDetailsModal"
-                  [routerLink]= "['view-details', drink.name]"
-                  >
-                  <img
-                  class="action-button"
-                  src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
-                  *ngIf="this.authService.isLoggedIn"
-                  (click)="getProductInfo(drink)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#editModal"
-                  [routerLink]= "['edit-product', drink.name]"
-                  >
-                  <img
-                  class="action-button"
-                  src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
-                  *ngIf="this.authService.isLoggedIn"
-                  (click)="getProductInfo(drink)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                  [routerLink]= "['delete-product']">
-                </div>
-              </div>
-
-          </div>
-
-
         </div>
-
-
       </div>
+
+    </div>
+
+
+    <!--Sección bebidas-->
+    <div class="card-container" *ngIf ="toggleBtnTwo.checked">
+      <!--Botón "Crear Producto"-->
+      <div  class="create-button" *ngIf="this.authService.isLoggedIn">
+        <button
+            mat-flat-button color="accent"
+            class="button"
+            data-bs-toggle="modal"
+            data-bs-target="#createModal"
+            routerLink="create-product">Crear Producto
+        </button>
+      </div>
+      <!--Contenedor de tarjeta-->
+      <div class="card-container__card-section">
+        <!--Tarjeta-->
+        <div class="cards shadow border-light" *ngFor="let plate of drinks;">
+          <div class="card-image-section">
+            <div class="image-container">
+              <img [src]="plate.image" class="image">
+            </div>
+          </div>
+          <div class="card-text-section">
+            <h2 clas="card-items">{{plate.name}}</h2>
+            <p clas="card-items">{{plate.ingredients}}</p>
+            <h3 clas="card-items">{{plate.price}} €</h3>
+            <p class="card-items"></p>
+            <div class="action-button__container">
+              <img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/eye-svgrepo-com.svg"
+              (click)="getProductInfo(plate)"
+              data-bs-toggle="modal"
+              data-bs-target="#viewDetailsModal"
+              [routerLink]= "['view-details', plate.name]">
+              <img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/edit-svgrepo-com.svg"
+              *ngIf="this.authService.isLoggedIn"
+              (click)="getProductInfo(plate)"
+              data-bs-toggle="modal"
+              data-bs-target="#editModal"
+              [routerLink]= "['edit-product', plate.name]">
+              <img
+              class="action-button"
+              src="assets/images/pizza-menu-icons/delete-svgrepo-com.svg"
+              *ngIf="this.authService.isLoggedIn"
+              (click)="getProductInfo(plate)"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              [routerLink]= "['delete-product']">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
 
 </div>
 
