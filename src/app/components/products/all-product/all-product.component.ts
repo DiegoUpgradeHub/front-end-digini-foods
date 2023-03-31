@@ -14,12 +14,15 @@ import { Product } from 'src/app/core/models/product';
 export class AllProductComponent {
 
   productsList: Product[] = [];
+  filteredList: Product[] = [];
+
   editForm!: FormGroup;
 
   thisProduct: any = {};
 
   searchBarValue!: string;
 
+  protected readonly clearSubscriptions$ = new Subject();
 
   constructor(
     public fb: FormBuilder,
@@ -33,9 +36,17 @@ export class AllProductComponent {
     this.getProducts();
   }
 
+  ngOnDestroy(): void {
+    this.clearSubscriptions$.complete();
+  }
+
+  //Obtener todos los productos
   getProducts(): void{
-    this.productsService.getProducts().subscribe((response)=>{
-      this.productsList = response;
+    this.productsService.getProducts().pipe(takeUntil(this.clearSubscriptions$),).subscribe((data)=>{
+      this.productsList = data;
+      this.filteredList = data;
+      console.log('Products list: ', this.productsList);
+      console.log('filtered: ', this.filteredList);
     });
   }
 
@@ -53,7 +64,7 @@ export class AllProductComponent {
   }
   //Buscar un producto
   searchProduct(){
-    this.productsList = this.productsList.filter(product => product.name == this.searchBarValue)
+    this.filteredList = this.productsList.filter(product => product.name.toLowerCase() == this.searchBarValue.toLowerCase())
     console.log(this.productsList)
   }
   //Obtener información del input del searchbar
@@ -62,27 +73,27 @@ export class AllProductComponent {
   }
   //Obetener productos de La Pizzetta
   getPizzeria(){
-    this.productsList = this.productsList.filter(product => product.restaurant == 'pizzeria');
+    this.filteredList = this.productsList.filter(product => product.restaurant == 'pizzeria');
   }
   //Obetener productos de Sushi Saki
   getSushi(){
-    this.productsList = this.productsList.filter(product => product.restaurant == 'sushi');
+    this.filteredList = this.productsList.filter(product => product.restaurant == 'sushi');
   }
   //Obetener productos de Brunch & Munch
   getBrunch(){
-    this.productsList = this.productsList.filter(product => product.restaurant == 'brunch');
+    this.filteredList = this.productsList.filter(product => product.restaurant == 'brunch');
   }
   //Obetener productos de Brunch & Munch
   getInAllRestaurants(){
-    this.productsList = this.productsList.filter(product => product.restaurant == '');
+    this.filteredList = this.productsList.filter(product => product.restaurant == '');
   }
   //Obetener productos categoría plates
   getPlates(){
-    this.productsList = this.productsList.filter(product => product.category == 'plates');
+    this.filteredList = this.productsList.filter(product => product.category == 'plates');
   }
   //Obetener productos categoría drinks
   getDrinks(){
-    this.productsList = this.productsList.filter(product => product.category == 'drinks');
+    this.filteredList = this.productsList.filter(product => product.category == 'drinks');
   }
 
 }

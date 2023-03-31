@@ -13,6 +13,8 @@ import { User } from 'src/app/core/models/user';
 export class AllUserComponent implements OnInit {
 
   usersList: User[] = [];
+  filteredList: User[] = [];
+
   editForm!: FormGroup;
 
   thisUser: any = {};
@@ -39,6 +41,7 @@ export class AllUserComponent implements OnInit {
   getAllUsers() {
     return this.authService.getUsers().pipe(takeUntil(this.clearSubscriptions$),).subscribe((data) => {
       this.usersList = data
+      this.filteredList = data
     })
   }
   //Obtener este usuario
@@ -48,7 +51,7 @@ export class AllUserComponent implements OnInit {
   }
   //Buscar un usuario
   searchUser(){
-    this.usersList = this.usersList.filter(user => user.name == this.searchBarValue)
+    this.filteredList = this.usersList.filter(user => user.name.toLowerCase() == this.searchBarValue.toLowerCase())
     console.log(this.usersList)
   }
   //Obtener información del input del searchbar
@@ -57,31 +60,31 @@ export class AllUserComponent implements OnInit {
   }
   //Obetener usuarios de La Pizzetta
   getPizzeria(){
-    this.usersList = this.usersList.filter(user => user.workplace == 'pizzeria');
+    this.filteredList = this.usersList.filter(user => user.workplace == 'pizzeria');
   }
   //Obetener usuarios de Sushi Saki
   getSushi(){
-    this.usersList = this.usersList.filter(user => user.workplace == 'sushi');
+    this.filteredList = this.usersList.filter(user => user.workplace == 'sushi');
   }
   //Obetener usuarios de Brunch & Munch
   getBrunch(){
-    this.usersList = this.usersList.filter(user => user.workplace == 'brunch');
+    this.filteredList = this.usersList.filter(user => user.workplace == 'brunch');
   }
   //Obetener usuarios de Oficinas Centrales
   getOffice(){
-    this.usersList = this.usersList.filter(user => user.workplace == 'office');
+    this.filteredList = this.usersList.filter(user => user.workplace == 'office');
   }
   //Obetener usuarios Restauración
   getWaiter(){
-    this.usersList = this.usersList.filter(user => user.role == 'waiter');
+    this.filteredList = this.usersList.filter(user => user.role == 'waiter');
   }
   //Obetener usuarios Marketing
   getMarketing(){
-    this.usersList = this.usersList.filter(user => user.role == 'marketing');
+    this.filteredList = this.usersList.filter(user => user.role == 'marketing');
   }
   //Obetener usuarios Administración
   getAdmin(){
-    this.usersList = this.usersList.filter(user => user.role == 'admin');
+    this.filteredList = this.usersList.filter(user => user.role == 'admin');
   }
 
 }

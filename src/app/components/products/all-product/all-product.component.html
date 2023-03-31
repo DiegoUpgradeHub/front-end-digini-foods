@@ -34,37 +34,37 @@
 
   <div class="filters">
     <div class="form-check form-check-inline" (click)="getProducts()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio1" value="option1">
       <label class="form-check-label" for="inlineRadio1">Todos los productos</label>
     </div>
     <div class="form-check form-check-inline" (click)="getPizzeria()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio2" value="option2">
       <label class="form-check-label" for="inlineRadio2">La Pizzetta</label>
     </div>
     <div class="form-check form-check-inline" (click)="getSushi()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio3" value="option3">
       <label class="form-check-label" for="inlineRadio3">Sushi Saki</label>
     </div>
     <div class="form-check form-check-inline" (click)="getBrunch()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio4" value="option4">
       <label class="form-check-label" for="inlineRadio4">Brunch & Munch</label>
     </div>
     <div class="form-check form-check-inline" (click)="getInAllRestaurants()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio5" value="option5">
       <label class="form-check-label" for="inlineRadio5">En todos los restaurantes</label>
     </div>
     <div class="form-check form-check-inline" (click)="getPlates()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio6" value="option6">
       <label class="form-check-label" for="inlineRadio6">Platos</label>
     </div>
     <div class="form-check form-check-inline" (click)="getDrinks()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio7" value="option7">
       <label class="form-check-label" for="inlineRadio7">Bebidas</label>
     </div>
   </div>
 
   <ul class="product-list">
-    <li *ngFor="let product of productsList;">
+    <li *ngFor="let product of filteredList;">
       <div class="product-card">
         <div class="image-box">
           <img [src]="product.image" class="product-image" alt="...">
