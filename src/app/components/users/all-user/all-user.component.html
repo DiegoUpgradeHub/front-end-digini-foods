@@ -34,37 +34,37 @@
 
   <div class="filters">
     <div class="form-check form-check-inline" (click)="getAllUsers()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio1" value="option1">
       <label class="form-check-label" for="inlineRadio1">Todos los usuarios</label>
     </div>
     <div class="form-check form-check-inline" (click)="getPizzeria()">
-      <input class="form-check-input" type="radi              o" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio2" value="option2">
       <label class="form-check-label" for="inlineRadio2">La Pizzetta</label>
     </div>
     <div class="form-check form-check-inline" (click)="getSushi()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio3" value="option3">
       <label class="form-check-label" for="inlineRadio3">Sushi Saki</label>
     </div>
     <div class="form-check form-check-inline" (click)="getBrunch()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio4" value="option4">
       <label class="form-check-label" for="inlineRadio4">Brunch & Munch</label>
     </div>
     <div class="form-check form-check-inline" (click)="getWaiter()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio5" value="option5">
       <label class="form-check-label" for="inlineRadio5">Equipo de restaruración</label>
     </div>
     <div class="form-check form-check-inline" (click)="getMarketing()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio6" value="option6">
       <label class="form-check-label" for="inlineRadio6">Equipo de marketing</label>
     </div>
     <div class="form-check form-check-inline" (click)="getAdmin()">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option2">
+      <input class="form-check-input" type="radio" name="radioFilter" id="inlineRadio7" value="option7">
       <label class="form-check-label" for="inlineRadio7">Equipo de administración</label>
     </div>
   </div>
 
   <ul class="users-list">
-    <li *ngFor="let user of usersList; let i = index">
+    <li *ngFor="let user of filteredList; let i = index">
       <div class="user-card">
         <div class="card-tittle">
           <h2>{{user.name}}</h2>
