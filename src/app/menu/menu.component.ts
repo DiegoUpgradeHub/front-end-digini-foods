@@ -12,11 +12,13 @@ import { SharedModule } from '../components/shared/shared.module';
 export class MenuComponent implements OnInit {
 
   constructor(
+    public translateService:TranslateService,
     public authService:AuthService,
     public appComponent: AppComponent
   ) { }
 
   ngOnInit(): void {
+    this.detectBrowserLanguage();
   }
 
   toggleMenu() {
@@ -33,11 +35,21 @@ myAccount(){
   this.authService.userProfile();
 }
 
-setAppLanguages(){
-  this.appComponent.setAppLanguage();
+setEnglish(){
+  this.appComponent.setAppLanguageEnglish();
+}
+
+setSpanish(){
+  this.appComponent.setAppLanguageSpanish();
 }
 
 
+detectBrowserLanguage(){
+     const browserLang = this.translateService.getBrowserLang();
+      if (browserLang === 'es') {
+        console.log('Tu navegador es español')
+    }
+}
 
 }
 

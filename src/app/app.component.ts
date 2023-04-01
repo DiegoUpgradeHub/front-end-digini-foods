@@ -13,12 +13,18 @@ export class AppComponent {
 
   }
 
-  setAppLanguage() {
-    const browserLang = this.translate.getBrowserLang();
-    if (browserLang) {
-      this.translate.use(browserLang);
-    } else {
+
+  
+  setAppLanguageEnglish() {
+    // const browserLang = this.translate.getBrowserLang();
+    // if (browserLang) {
+    //   this.translate.use(browserLang);
+    // } else {
       this.translate.setDefaultLang('en');
-    }
+    //}
+  }
+
+  setAppLanguageSpanish(){
+    this.translate.setDefaultLang('es');
   }
 }
