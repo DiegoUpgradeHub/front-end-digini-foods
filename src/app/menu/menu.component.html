@@ -7,4 +7,8 @@
     <li><a routerLink="/sign-in"*ngIf="this.authService.isLoggedOut">{{ 'Iniciar sesión' | translate }}</a></li>
     <li><a (click)="logout()"*ngIf="this.authService.isLoggedIn">{{ 'Cerrar sesión' | translate }}</a></li>
   </ul>
+  <div class="flags">
+    <img class="flag-icon" src="../../assets/images/pizza-menu-icons/united-kingdom-uk-svgrepo-com.svg" (click)="setAppLanguages()">
+    <img class="flag-icon" src="../../assets/images/pizza-menu-icons/spain-svgrepo-com.svg" (click)="setAppLanguages()">
+  </div>
 </nav>
