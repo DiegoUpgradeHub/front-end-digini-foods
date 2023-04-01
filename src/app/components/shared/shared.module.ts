@@ -10,6 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
+//importacion int
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TranslateModule
   ]
 })
 export class SharedModule { }
