@@ -9,6 +9,27 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
+.accordion-section.one {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Proporción 16:9 */
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -59,3 +80,8 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #4285f4;
 }
+
+.accordion-section {
+  text-align: center;
+}
+
