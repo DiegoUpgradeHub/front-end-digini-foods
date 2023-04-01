@@ -12,7 +12,7 @@ import { User } from '../models/user';
 export class AuthService {
 
   //Definimos el endpoint y los headers para poder realizar la petición
-  endpoint: string = 'http://localhost:4000/api';
+  endpoint: string = 'https://back-end-digini-foods-vercel.vercel.app/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {}; //Aquí almacenaremos el usuario
 

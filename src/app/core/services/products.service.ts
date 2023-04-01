@@ -12,9 +12,7 @@ import { Product } from '../models/product';
 export class ProductsService {
 
   //Definimos el endpoint y header para hacer la API request
-  endpoint: string = 'http://localhost:4000/api';
-  //Este endpoint funciona si está desplegado en Vercel
-  // endpoint: string = 'https://backend-restaurant-menu.vercel.app';
+  endpoint: string = 'https://back-end-digini-foods-vercel.vercel.app/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor (
