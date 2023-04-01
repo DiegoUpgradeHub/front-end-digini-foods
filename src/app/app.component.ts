@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'front-end-digini-foods';
 
   constructor(private translate: TranslateService) {
-    this.setAppLanguage();
+
   }
 
   setAppLanguage() {
@@ -18,7 +18,7 @@ export class AppComponent {
     if (browserLang) {
       this.translate.use(browserLang);
     } else {
-      this.translate.setDefaultLang('es');
+      this.translate.setDefaultLang('en');
     }
   }
 }
