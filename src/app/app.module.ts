@@ -1,4 +1,4 @@
-//Importación de módulos
+// Importación de módulos
 import { SharedModule } from './components/shared/shared.module';
 import { ProductsModule } from './components/products/products.module';
 import { UsersModule } from './components/users/users.module';
@@ -8,22 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/interceptors/authconfig.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient } from '@angular/common/http';
 
-//Importación de componentes
+// Importación de módulos externos
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// Importación de componentes
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-
-
-//Importación componentes CRUD usuarios y productos
-
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +31,13 @@ import { MenuComponent } from './menu/menu.component';
     SharedModule,
     ProductsModule,
     UsersModule,
-
-
-
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {
@@ -47,3 +49,8 @@ import { MenuComponent } from './menu/menu.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// Función para cargar los archivos de traducción
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
