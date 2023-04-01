@@ -1,88 +1,65 @@
 <div class="contact-page">
   <div class="section-one">
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
-            Información de contacto
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="accordion-section one">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24300.758087003192!2d-3.7240931414534866!3d40.417827279342504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287e9fd06215%3A0xd5e109ff23e3d0c1!2sCentro%2C%20Madrid!5e0!3m2!1ses!2ses!4v1680094484486!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <div class="contact-form">
-              <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" [(ngModel)]="contact.name" required minlength="5">
-                  <div class="error-message" *ngIf="contactForm.form.get('name')?.invalid && contactForm.form.get('name')?.dirty || contactForm.form.get('name')?.touched">
-                    <p class="error" *ngIf="contactForm.form.get('name')?.errors?.['required']">
-                      Mandatory Field
-                    </p>
-                    <p class="error" *ngIf="contactForm.form.get('name')?.errors?.['minlength']">
-                      The length of name should be at least 5 characters
-                    </p>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="phoneNumber">Phone number</label>
-                  <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" minlength="9" maxlength="12" placeholder="Your phone number" required [(ngModel)]="contact.phoneNumber">
-                  <p class="error" *ngIf="contactForm.form.get('phoneNumber')?.errors?.['minlength']">Phone number should contain at least 9 numbers</p>
-                </div>
-                <div class="form-group">
-                  <label for="date">Reservation Date:</label>
-                  <input type="date" class="form-control" id="date" name="date" required [(ngModel)]="contact.date" #date="ngModel">
-                  <p class="error" *ngIf="date.errors?.['required']">Please select a valid date</p>
-                </div>
-
-                  <div class="form-group">
-                    <label for="email">E-mail address:</label>
-                    <input type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="your-name@provider.com"
-                    required
-                    maxlength = "250"
-                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                    [(ngModel)]="contact.email">
-                  <p *ngIf="contactForm.form.get('email')?.errors?.['pattern']">Please use the correct format email@email.com</p>
-                  </div>
-
-                  <div class="form-group ">
-                    <label for="description">Description:</label>
-                    <textarea type="textarea"
-                    class="form-control textarea"
-                    id="description"
-                    name="description"
-                    rows="5"
-                    cols="33"
-                    [(ngModel)]="contact.description"></textarea>
-                  </div>
-
-                  <div class="form-group__submit">
-                    <button mat-raised-button type="submit" [disabled]="!contactForm.form.valid">Submit</button>
-                  </div>
-
-                </form>
-              </div>
-
-
-
-
-          </div>
-        </div>
-
-      </div>
-
+    <div class="accordion-section one">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1jnZk9H8Xv7d7AMgI2fw2DrZfjWcwQSM&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
 
-
-  </div>
-
-
-
+    <div class="contact-form">
+      <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" [(ngModel)]="contact.name" required minlength="5">
+          <div class="error-message" *ngIf="contactForm.form.get('name')?.invalid && contactForm.form.get('name')?.dirty || contactForm.form.get('name')?.touched">
+            <p class="error" *ngIf="contactForm.form.get('name')?.errors?.['required']">
+              Mandatory Field
+            </p>
+            <p class="error" *ngIf="contactForm.form.get('name')?.errors?.['minlength']">
+              The length of name should be at least 5 characters
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone number</label>
+          <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" minlength="9" maxlength="12" placeholder="Your phone number" required [(ngModel)]="contact.phoneNumber">
+          <p class="error" *ngIf="contactForm.form.get('phoneNumber')?.errors?.['minlength']">Phone number should contain at least 9 numbers</p>
+        </div>
+        <div class="form-group">
+          <label for="date">Reservation Date:</label>
+          <input type="date" class="form-control" id="date" name="date" required [(ngModel)]="contact.date" #date="ngModel">
+          <p class="error" *ngIf="date.errors?.['required']">Please select a valid date</p>
+        </div>
+<div class="form-group">
+  <label for="email">E-mail address:</label>
+  <input type="email"
+  class="form-control"
+  id="email"
+  name="email"
+  placeholder="your-name@provider.com"
+  required
+  maxlength = "250"
+  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+  [(ngModel)]="contact.email">
+<p *ngIf="contactForm.form.get('email')?.errors?.['pattern']">Please use the correct format email@email.com</p>
 </div>
+
+<div class="form-group ">
+  <label for="description">Description:</label>
+  <textarea type="textarea"
+  class="form-control textarea"
+  id="description"
+  name="description"
+  rows="5"
+  cols="33"
+  [(ngModel)]="contact.description"></textarea>
+</div>
+
+<div class="form-group__submit">
+  <button mat-raised-button type="submit" [disabled]="!contactForm.form.valid">Submit</button>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+
+         
