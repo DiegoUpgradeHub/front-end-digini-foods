@@ -1,18 +1,15 @@
-// Estilos para el footer
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //position: relative;
-  bottom: 1px; /* Ajustar la propiedad bottom para mover el footer hacia abajo */
-  height: 80px;
   background-color: #f5f5f5;
   padding: 0 20px;
+  height: 50px; /* Establecer la altura del footer en 50px */
 
+  /* Los estilos para .logo, .copy y .redes permanecen igual */
   .logo {
     width: 190px;
-    height: 190px;
-    margin-right: 20px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,12 +24,18 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+    margin: 0;
+    height: 100%; /* Establecer la altura en 100% para que ocupe toda la altura del footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .redes {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    height: 100%; /* Establecer la altura en 100% para que ocupe toda la altura del footer */
 
     a {
       margin-left: 10px;
@@ -43,4 +46,10 @@
       height: 25px;
     }
   }
+}
+
+.mat-toolbar {
+  background-color: transparent; /* Establecer el fondo transparente para evitar que se duplique el color de fondo */
+  height: auto; /* Eliminar la altura fija para que se adapte automáticamente */
+  margin-top: auto; /* Alinear el footer en la parte inferior */
 }
