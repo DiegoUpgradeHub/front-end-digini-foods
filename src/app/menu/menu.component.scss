@@ -21,6 +21,7 @@ nav {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 10pt;
     }
 
     .icon-menu {
@@ -40,6 +41,7 @@ nav {
       background-color: #c5c5c5;
       color: #fff;
       padding: 5px 5px;
+      margin-top: 4pt;
     }
   }
 }
@@ -100,6 +102,10 @@ a:hover {
   width:30pt;
   margin:20pt;
 }
+
+
+
 .flags{
   margin: 20pt;
 }
+
