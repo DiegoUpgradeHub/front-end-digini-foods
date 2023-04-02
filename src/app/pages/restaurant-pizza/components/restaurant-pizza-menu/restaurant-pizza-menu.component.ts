@@ -4,7 +4,6 @@ import { ProductsService } from 'src/app/core/services/products.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 
-
 @Component({
   selector: 'app-restaurant-pizza-menu',
   templateUrl: './restaurant-pizza-menu.component.html',

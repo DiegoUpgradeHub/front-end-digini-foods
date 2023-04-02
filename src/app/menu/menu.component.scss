@@ -68,7 +68,7 @@ li {
   }
 }
 
-a {
+  .menu-button {
   color: #333;
   text-decoration: none;
   padding: 5px 10px;
@@ -79,8 +79,9 @@ a {
   }
 }
 
-a:hover {
+.menu-button:hover {
   background-color: #333;
+  text-decoration: none;
   color: #fff;
 }
 
@@ -108,4 +109,9 @@ a:hover {
 .flags{
   margin: 20pt;
 }
-
+button{
+  width:60pt;
+  outline:none;
+  border:none;
+  background-color: none;
+  }
