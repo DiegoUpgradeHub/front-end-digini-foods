@@ -1,10 +1,10 @@
 <div class="edit-user-page">
     <h2>Formulario para editar usuarios</h2>
     <form [formGroup]="editUserForm" (ngSubmit)="editingUser(this.user._id)">
-      <div class="form">
+      <fieldset disabled class="form">
         <label>ID del usuario</label>
         <input type="text" class="form-control mb-2" formControlName="_id" placeholder="Id del usuario" value="{{this.user._id}}">
-      </div>
+      </fieldset>
       <div class="form">
         <label>Nombre</label>
         <input type="text" class="form-control mb-2" formControlName="name" placeholder="Nombre" required value="{{this.user.name}}">
