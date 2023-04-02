@@ -1,11 +1,11 @@
 <nav>
   <span class="icon-menu" (click)="toggleMenu()">&#9776;</span>
   <ul class="menu-items">
-    <li class ="item"><a routerLink="/home">DiGiNi</a></li>
-    <li class ="item"><a routerLink="/restaurant-pizza">{{ 'Pizza Restaurante' | translate }}</a></li>
-    <li class ="item"><a (click)="myAccount()"*ngIf="this.authService.isLoggedIn">{{ 'Mi cuenta' | translate }}</a></li>
-    <li class ="item"><a routerLink="/sign-in"*ngIf="this.authService.isLoggedOut">{{ 'Iniciar sesión' | translate }}</a></li>
-    <li class ="item"><a (click)="logout()"*ngIf="this.authService.isLoggedIn">{{ 'Cerrar sesión' | translate }}</a></li>
+    <li class ="item"><a class="menu-button" routerLink="/home">DiGiNi</a></li>
+    <li class ="item"><a class="menu-button"  routerLink="/restaurant-pizza">{{ 'Pizza Restaurante' | translate }}</a></li>
+    <li class ="item"><a class="menu-button"  (click)="myAccount()"*ngIf="this.authService.isLoggedIn">{{ 'Mi cuenta' | translate }}</a></li>
+    <li class ="item"><a class="menu-button"  routerLink="/sign-in"*ngIf="this.authService.isLoggedOut">{{ 'Iniciar sesión' | translate }}</a></li>
+    <li class ="item"><a class="menu-button"  (click)="logout()"*ngIf="this.authService.isLoggedIn">{{ 'Cerrar sesión' | translate }}</a></li>
   </ul>
   <div class="flags">
     <img class="flag-icon" src="../../assets/images/pizza-menu-icons/united-kingdom-uk-svgrepo-com.svg" (click)="setEnglish()">

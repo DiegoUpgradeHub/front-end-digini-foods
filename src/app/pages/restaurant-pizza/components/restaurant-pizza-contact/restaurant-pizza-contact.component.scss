@@ -3,11 +3,11 @@ h2 {
 }
 
 .contactPage {
-  display: flex;
+  //display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  //width: 100%;
 }
 
 .infoBox {
@@ -38,8 +38,14 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 900px;
+  //max-width: 900px;
   max-height: 500px;
+}
+
+@media screen and (max-width: 1000px) {
+  iframe{
+    width:85%;
+  }
 }
 
 // .contact-form {
