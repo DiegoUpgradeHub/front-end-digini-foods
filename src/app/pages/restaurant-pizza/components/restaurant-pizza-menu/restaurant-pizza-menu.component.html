@@ -4,8 +4,8 @@
 
     <!--Botones de menu-->
     <mat-button-toggle-group class="menu-buttons" #toggleGroup="matButtonToggleGroup" >
-      <mat-button-toggle  mat-raised-button class="menu-button"  #toggleBtn>Platos</mat-button-toggle>
-      <mat-button-toggle  mat-raised-button class="menu-button"  #toggleBtnTwo>Bebidas</mat-button-toggle>
+      <mat-button-toggle  mat-raised-button class="menu-button"  #toggleBtn>{{"Platos" | translate}}</mat-button-toggle>
+      <mat-button-toggle  mat-raised-button class="menu-button"  #toggleBtnTwo>{{"Bebidas" | translate}}</mat-button-toggle>
     </mat-button-toggle-group>
 
 
@@ -20,11 +20,13 @@
         data-bs-toggle="modal"
         data-bs-target="#createModal"
         routerLink="create-product">
-        Crear Producto
+        {{"Crear Producto" | translate}}
         </button>
       </div>
       <!--Contenedor de tarjeta-->
       <div class="card-container__card-section">
+
+        <app-loader *ngIf="isLoading"></app-loader>
         <!--Tarjeta-->
         <div class="cards shadow border-light" *ngFor="let plate of plates;">
           <div class="card-image-section">
@@ -78,7 +80,8 @@
             class="button"
             data-bs-toggle="modal"
             data-bs-target="#createModal"
-            routerLink="create-product">Crear Producto
+            routerLink="create-product">
+            {{"Crear Producto" | translate}}
         </button>
       </div>
       <!--Contenedor de tarjeta-->

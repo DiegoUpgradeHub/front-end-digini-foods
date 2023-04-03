@@ -39,10 +39,8 @@
             <div class="form-floating mb-3">
               <select id="disabledSelect" class="form-select" formControlName="category" value="{{this.item.category}}" >
                 <option selected>{{this.item.category}}</option>
-                <option>pizzas</option>
-                <option>bebidas</option>
-                <option>plates</option>
-                <option>drinks</option>
+                <option *ngIf="this.item.category == 'drinks'">plates</option>
+                <option *ngIf="this.item.category == 'plates'">drinks</option>
               </select>
               <label for="disabledSelect" class="form-label">Categoría</label>
             </div>
