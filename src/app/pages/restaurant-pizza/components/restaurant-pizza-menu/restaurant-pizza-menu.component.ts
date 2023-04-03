@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Product } from 'src/app/core/models/product';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 
 @Component({
@@ -17,35 +19,30 @@ export class RestaurantPizzaMenuComponent {
   showSection: number = 0;
   deleteConfirmation:boolean = false;
 
+  isLoading:boolean = false;
 
-  productInfo: any = {}
-
-  someExpression:any;
+  productInfo: any = {};
 
 
   constructor (
     private productsService: ProductsService,
-    public authService: AuthService
-    ) {
-      this.someExpression = null;
-    }
+    public authService: AuthService,
+    ) {}
 
     ngOnInit():void {
       this.getAllProducts();
     }
 
-    getAllProducts(){
-      this.productsService.getProducts().subscribe((response)=>{
-        this.productList = response;
-        this.drinks = this.productList.filter(drink => drink.category ===  'drinks' )
-        this.plates = this.productList.filter(product => (product.category === 'plates' && product.restaurant === 'pizzeria') )
-        //console.log(this.productList)
+  getAllProducts(){
+    this.isLoading = true;
+    this.productsService.getProducts().subscribe((response)=>{
+      this.productList = response;
+      this.drinks = this.productList.filter(drink => drink.category ===  'drinks' )
+      this.plates = this.productList.filter(product => (product.category === 'plates' && product.restaurant === 'pizzeria') )
+      //console.log(this.productList)
+      this.isLoading = false;
       });
     }
-
-
-
-
 
   public triggerDeleteConfrimation(newState: boolean): void {
     this.deleteConfirmation = newState;
@@ -54,16 +51,9 @@ export class RestaurantPizzaMenuComponent {
   //Recojo el objeto del plato y lo guardo en una variable
   getProductInfo(plate:any): void {
     this.productInfo = plate;
-    console.log(this.productInfo);
+    //console.log(this.productInfo);
   }
 
-  toggleAttribute() {
-    if (this.someExpression==null) {
-      this.someExpression = '';
-    } else {
-      this.someExpression = null;
-    }
-  }
 
 
 }

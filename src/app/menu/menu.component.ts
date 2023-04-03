@@ -47,7 +47,7 @@ setSpanish(){
 detectBrowserLanguage(){
      const browserLang = this.translateService.getBrowserLang();
       if (browserLang === 'es') {
-        console.log('Tu navegador es español')
+        //console.log('Tu navegador es español')
     }
 }
 

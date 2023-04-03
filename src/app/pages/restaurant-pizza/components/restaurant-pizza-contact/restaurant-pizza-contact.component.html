@@ -2,16 +2,16 @@
 
   <div class="contactInfoBox">
     <div class="infoBox">
-      <h2>Abrimos todos los días de 12:00 a 23:00. <br>Consulta Google Maps para obtener información detallada.</h2>
+      <h2>{{"Abrimos todos los días de 12:00 a 23:00." | translate }}<br>{{"Consulta Google Maps para obtener información detallada." | translate}}</h2>
     </div>
 
     <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="formBox">
           <div class="contactoFormLeft">
             <div class="form-group">
-              <h1>¿Cómo podemos ayudarte?</h1>
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" [(ngModel)]="contact.name" required minlength="5">
+              <h1>{{"¿Cómo podemos ayudarte?" | translate}}</h1>
+              <label for="name">{{"Nombre" | translate}}</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="{{'Nombre' | translate}}" [(ngModel)]="contact.name" required minlength="5">
               <div class="error-message" *ngIf="contactForm.form.get('name')?.invalid && contactForm.form.get('name')?.dirty || contactForm.form.get('name')?.touched">
                 <p class="error" *ngIf="contactForm.form.get('name')?.errors?.['required']">
                   Mandatory Field
@@ -22,33 +22,32 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="phoneNumber">Phone number</label>
-              <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" minlength="9" maxlength="12" placeholder="Your phone number" required [(ngModel)]="contact.phoneNumber">
-              <p class="error" *ngIf="contactForm.form.get('phoneNumber')?.errors?.['minlength']">Phone number should contain at least 9 numbers</p>
+              <label for="phoneNumber">{{"Número de Teléfono" | translate}}</label>
+              <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" minlength="9" maxlength="12" placeholder="{{'Número de Teléfono' | translate}}" required [(ngModel)]="contact.phoneNumber">
+              <p class="error" *ngIf="contactForm.form.get('phoneNumber')?.errors?.['minlength']">{{"El teléfono tiene que tener por lo menos 9 cifras" | translate}}</p>
             </div>
             <div class="form-group">
-              <label for="date">Reservation Date:</label>
+              <label for="date">{{"Fecha de Reserva" | translate}}</label>
               <input type="date" class="form-control" id="date" name="date" required [(ngModel)]="contact.date" #date="ngModel">
-              <p class="error" *ngIf="date.errors?.['required']">Please select a valid date</p>
             </div>
           </div>
           <div class="contactoFormRight">
             <div class="form-group">
-              <label for="email">E-mail address:</label>
+              <label for="email">{{"Correo electrónico" | translate}}</label>
               <input type="email"
               class="form-control"
               id="email"
               name="email"
-              placeholder="your-name@provider.com"
+              placeholder="{{'tuCorreo@email.com' | translate}}"
               required
               maxlength = "250"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
               [(ngModel)]="contact.email">
-            <p *ngIf="contactForm.form.get('email')?.errors?.['pattern']">Please use the correct format email@email.com</p>
+            <p *ngIf="contactForm.form.get('email')?.errors?.['pattern']">{{"Por favor utilice el formato correcto de e-mail" | translate}}</p>
             </div>
 
             <div class="form-group ">
-              <label for="description">Description:</label>
+              <label for="description">{{"Descripción" | translate}}</label>
               <textarea type="textarea"
               class="form-control textarea"
               id="description"
@@ -58,7 +57,7 @@
               [(ngModel)]="contact.description"></textarea>
             </div>
             <div class="form-group__submit">
-              <button mat-raised-button type="submit" [disabled]="!contactForm.form.valid">Submit</button>
+              <button mat-raised-button type="submit" [disabled]="!contactForm.form.valid">{{"Enviar" | translate}}</button>
             </div>
           </div>
         </div>

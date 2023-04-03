@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { SharedModule } from 'src/app/components/shared/shared.module';
 
 import { RestaurantPizzaRoutingModule } from './restaurant-pizza-routing.module';
 import { RestaurantPizzaComponent } from './restaurant-pizza.component';
@@ -48,7 +48,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     //Angular Material
     CdkTableModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    SharedModule
 
   ]
 })
