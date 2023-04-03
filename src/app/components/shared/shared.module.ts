@@ -13,11 +13,13 @@ import { MatMenuModule } from '@angular/material/menu';
 
 //importacion int
 import { TranslateModule } from '@ngx-translate/core';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { TranslateModule } from '@ngx-translate/core';
   exports: [
     HeaderComponent,
     FooterComponent,
-    TranslateModule
+    TranslateModule,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
